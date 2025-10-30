@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "cstdlib": "c",
+        "course.h": "c",
+        "students.h": "c",
+        "typeinfo": "c",
+        "followed_course.h": "c",
+        "dyn_table.h": "c",
+        "stdio.h": "c",
+        "grades.h": "c",
+        "initializer_list": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "promotion.h": "c",
+        "load_data.h": "c"
+    },
+    "cSpell.words": [
+        "ETUDIANTS",
+        "fcourse",
+        "fcourses",
+        "MATIERES"
+    ]
+}
