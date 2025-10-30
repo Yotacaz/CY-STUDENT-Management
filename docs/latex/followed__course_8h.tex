@@ -1,0 +1,97 @@
+\doxysection{src/models/followed\+\_\+course.h File Reference}
+\hypertarget{followed__course_8h}{}\label{followed__course_8h}\index{src/models/followed\_course.h@{src/models/followed\_course.h}}
+
+
+Structure and functions to handle followed courses data.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}../other/dyn\+\_\+table.\+h"{}}\newline
+{\ttfamily \#include "{}../other/utils.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfollowed__course}{followed\+\_\+course}}
+\begin{DoxyCompactList}\small\item\em The courses followed by a specific student. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{followed__course_8h_a870264768a8605a1071612a511ee52a2}\label{followed__course_8h_a870264768a8605a1071612a511ee52a2} 
+\#define {\bfseries GRADE\+\_\+\+MIN}~-\/0.\+0001
+\item 
+\Hypertarget{followed__course_8h_ae43cf4df151af6f9140c801ba7c0b68e}\label{followed__course_8h_ae43cf4df151af6f9140c801ba7c0b68e} 
+\#define {\bfseries GRADE\+\_\+\+MAX}~20.\+0001
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{followed__course_8h_a073a650292b8c9358734e1254a622c67}\label{followed__course_8h_a073a650292b8c9358734e1254a622c67} 
+typedef struct \mbox{\hyperlink{structfollowed__course}{followed\+\_\+course}} {\bfseries Followed\+\_\+course}
+\begin{DoxyCompactList}\small\item\em The courses followed by a specific student. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{followed__course_8h_ab3803222ef4996da2c2fb622c601df5b}{init\+\_\+followed\+\_\+course}} (Grades \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*}init\+\_\+grades)())
+\begin{DoxyCompactList}\small\item\em Create a followed course, it\textquotesingle{}s average is initialised to -\/1 and the Grades are allocated using the init\+\_\+grades function. If init\+\_\+grades NULL, this step will be skipped. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{followed__course_8h_ad5899903d48aefecd86d801ea6ce7152}{free\+\_\+followed\+\_\+course}} (\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}f\+\_\+course)
+\begin{DoxyCompactList}\small\item\em Free a followed course. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{followed__course_8h_ae4a7e635d96c3d5bad7d8feca68f7172}{print\+\_\+fcourse}} (\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}fcourse)
+\begin{DoxyCompactList}\small\item\em Print a followed course. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure and functions to handle followed courses data. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{followed__course_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{followed__course_8h_ad5899903d48aefecd86d801ea6ce7152}\index{followed\_course.h@{followed\_course.h}!free\_followed\_course@{free\_followed\_course}}
+\index{free\_followed\_course@{free\_followed\_course}!followed\_course.h@{followed\_course.h}}
+\doxysubsubsection{\texorpdfstring{free\_followed\_course()}{free\_followed\_course()}}
+{\footnotesize\ttfamily \label{followed__course_8h_ad5899903d48aefecd86d801ea6ce7152} 
+void free\+\_\+followed\+\_\+course (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}}]{f\+\_\+course}{}\end{DoxyParamCaption})}
+
+
+
+Free a followed course. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+\_\+course} & the followed course to free \\
+\hline
+\end{DoxyParams}
+\Hypertarget{followed__course_8h_ab3803222ef4996da2c2fb622c601df5b}\index{followed\_course.h@{followed\_course.h}!init\_followed\_course@{init\_followed\_course}}
+\index{init\_followed\_course@{init\_followed\_course}!followed\_course.h@{followed\_course.h}}
+\doxysubsubsection{\texorpdfstring{init\_followed\_course()}{init\_followed\_course()}}
+{\footnotesize\ttfamily \label{followed__course_8h_ab3803222ef4996da2c2fb622c601df5b} 
+\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*} init\+\_\+followed\+\_\+course (\begin{DoxyParamCaption}\item[{Grades \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*}}]{init\+\_\+grades~}{)()}\end{DoxyParamCaption})}
+
+
+
+Create a followed course, it\textquotesingle{}s average is initialised to -\/1 and the Grades are allocated using the init\+\_\+grades function. If init\+\_\+grades NULL, this step will be skipped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+\_\+grades} & The function used to allocate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created followed course 
+\end{DoxyReturn}
+\Hypertarget{followed__course_8h_ae4a7e635d96c3d5bad7d8feca68f7172}\index{followed\_course.h@{followed\_course.h}!print\_fcourse@{print\_fcourse}}
+\index{print\_fcourse@{print\_fcourse}!followed\_course.h@{followed\_course.h}}
+\doxysubsubsection{\texorpdfstring{print\_fcourse()}{print\_fcourse()}}
+{\footnotesize\ttfamily \label{followed__course_8h_ae4a7e635d96c3d5bad7d8feca68f7172} 
+void print\+\_\+fcourse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}}]{fcourse}{}\end{DoxyParamCaption})}
+
+
+
+Print a followed course. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fcourse} & the followed course to print \\
+\hline
+\end{DoxyParams}

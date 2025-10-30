@@ -1,0 +1,36 @@
+\doxysection{load\+\_\+data.\+h}
+\hypertarget{load__data_8h_source}{}\label{load__data_8h_source}\index{src/core/load\_data.h@{src/core/load\_data.h}}
+\mbox{\hyperlink{load__data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LOAD\_DATA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LOAD\_DATA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{promotion_8h}{../models/promotion.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{../other/utils.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsect}{sect}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *section\_title;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *section\_header;}
+\DoxyCodeLine{00015\ \}\ \mbox{\hyperlink{load__data_8h_aef02f2f64f0bcd6490171dc1c01cfb37}{Section}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ SECTION\_CONTENT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \{"{}ETUDIANTS"{},\ "{}numero;prenom;nom;age"{}\},\ \(\backslash\)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{"{}MATIERES"{},\ "{}nom;coef"{}\},\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{"{}NOTES"{},\ "{}id;nom;note"{}\}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}}*\ \mbox{\hyperlink{load__data_8h_a4cc7fd3bfb2bc4497df151612e0ea66a}{load\_data}}(\textcolor{keywordtype}{char}\ *file\_path);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ StudentsTab\ *\mbox{\hyperlink{load__data_8h_affeacd3d8564a7cef5d26ecc3c8e62d2}{load\_student\_tab\_data}}(FILE\ *file);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ CoursesTab\ *\mbox{\hyperlink{load__data_8h_a5af573cac1a0bc650fc6d1b34b3b5832}{load\_courses\_data}}(FILE\ *file);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{load__data_8h_acf5c847f69fd3db9e344f1ec6862e14e}{load\_grades\_data}}(StudentsTab\ *prom,\ CoursesTab\ *courses,\ FILE\ *file);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{load__data_8h_a2d7c226fde2c516c982203dbb529bf3b}{set\_cursor\_to\_next\_section}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{load__data_8h_aef02f2f64f0bcd6490171dc1c01cfb37}{Section}}\ section,\ FILE\ *file);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

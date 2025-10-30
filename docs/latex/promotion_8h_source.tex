@@ -1,0 +1,44 @@
+\doxysection{promotion.\+h}
+\hypertarget{promotion_8h_source}{}\label{promotion_8h_source}\index{src/models/promotion.h@{src/models/promotion.h}}
+\mbox{\hyperlink{promotion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROMOTION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROMOTION\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{students_8h}{students.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \#include\ "{}course.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \mbox{\hyperlink{dyn__table_8h_ab9852f08c4f1e62818165cfa3c260d20}{DECLARE\_DYN\_TABLE}}(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *,\ StudentsTab)}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ typedef\ struct\ \mbox{\hyperlink{structpromotion}{promotion}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ StudentsTab\ *stu\_dtab;}
+\DoxyCodeLine{00015\ \ \ \ \ CoursesTab\ *courses;}
+\DoxyCodeLine{00016\ \}\ \mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Function\ prototypes}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{promotion_8h_afed5bef66f3e38d90fb22dedbb778fab}{compare\_student\_key}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *b);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{promotion_8h_a8129e29a36126a2d8f667173ceaa1359}{compare\_student\_id}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *s1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *s2);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *\mbox{\hyperlink{promotion_8h_afc22f1d99464e360f3d958f732d22070}{student\_tab\_bsearch}}(StudentsTab\ *prom,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ searched\_id);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{promotion_8h_a725e097db05eb2b0f953a0c4fe6f4533}{allocate\_students\_courses}}(StudentsTab\ *prom,\ \textcolor{keywordtype}{int}\ n\_courses);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}}\ *\mbox{\hyperlink{promotion_8h_afd3ecf2348f66f5a533169df082ad99f}{init\_promotion}}(CoursesTab\ *ctab,\ StudentsTab\ *stu\_dtab);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{promotion_8h_a0d3b31688a911c328c8142f0f36181ac}{free\_promotion}}(\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}}\ *prom,\ \textcolor{keywordtype}{void}\ (*free\_student\_f)(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *),\ \textcolor{keywordtype}{void}\ (*free\_course\_f)(\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}\ *));}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{promotion_8h_a03dd021bb828713f0b60805ccf3079ab}{print\_promotion}}(\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}}\ *prom);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ StudentsTab\ *\mbox{\hyperlink{promotion_8h_af0a2a8cd3481045924195f3d1a28be78}{get\_top\_students}}(StudentsTab\ *stu\_dtab,\ \textcolor{keywordtype}{int}\ top\_max\_size);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ StudentsTab\ *\mbox{\hyperlink{promotion_8h_a6454fc13ca1ddeb3651288c64e85777d}{get\_top\_students\_in\_course}}(\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}}\ *prom,\ \textcolor{keywordtype}{char}\ *course\_name,\ \textcolor{keywordtype}{int}\ top\_max\_size);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ print\ promotion\ is\ in\ the\ macro}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

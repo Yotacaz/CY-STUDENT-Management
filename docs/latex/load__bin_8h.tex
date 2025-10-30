@@ -1,0 +1,105 @@
+\doxysection{src/core/load\+\_\+bin.h File Reference}
+\hypertarget{load__bin_8h}{}\label{load__bin_8h}\index{src/core/load\_bin.h@{src/core/load\_bin.h}}
+
+
+Functions to load data from binary files, {\itshape {\bfseries{WARNING\+: binary file is NOT portable}}}.  
+
+
+{\ttfamily \#include "{}../models/promotion.\+h"{}}\newline
+{\ttfamily \#include "{}../other/utils.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{load__bin_8h_aa5810a67db25f8a4eb1dcfb1d7c2e642}{bin\+\_\+load\+\_\+promotion}} (char \texorpdfstring{$\ast$}{*}file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Loads a promotion from a binary file. Order\+: courses, students. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{load__bin_8h_a087dc2ca986fa77563d7b4bb45ee8b1e}{bin\+\_\+load\+\_\+course}} (FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Loads a course from a binary file. Order\+: coef, name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{load__bin_8h_a97051b4c58c8d40b20f8b17df4c2c2b4}{bin\+\_\+load\+\_\+student}} (FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Loads a student from a binary file. Order\+: id, name, fname, average, n\+\_\+courses, followed courses. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{load__bin_8h_a51e9a13de40b78f6cb39d8f151c6169b}{bin\+\_\+load\+\_\+followed\+\_\+course}} (FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Loads a followed course from a binary file. Order\+: average, grades. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to load data from binary files, {\itshape {\bfseries{WARNING\+: binary file is NOT portable}}}. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{save__bin_8h}{save\+\_\+bin.\+h} (modifications to one file must be reflected in the other) 
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{load__bin_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{load__bin_8h_a087dc2ca986fa77563d7b4bb45ee8b1e}\index{load\_bin.h@{load\_bin.h}!bin\_load\_course@{bin\_load\_course}}
+\index{bin\_load\_course@{bin\_load\_course}!load\_bin.h@{load\_bin.h}}
+\doxysubsubsection{\texorpdfstring{bin\_load\_course()}{bin\_load\_course()}}
+{\footnotesize\ttfamily \label{load__bin_8h_a087dc2ca986fa77563d7b4bb45ee8b1e} 
+\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*} bin\+\_\+load\+\_\+course (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Loads a course from a binary file. Order\+: coef, name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the binary file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded \doxylink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course} 
+\end{DoxyReturn}
+\Hypertarget{load__bin_8h_a51e9a13de40b78f6cb39d8f151c6169b}\index{load\_bin.h@{load\_bin.h}!bin\_load\_followed\_course@{bin\_load\_followed\_course}}
+\index{bin\_load\_followed\_course@{bin\_load\_followed\_course}!load\_bin.h@{load\_bin.h}}
+\doxysubsubsection{\texorpdfstring{bin\_load\_followed\_course()}{bin\_load\_followed\_course()}}
+{\footnotesize\ttfamily \label{load__bin_8h_a51e9a13de40b78f6cb39d8f151c6169b} 
+\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*} bin\+\_\+load\+\_\+followed\+\_\+course (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Loads a followed course from a binary file. Order\+: average, grades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the binary file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded \doxylink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course} 
+\end{DoxyReturn}
+\Hypertarget{load__bin_8h_aa5810a67db25f8a4eb1dcfb1d7c2e642}\index{load\_bin.h@{load\_bin.h}!bin\_load\_promotion@{bin\_load\_promotion}}
+\index{bin\_load\_promotion@{bin\_load\_promotion}!load\_bin.h@{load\_bin.h}}
+\doxysubsubsection{\texorpdfstring{bin\_load\_promotion()}{bin\_load\_promotion()}}
+{\footnotesize\ttfamily \label{load__bin_8h_aa5810a67db25f8a4eb1dcfb1d7c2e642} 
+\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*} bin\+\_\+load\+\_\+promotion (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Loads a promotion from a binary file. Order\+: courses, students. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & the path to the binary file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded \doxylink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion} 
+\end{DoxyReturn}
+\Hypertarget{load__bin_8h_a97051b4c58c8d40b20f8b17df4c2c2b4}\index{load\_bin.h@{load\_bin.h}!bin\_load\_student@{bin\_load\_student}}
+\index{bin\_load\_student@{bin\_load\_student}!load\_bin.h@{load\_bin.h}}
+\doxysubsubsection{\texorpdfstring{bin\_load\_student()}{bin\_load\_student()}}
+{\footnotesize\ttfamily \label{load__bin_8h_a97051b4c58c8d40b20f8b17df4c2c2b4} 
+\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} bin\+\_\+load\+\_\+student (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Loads a student from a binary file. Order\+: id, name, fname, average, n\+\_\+courses, followed courses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the binary file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded \doxylink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student} 
+\end{DoxyReturn}

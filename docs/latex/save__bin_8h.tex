@@ -1,0 +1,100 @@
+\doxysection{src/core/save\+\_\+bin.h File Reference}
+\hypertarget{save__bin_8h}{}\label{save__bin_8h}\index{src/core/save\_bin.h@{src/core/save\_bin.h}}
+
+
+Functions to save data to binary files, {\itshape {\bfseries{WARNING\+: binary file is NOT portable}}}.  
+
+
+{\ttfamily \#include "{}../models/promotion.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{save__bin_8h_a23f45a688661842b737aa0e4876bb1c4}{bin\+\_\+save\+\_\+promotion}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom, char \texorpdfstring{$\ast$}{*}file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Saves a promotion to a binary file. Order\+: courses, students. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{save__bin_8h_a5694b5058f69b7cac811c18268bede72}{bin\+\_\+save\+\_\+course}} (\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structcourse}{course}}, FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Saves a course to a binary file. Order\+: coef, name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{save__bin_8h_aa15fe2654289b7b1f512800feddc603c}{bin\+\_\+save\+\_\+student}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu, FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Saves a student to a binary file. Order\+: id, name, fname, average, n\+\_\+courses, followed courses. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{save__bin_8h_a587c83cefdc5b49211a8c6491ddaf899}{bin\+\_\+save\+\_\+followed\+\_\+course}} (\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}fcourse, FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Saves a followed course to a binary file. Order\+: average, grades. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to save data to binary files, {\itshape {\bfseries{WARNING\+: binary file is NOT portable}}}. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{load__bin_8h}{load\+\_\+bin.\+h} (modifications to one file must be reflected in the other) 
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{save__bin_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{save__bin_8h_a5694b5058f69b7cac811c18268bede72}\index{save\_bin.h@{save\_bin.h}!bin\_save\_course@{bin\_save\_course}}
+\index{bin\_save\_course@{bin\_save\_course}!save\_bin.h@{save\_bin.h}}
+\doxysubsubsection{\texorpdfstring{bin\_save\_course()}{bin\_save\_course()}}
+{\footnotesize\ttfamily \label{save__bin_8h_a5694b5058f69b7cac811c18268bede72} 
+void bin\+\_\+save\+\_\+course (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}}]{course}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Saves a course to a binary file. Order\+: coef, name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em course} & the course to save \\
+\hline
+{\em file} & the binary file \\
+\hline
+\end{DoxyParams}
+\Hypertarget{save__bin_8h_a587c83cefdc5b49211a8c6491ddaf899}\index{save\_bin.h@{save\_bin.h}!bin\_save\_followed\_course@{bin\_save\_followed\_course}}
+\index{bin\_save\_followed\_course@{bin\_save\_followed\_course}!save\_bin.h@{save\_bin.h}}
+\doxysubsubsection{\texorpdfstring{bin\_save\_followed\_course()}{bin\_save\_followed\_course()}}
+{\footnotesize\ttfamily \label{save__bin_8h_a587c83cefdc5b49211a8c6491ddaf899} 
+void bin\+\_\+save\+\_\+followed\+\_\+course (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}}]{fcourse}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Saves a followed course to a binary file. Order\+: average, grades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fcourse} & the followed course to save \\
+\hline
+{\em file} & the binary file \\
+\hline
+\end{DoxyParams}
+\Hypertarget{save__bin_8h_a23f45a688661842b737aa0e4876bb1c4}\index{save\_bin.h@{save\_bin.h}!bin\_save\_promotion@{bin\_save\_promotion}}
+\index{bin\_save\_promotion@{bin\_save\_promotion}!save\_bin.h@{save\_bin.h}}
+\doxysubsubsection{\texorpdfstring{bin\_save\_promotion()}{bin\_save\_promotion()}}
+{\footnotesize\ttfamily \label{save__bin_8h_a23f45a688661842b737aa0e4876bb1c4} 
+void bin\+\_\+save\+\_\+promotion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}}]{prom}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Saves a promotion to a binary file. Order\+: courses, students. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prom} & the promotion to save \\
+\hline
+{\em file\+\_\+path} & the path to the binary file \\
+\hline
+\end{DoxyParams}
+\Hypertarget{save__bin_8h_aa15fe2654289b7b1f512800feddc603c}\index{save\_bin.h@{save\_bin.h}!bin\_save\_student@{bin\_save\_student}}
+\index{bin\_save\_student@{bin\_save\_student}!save\_bin.h@{save\_bin.h}}
+\doxysubsubsection{\texorpdfstring{bin\_save\_student()}{bin\_save\_student()}}
+{\footnotesize\ttfamily \label{save__bin_8h_aa15fe2654289b7b1f512800feddc603c} 
+void bin\+\_\+save\+\_\+student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}}]{stu}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Saves a student to a binary file. Order\+: id, name, fname, average, n\+\_\+courses, followed courses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stu} & the student to save \\
+\hline
+{\em file} & the binary file \\
+\hline
+\end{DoxyParams}

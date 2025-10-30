@@ -1,8 +1,12 @@
 #ifndef FOLLOWED_COURSE_H
 #define FOLLOWED_COURSE_H
 
+/// @file followed_course.h
+/// @brief Structure and functions to handle followed courses data
+
 #include <stdio.h>
 #include "../other/dyn_table.h"
+#include "../other/utils.h"
 
 DECLARE_DYN_TABLE(float, Grades)
 
@@ -17,9 +21,10 @@ typedef struct followed_course
 } Followed_course;
 
 /// @brief Create a followed course, it's average is initialised to -1 and
-/// the Grades are initialised using the dynamic table structure macro.
+/// the Grades are allocated using the init_grades function. If init_grades NULL, this step will be skipped.
+/// @param init_grades The function used to allocate
 /// @return The created followed course
-Followed_course *init_followed_course();
+Followed_course *init_followed_course(Grades *(*init_grades)());
 
 /// @brief Free a followed course
 /// @param f_course the followed course to free

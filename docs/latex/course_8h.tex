@@ -1,0 +1,132 @@
+\doxysection{src/models/course.h File Reference}
+\hypertarget{course_8h}{}\label{course_8h}\index{src/models/course.h@{src/models/course.h}}
+
+
+Structure and functions to handle courses data.  
+
+
+{\ttfamily \#include "{}../other/dyn\+\_\+table.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcourse}{course}}
+\begin{DoxyCompactList}\small\item\em Structure containing the name and the coefficient of a course. Should be stored in a dynamic table inside a promotion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}\label{course_8h_a7c557a628c793038b8cfd220c9d1cc2c} 
+typedef struct \mbox{\hyperlink{structcourse}{course}} {\bfseries Course}
+\begin{DoxyCompactList}\small\item\em Structure containing the name and the coefficient of a course. Should be stored in a dynamic table inside a promotion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{course_8h_aff23ac44c3363f0ee9d3a9cbf390ad0b}{init\+\_\+course}} (float coef, char \texorpdfstring{$\ast$}{*}course\+\_\+name)
+\begin{DoxyCompactList}\small\item\em allocate and initialise a course \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{course_8h_a7b533a58022dbc2febd446a2f0ef385b}{free\+\_\+course}} (\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structcourse}{course}})
+\begin{DoxyCompactList}\small\item\em Free a course. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{course_8h_a9f1c0aea189564aac75fc84c7f90ee02}{compare\+\_\+courses}} (const void \texorpdfstring{$\ast$}{*}c1, const void \texorpdfstring{$\ast$}{*}c2)
+\begin{DoxyCompactList}\small\item\em compare two courses by their names. Should be used for qsort \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{course_8h_a412974a2b5cb4687fea92d19c404bd63}{get\+\_\+course\+\_\+index}} (Courses\+Tab \texorpdfstring{$\ast$}{*}tab, char \texorpdfstring{$\ast$}{*}searched\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Get a course index given a sorted courses tab and the searched name. Use binary search. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{course_8h_a99bf8b3f3c2d5dc7cf798ed445eaaa77}{print\+\_\+course}} (\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structcourse}{course}})
+\begin{DoxyCompactList}\small\item\em print a course \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure and functions to handle courses data. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{course_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{course_8h_a9f1c0aea189564aac75fc84c7f90ee02}\index{course.h@{course.h}!compare\_courses@{compare\_courses}}
+\index{compare\_courses@{compare\_courses}!course.h@{course.h}}
+\doxysubsubsection{\texorpdfstring{compare\_courses()}{compare\_courses()}}
+{\footnotesize\ttfamily \label{course_8h_a9f1c0aea189564aac75fc84c7f90ee02} 
+int compare\+\_\+courses (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{c1}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{c2}{}\end{DoxyParamCaption})}
+
+
+
+compare two courses by their names. Should be used for qsort 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c1} & first course \\
+\hline
+{\em c2} & 2nd course \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of strcmp(name1, name2) 
+\end{DoxyReturn}
+\Hypertarget{course_8h_a7b533a58022dbc2febd446a2f0ef385b}\index{course.h@{course.h}!free\_course@{free\_course}}
+\index{free\_course@{free\_course}!course.h@{course.h}}
+\doxysubsubsection{\texorpdfstring{free\_course()}{free\_course()}}
+{\footnotesize\ttfamily \label{course_8h_a7b533a58022dbc2febd446a2f0ef385b} 
+void free\+\_\+course (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}}]{course}{}\end{DoxyParamCaption})}
+
+
+
+Free a course. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em course} & the course to free \\
+\hline
+\end{DoxyParams}
+\Hypertarget{course_8h_a412974a2b5cb4687fea92d19c404bd63}\index{course.h@{course.h}!get\_course\_index@{get\_course\_index}}
+\index{get\_course\_index@{get\_course\_index}!course.h@{course.h}}
+\doxysubsubsection{\texorpdfstring{get\_course\_index()}{get\_course\_index()}}
+{\footnotesize\ttfamily \label{course_8h_a412974a2b5cb4687fea92d19c404bd63} 
+int get\+\_\+course\+\_\+index (\begin{DoxyParamCaption}\item[{Courses\+Tab \texorpdfstring{$\ast$}{*}}]{tab}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{searched\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Get a course index given a sorted courses tab and the searched name. Use binary search. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em courses} & the table \\
+\hline
+{\em searched\+\_\+name} & the name to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the \doxylink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course} in the courses table 
+\end{DoxyReturn}
+\Hypertarget{course_8h_aff23ac44c3363f0ee9d3a9cbf390ad0b}\index{course.h@{course.h}!init\_course@{init\_course}}
+\index{init\_course@{init\_course}!course.h@{course.h}}
+\doxysubsubsection{\texorpdfstring{init\_course()}{init\_course()}}
+{\footnotesize\ttfamily \label{course_8h_aff23ac44c3363f0ee9d3a9cbf390ad0b} 
+\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*} init\+\_\+course (\begin{DoxyParamCaption}\item[{float}]{coef}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{course\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+allocate and initialise a course 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coef} & coef of the course \\
+\hline
+{\em course\+\_\+name} & name of the course \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the allocated value 
+\end{DoxyReturn}
+\Hypertarget{course_8h_a99bf8b3f3c2d5dc7cf798ed445eaaa77}\index{course.h@{course.h}!print\_course@{print\_course}}
+\index{print\_course@{print\_course}!course.h@{course.h}}
+\doxysubsubsection{\texorpdfstring{print\_course()}{print\_course()}}
+{\footnotesize\ttfamily \label{course_8h_a99bf8b3f3c2d5dc7cf798ed445eaaa77} 
+void print\+\_\+course (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}}]{course}{}\end{DoxyParamCaption})}
+
+
+
+print a course 
+
+
+\begin{DoxyParams}{Parameters}
+{\em course} & course to print \\
+\hline
+\end{DoxyParams}

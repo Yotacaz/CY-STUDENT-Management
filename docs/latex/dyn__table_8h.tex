@@ -1,0 +1,91 @@
+\doxysection{src/other/dyn\+\_\+table.h File Reference}
+\hypertarget{dyn__table_8h}{}\label{dyn__table_8h}\index{src/other/dyn\_table.h@{src/other/dyn\_table.h}}
+
+
+Macros to declare and define dynamic tables in C. A dynamic table is a structure that can grow as needed when elements are added. It contains a pointer to the elements, the current size, and the capacity.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dyn__table_8h_ab9852f08c4f1e62818165cfa3c260d20}{DECLARE\+\_\+\+DYN\+\_\+\+TABLE}}(Type,  Name)
+\item 
+\#define \mbox{\hyperlink{dyn__table_8h_a23fb7b038d8874935956629ce05b5151}{DEFINE\+\_\+\+DYN\+\_\+\+TABLE}}(Type,  Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Macros to declare and define dynamic tables in C. A dynamic table is a structure that can grow as needed when elements are added. It contains a pointer to the elements, the current size, and the capacity. 
+
+
+
+\label{doc-define-members}
+\Hypertarget{dyn__table_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{dyn__table_8h_ab9852f08c4f1e62818165cfa3c260d20}\index{dyn\_table.h@{dyn\_table.h}!DECLARE\_DYN\_TABLE@{DECLARE\_DYN\_TABLE}}
+\index{DECLARE\_DYN\_TABLE@{DECLARE\_DYN\_TABLE}!dyn\_table.h@{dyn\_table.h}}
+\doxysubsubsection{\texorpdfstring{DECLARE\_DYN\_TABLE}{DECLARE\_DYN\_TABLE}}
+{\footnotesize\ttfamily \label{dyn__table_8h_ab9852f08c4f1e62818165cfa3c260d20} 
+\#define DECLARE\+\_\+\+DYN\+\_\+\+TABLE(\begin{DoxyParamCaption}\item[{}]{Type}{, }\item[{}]{Name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Name\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Type\ *tab;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ Name;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ Name\ *Name\#\#\_init();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ Name\#\#\_push(Type\ value,\ Name\ *table);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ Name\#\#\_free(Name\ *tab,\ \textcolor{keywordtype}{void}\ (*free\_elem)(Type));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ Name\#\#\_sort(Name\ *tab,\ \textcolor{keywordtype}{int}\ (*compare\_function)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ Name\#\#\_print(Name\ *tab,\ \textcolor{keywordtype}{void}\ (*print\_elem)(Type));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ Name\#\#\_save\_to\_bin(Name\ *tab,\ FILE\ *file,\ \textcolor{keywordtype}{void}\ (*save\_elem)(Type,\ FILE\ *));\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ Name\ *Name\#\#\_load\_from\_bin(FILE\ *file,\ Type\ (*load\_elem)(FILE\ *));}
+
+\end{DoxyCode}
+DECLARE\+\_\+\+DYN\+\_\+\+TABLE should be put in the header file where we would want to declare a dynamic table structure that reallocate itself as needed. 
+\begin{DoxyParams}{Parameters}
+{\em Type} & the type of the elements stored in the dynamic table \\
+\hline
+{\em Name} & the name of the dynamic table structure Generates the structure and the function prototypes. Usage example\+: \doxylink{dyn__table_8h_ab9852f08c4f1e62818165cfa3c260d20}{DECLARE\+\_\+\+DYN\+\_\+\+TABLE(\+Student\texorpdfstring{$\ast$}{*}, Students\+Tab)} Functions generated\+:
+\begin{DoxyItemize}
+\item Students\+Tab\texorpdfstring{$\ast$}{*} Students\+Tab\+\_\+init();
+\item void Students\+Tab\+\_\+push(\+Student\texorpdfstring{$\ast$}{*} value, Students\+Tab\texorpdfstring{$\ast$}{*} table) \+: adds an element to the dynamic table
+\item void Students\+Tab\+\_\+free(Students\+Tab\texorpdfstring{$\ast$}{*} tab, void ({\itshape free\+\_\+elem)(\doxylink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}})) \+: frees the dynamic table and its elements using the provided free function~\newline
+ ~\newline
+
+\item void Students\+Tab\+\_\+sort(Students\+Tab\texorpdfstring{$\ast$}{*} tab, int ({\itshape compare\+\_\+function)(const void}, const void\texorpdfstring{$\ast$}{*})) \+: sorts the dynamic table using qsort and the provided comparison function~\newline
+ ~\newline
+
+\item void Students\+Tab\+\_\+print(Students\+Tab\texorpdfstring{$\ast$}{*} tab, void ({\itshape print\+\_\+elem)(\doxylink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}})) \+: prints the dynamic table using the provided print function~\newline
+ ~\newline
+
+\item void Students\+Tab\+\_\+save\+\_\+to\+\_\+bin(Students\+Tab\texorpdfstring{$\ast$}{*} tab, FILE\texorpdfstring{$\ast$}{*} file, void ({\itshape save\+\_\+elem)(\doxylink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}, FILE\texorpdfstring{$\ast$}{*}))\+: saves the dynamic table to a binary file using the provided save function~\newline
+ ~\newline
+
+\item Students\+Tab\texorpdfstring{$\ast$}{*} Students\+Tab\+\_\+load\+\_\+from\+\_\+bin(FILE\texorpdfstring{$\ast$}{*} file, Student\texorpdfstring{$\ast$}{*} ({\itshape load\+\_\+elem)(FILE})) \+: loads the dynamic table from a binary file using the provided load function 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\Hypertarget{dyn__table_8h_a23fb7b038d8874935956629ce05b5151}\index{dyn\_table.h@{dyn\_table.h}!DEFINE\_DYN\_TABLE@{DEFINE\_DYN\_TABLE}}
+\index{DEFINE\_DYN\_TABLE@{DEFINE\_DYN\_TABLE}!dyn\_table.h@{dyn\_table.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_DYN\_TABLE}{DEFINE\_DYN\_TABLE}}
+{\footnotesize\ttfamily \label{dyn__table_8h_a23fb7b038d8874935956629ce05b5151} 
+\#define DEFINE\+\_\+\+DYN\+\_\+\+TABLE(\begin{DoxyParamCaption}\item[{}]{Type}{, }\item[{}]{Name}{}\end{DoxyParamCaption})}
+
+DEFINE\+\_\+\+DYN\+\_\+\+TABLE should be put in the C file where we would want to define the functions of a dynamic table structure that reallocate itself as needed. 
+\begin{DoxyParams}{Parameters}
+{\em Type} & the type of the elements stored in the dynamic table \\
+\hline
+{\em Name} & the name of the dynamic table structure \\
+\hline
+\end{DoxyParams}

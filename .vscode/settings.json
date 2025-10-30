@@ -12,7 +12,8 @@
         "type_traits": "c",
         "utility": "c",
         "promotion.h": "c",
-        "load_data.h": "c"
+        "load_data.h": "c",
+        "save_bin.h": "c"
     },
     "cSpell.words": [
         "ETUDIANTS",

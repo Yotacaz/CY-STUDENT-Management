@@ -4,13 +4,15 @@
 
 DEFINE_DYN_TABLE(float, Grades)
 
-Followed_course *init_followed_course()
+Followed_course *init_followed_course(Grades* (*init_grades)())
 {
     Followed_course *f_course = malloc(sizeof(Followed_course));
     assert(f_course);
     f_course->average = -1;
-    f_course->grades = Grades_init();
-    assert(f_course);
+    if (init_grades != NULL){
+        f_course->grades = Grades_init();
+        assert(f_course->grades);
+    }
     return f_course;
 }
 

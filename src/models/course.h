@@ -1,6 +1,9 @@
 #ifndef COURSE_H
 #define COURSE_H
 
+/// @file course.h
+/// @brief Structure and functions to handle courses data
+
 #include "../other/dyn_table.h"
 
 

@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['get_5fcourse_5findex_0',['get_course_index',['../course_8h.html#a412974a2b5cb4687fea92d19c404bd63',1,'course.c']]],
+  ['get_5ftop_5fstudents_1',['get_top_students',['../promotion_8h.html#af0a2a8cd3481045924195f3d1a28be78',1,'promotion.c']]],
+  ['get_5ftop_5fstudents_5fin_5fcourse_2',['get_top_students_in_course',['../promotion_8h.html#a6454fc13ca1ddeb3651288c64e85777d',1,'promotion.c']]]
+];

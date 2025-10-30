@@ -1,10 +1,11 @@
 #ifndef LOAD_DATA_H
 #define LOAD_DATA_H
 
+/// @file load_data.h
+/// @brief Functions to load data from text files
+
 #include "../models/promotion.h"
-
-
-#define BUF_LEN 4 * 1024
+#include "../other/utils.h"
 
 /// @brief Structure representing a section in the data file
 typedef struct sect

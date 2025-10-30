@@ -1,0 +1,156 @@
+\doxysection{src/core/load\+\_\+data.h File Reference}
+\hypertarget{load__data_8h}{}\label{load__data_8h}\index{src/core/load\_data.h@{src/core/load\_data.h}}
+
+
+Functions to load data from text files.  
+
+
+{\ttfamily \#include "{}../models/promotion.\+h"{}}\newline
+{\ttfamily \#include "{}../other/utils.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsect}{sect}}
+\begin{DoxyCompactList}\small\item\em Structure representing a section in the data file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{load__data_8h_a82f7376fac56bac377c052858b3f8bd7}{SECTION\+\_\+\+CONTENT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{load__data_8h_aef02f2f64f0bcd6490171dc1c01cfb37}\label{load__data_8h_aef02f2f64f0bcd6490171dc1c01cfb37} 
+typedef struct \mbox{\hyperlink{structsect}{sect}} {\bfseries Section}
+\begin{DoxyCompactList}\small\item\em Structure representing a section in the data file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{load__data_8h_a4cc7fd3bfb2bc4497df151612e0ea66a}{load\+\_\+data}} (char \texorpdfstring{$\ast$}{*}file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Load data from a file and create a \doxylink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion} structure. \end{DoxyCompactList}\item 
+Students\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{load__data_8h_affeacd3d8564a7cef5d26ecc3c8e62d2}{load\+\_\+student\+\_\+tab\+\_\+data}} (FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Load the students data from a file. \end{DoxyCompactList}\item 
+Courses\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{load__data_8h_a5af573cac1a0bc650fc6d1b34b3b5832}{load\+\_\+courses\+\_\+data}} (FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Load the courses data from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{load__data_8h_acf5c847f69fd3db9e344f1ec6862e14e}{load\+\_\+grades\+\_\+data}} (Students\+Tab \texorpdfstring{$\ast$}{*}prom, Courses\+Tab \texorpdfstring{$\ast$}{*}courses, FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Load the grades data from a file and update the students\textquotesingle{} followed courses. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{load__data_8h_a2d7c226fde2c516c982203dbb529bf3b}{set\+\_\+cursor\+\_\+to\+\_\+next\+\_\+section}} (const \mbox{\hyperlink{load__data_8h_aef02f2f64f0bcd6490171dc1c01cfb37}{Section}} section, FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Set the file cursor to the beginning of the next section. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to load data from text files. 
+
+
+
+\label{doc-define-members}
+\Hypertarget{load__data_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{load__data_8h_a82f7376fac56bac377c052858b3f8bd7}\index{load\_data.h@{load\_data.h}!SECTION\_CONTENT@{SECTION\_CONTENT}}
+\index{SECTION\_CONTENT@{SECTION\_CONTENT}!load\_data.h@{load\_data.h}}
+\doxysubsubsection{\texorpdfstring{SECTION\_CONTENT}{SECTION\_CONTENT}}
+{\footnotesize\ttfamily \label{load__data_8h_a82f7376fac56bac377c052858b3f8bd7} 
+\#define SECTION\+\_\+\+CONTENT}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}ETUDIANTS"{}},\ \textcolor{stringliteral}{"{}numero;prenom;nom;age"{}}\},\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}MATIERES"{}},\ \textcolor{stringliteral}{"{}nom;coef"{}}\},\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}NOTES"{}},\ \textcolor{stringliteral}{"{}id;nom;note"{}}\}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{load__data_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{load__data_8h_a5af573cac1a0bc650fc6d1b34b3b5832}\index{load\_data.h@{load\_data.h}!load\_courses\_data@{load\_courses\_data}}
+\index{load\_courses\_data@{load\_courses\_data}!load\_data.h@{load\_data.h}}
+\doxysubsubsection{\texorpdfstring{load\_courses\_data()}{load\_courses\_data()}}
+{\footnotesize\ttfamily \label{load__data_8h_a5af573cac1a0bc650fc6d1b34b3b5832} 
+Courses\+Tab \texorpdfstring{$\ast$}{*} load\+\_\+courses\+\_\+data (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Load the courses data from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the file to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded Courses\+Tab 
+\end{DoxyReturn}
+\Hypertarget{load__data_8h_a4cc7fd3bfb2bc4497df151612e0ea66a}\index{load\_data.h@{load\_data.h}!load\_data@{load\_data}}
+\index{load\_data@{load\_data}!load\_data.h@{load\_data.h}}
+\doxysubsubsection{\texorpdfstring{load\_data()}{load\_data()}}
+{\footnotesize\ttfamily \label{load__data_8h_a4cc7fd3bfb2bc4497df151612e0ea66a} 
+\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*} load\+\_\+data (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Load data from a file and create a \doxylink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion} structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & the path to the data file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded \doxylink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion} 
+\end{DoxyReturn}
+\Hypertarget{load__data_8h_acf5c847f69fd3db9e344f1ec6862e14e}\index{load\_data.h@{load\_data.h}!load\_grades\_data@{load\_grades\_data}}
+\index{load\_grades\_data@{load\_grades\_data}!load\_data.h@{load\_data.h}}
+\doxysubsubsection{\texorpdfstring{load\_grades\_data()}{load\_grades\_data()}}
+{\footnotesize\ttfamily \label{load__data_8h_acf5c847f69fd3db9e344f1ec6862e14e} 
+void load\+\_\+grades\+\_\+data (\begin{DoxyParamCaption}\item[{Students\+Tab \texorpdfstring{$\ast$}{*}}]{prom}{, }\item[{Courses\+Tab \texorpdfstring{$\ast$}{*}}]{courses}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Load the grades data from a file and update the students\textquotesingle{} followed courses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prom} & the students table \\
+\hline
+{\em courses} & the courses table \\
+\hline
+{\em file} & the file to read from \\
+\hline
+\end{DoxyParams}
+\textbackslash{} WARNING \+: code PARTLY duplicated\Hypertarget{load__data_8h_affeacd3d8564a7cef5d26ecc3c8e62d2}\index{load\_data.h@{load\_data.h}!load\_student\_tab\_data@{load\_student\_tab\_data}}
+\index{load\_student\_tab\_data@{load\_student\_tab\_data}!load\_data.h@{load\_data.h}}
+\doxysubsubsection{\texorpdfstring{load\_student\_tab\_data()}{load\_student\_tab\_data()}}
+{\footnotesize\ttfamily \label{load__data_8h_affeacd3d8564a7cef5d26ecc3c8e62d2} 
+Students\+Tab \texorpdfstring{$\ast$}{*} load\+\_\+student\+\_\+tab\+\_\+data (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Load the students data from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the file to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded Students\+Tab 
+\end{DoxyReturn}
+\textbackslash{} WARNING \+: code PARTLY duplicated\Hypertarget{load__data_8h_a2d7c226fde2c516c982203dbb529bf3b}\index{load\_data.h@{load\_data.h}!set\_cursor\_to\_next\_section@{set\_cursor\_to\_next\_section}}
+\index{set\_cursor\_to\_next\_section@{set\_cursor\_to\_next\_section}!load\_data.h@{load\_data.h}}
+\doxysubsubsection{\texorpdfstring{set\_cursor\_to\_next\_section()}{set\_cursor\_to\_next\_section()}}
+{\footnotesize\ttfamily \label{load__data_8h_a2d7c226fde2c516c982203dbb529bf3b} 
+void set\+\_\+cursor\+\_\+to\+\_\+next\+\_\+section (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{load__data_8h_aef02f2f64f0bcd6490171dc1c01cfb37}{Section}}}]{section}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Set the file cursor to the beginning of the next section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & the section to find \\
+\hline
+{\em file} & the file to read from \\
+\hline
+\end{DoxyParams}

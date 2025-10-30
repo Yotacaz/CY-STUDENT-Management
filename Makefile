@@ -31,6 +31,12 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(INC) | $(BUILD_DIR)
 $(BUILD_DIR):
 	cd $(SRC_DIR) && find . -type d -exec mkdir -p "../build/{}" \;
 	cd ..
+
+#generate documentation file
+.PHONY: documentation
+documentation : exec
+	doxygen Doxyfile
+
 .PHONY: clean
 clean:
 	@echo "cleaning workspace..."

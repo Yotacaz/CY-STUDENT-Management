@@ -2,14 +2,23 @@
 
 #include "students.h"
 
-Student *init_student(char *name, char *first_name, unsigned int student_id)
+Student *init_student(char *name, char *first_name, unsigned int student_id, int n_courses)
 {
     Student *stu = malloc(sizeof(Student));
     assert(stu);
     stu->id = student_id;
     stu->average = -1;
-    stu->n_courses = 0;
-    stu->f_courses = NULL; // we don't know how many courses a student will follow yet (but will later)
+    stu->n_courses = n_courses;
+    if (n_courses > 0)
+    {
+        // IF n_courses is known, it is supposed sufficiently constant so that we don't need to reallocate to many times
+        stu->f_courses = (Followed_course **)calloc(n_courses, sizeof(Followed_course *)); // init at NULL for safety
+        assert(stu->f_courses);
+    }
+    else
+    {
+        stu->f_courses = NULL; // we don't know how many courses a student will follow yet (but will later)
+    }
     int name_len = strlen(name);
     int fname_len = strlen(first_name);
     stu->fname = (char *)malloc((fname_len + 1) * sizeof(char));
@@ -44,14 +53,18 @@ void print_student(Student *stu)
         printf("Student is NULL");
         exit(EXIT_FAILURE);
     }
-    printf("Student %u: %s %s, avg = %.2f\n", stu->id, stu->name, stu->fname, stu->average);
-                
-    printf("Courses (%d): \n", stu->n_courses);
-    // for (int i = 0; i < stu->n_courses; i++)
-    // {
-    //     printf("%d \n", i);
-    //     print_fcourse(stu->f_courses[i]);
-    // }
+    printf(BOLD_RED UNDERLINE"Student %u: %s %s"RESET RED", avg = %.2f\n", stu->id, stu->name, stu->fname, stu->average);
+
+    printf("Courses (%d): \n"RESET, stu->n_courses);
+    if (!PRINT_STUDENT_COURSES){
+        printf("\t(omitted)\n");
+        return;
+    }
+    for (int i = 0; i < stu->n_courses; i++)
+    {
+        printf(BOLD_BLU"%d - "RESET, i);
+        print_fcourse(stu->f_courses[i]);
+    }
 }
 
 void free_student(Student *stu)
@@ -63,7 +76,7 @@ void free_student(Student *stu)
     for (int i = 0; i < stu->n_courses; i++)
     {
         free_followed_course(stu->f_courses[i]);
-        stu->f_courses[i]=NULL;
+        stu->f_courses[i] = NULL;
     }
     free(stu->f_courses);
     stu->f_courses = NULL;

@@ -5,7 +5,6 @@ DEFINE_DYN_TABLE(Student *, StudentsTab)
 
 Promotion *init_promotion(CoursesTab *ctab, StudentsTab *stu_dtab)
 {
-    assert(ctab && stu_dtab);
     Promotion *prom = (Promotion *)malloc(sizeof(Promotion));
     assert(prom);
     prom->courses = ctab;
@@ -50,7 +49,7 @@ void allocate_students_courses(StudentsTab *stu_dtab, int n_courses)
         assert(stu->f_courses);
         for (int j = 0; j < n_courses; j++)
         {
-            stu->f_courses[j] = init_followed_course();
+            stu->f_courses[j] = init_followed_course(Grades_init);
             assert(stu->f_courses[j]);
         }
     }
@@ -64,11 +63,16 @@ void print_promotion(Promotion *prom)
     StudentsTab_print(prom->stu_dtab, print_student);
 }
 
-void free_promotion(Promotion *prom)
+void free_promotion(Promotion *prom, void (*free_student_f)(Student *), void (*free_course_f)(Course *))
 {
     assert(prom);
-    CoursesTab_free(prom->courses, free_course);
-    StudentsTab_free(prom->stu_dtab, free_student);
+    //If free_course_f or free_student_f is NULL, that mean we don't want to free them
+    if (free_course_f){
+        CoursesTab_free(prom->courses, free_course_f);
+    }
+    if (free_student_f){
+        StudentsTab_free(prom->stu_dtab, free_student_f);
+    }
     prom->courses = NULL;
     prom->stu_dtab = NULL;
     free(prom);

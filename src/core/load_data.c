@@ -49,7 +49,8 @@ StudentsTab *load_student_tab_data(FILE *file)
     assert(n_char > 0 && n_char < BUF_LEN); // no error or overflow
     while (fscanf(file, format, &stu_id, name, fname, &age) == 4)
     {
-        Student *stu = init_student(name, fname, stu_id);
+        // we don't know the number of courses yet
+        Student *stu = init_student(name, fname, stu_id, -1);
         assert(stu);
         StudentsTab_push(stu, stu_dtab);
     }

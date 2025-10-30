@@ -3,8 +3,14 @@
 #include <stdlib.h>
 #include <string.h>
 
+/// @file students.h
+/// @brief Structure and functions to handle students data
+
 #include "course.h"
 #include "followed_course.h"
+
+/// @brief Set to true to print the followed courses when printing a student
+#define PRINT_STUDENT_COURSES false 
 
 /// @brief Structure representing a student.
 /// We suppose here that every student follows the same number of courses (n_courses).
@@ -25,7 +31,7 @@ typedef struct student
 /// @param first_name the first name of the student
 /// @param student_id the unique identifier of the student
 /// @return the allocated student
-Student *init_student(char *name, char *first_name, unsigned int student_id);
+Student *init_student(char *name, char *first_name, unsigned int student_id, int n_courses);
 
 /// @brief Free a student and all its followed courses
 /// @param stu the student to free

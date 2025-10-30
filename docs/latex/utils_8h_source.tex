@@ -1,0 +1,50 @@
+\doxysection{utils.\+h}
+\hypertarget{utils_8h_source}{}\label{utils_8h_source}\index{src/other/utils.h@{src/other/utils.h}}
+\mbox{\hyperlink{utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UTILS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UTILS\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ buffer\ length\ for\ reading\ strings\ from\ files\ (binary\ or\ text)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ BUF\_LEN\ 4\ *\ 1024}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ normal\ text\ colors}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ RED\ "{}\(\backslash\)x1B[0;31m"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ GRN\ "{}\(\backslash\)x1B[0;32m"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ YEL\ "{}\(\backslash\)x1B[0;33m"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ BLU\ "{}\(\backslash\)x1B[0;34m"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MAG\ "{}\(\backslash\)x1B[0;35m"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ CYN\ "{}\(\backslash\)x1B[0;36m"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ WHT\ "{}\(\backslash\)x1B[0;37m"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ background\ colors}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ BG\_RED\ "{}\(\backslash\)x1B[41m"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ BG\_GRN\ "{}\(\backslash\)x1B[42m"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ BG\_YEL\ "{}\(\backslash\)x1B[43m"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ BG\_BLU\ "{}\(\backslash\)x1B[44m"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ BG\_MAG\ "{}\(\backslash\)x1B[45m"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ BG\_CYN\ "{}\(\backslash\)x1B[46m"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ BG\_WHT\ "{}\(\backslash\)x1B[47m"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ bold\ text\ colors}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ BOLD\_RED\ "{}\(\backslash\)x1B[1;31m"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ BOLD\_GRN\ "{}\(\backslash\)x1B[1;32m"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ BOLD\_YEL\ "{}\(\backslash\)x1B[1;33m"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BOLD\_BLU\ "{}\(\backslash\)x1B[1;34m"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BOLD\_MAG\ "{}\(\backslash\)x1B[1;35m"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ BOLD\_CYN\ "{}\(\backslash\)x1B[1;36m"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BOLD\_WHT\ "{}\(\backslash\)x1B[1;37m"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ underline}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ UNDERLINE\ "{}\(\backslash\)x1B[4m"{}}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ RESET\ "{}\(\backslash\)x1B[0m"{}}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{utils_8h_a290cabf3313b2303b06136bcee79c892}{bin\_read\_string}}(FILE\ *file,\ \textcolor{keywordtype}{char}\ buf[],\ \textcolor{keywordtype}{long}\ buf\_size);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

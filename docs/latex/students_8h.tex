@@ -1,0 +1,122 @@
+\doxysection{src/models/students.h File Reference}
+\hypertarget{students_8h}{}\label{students_8h}\index{src/models/students.h@{src/models/students.h}}
+
+
+Structure and functions to handle students data.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}course.\+h"{}}\newline
+{\ttfamily \#include "{}followed\+\_\+course.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstudent}{student}}
+\begin{DoxyCompactList}\small\item\em Structure representing a student. We suppose here that every student follows the same number of courses (n\+\_\+courses). In the f\+\_\+courses table, the courses are stored in the same order as in the Courses\+Tab of the promotion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{students_8h_a72cab552d48753679f7f0b8b8feb8720}\label{students_8h_a72cab552d48753679f7f0b8b8feb8720} 
+\#define {\bfseries PRINT\+\_\+\+STUDENT\+\_\+\+COURSES}~false
+\begin{DoxyCompactList}\small\item\em Set to true to print the followed courses when printing a student. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{students_8h_ae8c079733e2570c4a107caf4b38afc60}\label{students_8h_ae8c079733e2570c4a107caf4b38afc60} 
+typedef struct \mbox{\hyperlink{structstudent}{student}} {\bfseries Student}
+\begin{DoxyCompactList}\small\item\em Structure representing a student. We suppose here that every student follows the same number of courses (n\+\_\+courses). In the f\+\_\+courses table, the courses are stored in the same order as in the Courses\+Tab of the promotion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{students_8h_aca2f4c6eb237f8a1dee663aef1d72c88}{init\+\_\+student}} (char \texorpdfstring{$\ast$}{*}name, char \texorpdfstring{$\ast$}{*}first\+\_\+name, unsigned int student\+\_\+id, int n\+\_\+courses)
+\begin{DoxyCompactList}\small\item\em Initialise a student, its followed courses are initialised to NULL and n\+\_\+courses to 0. Additionally, average is initialised to -\/1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{students_8h_aea3122e43992dd7876262084e0d00ef0}{free\+\_\+student}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu)
+\begin{DoxyCompactList}\small\item\em Free a student and all its followed courses. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{students_8h_a7a09a7e9994d9eefc07aec5a21385117}{add\+\_\+grade\+\_\+to\+\_\+student}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu, Courses\+Tab \texorpdfstring{$\ast$}{*}ctab, char \texorpdfstring{$\ast$}{*}course\+\_\+name, float grade)
+\begin{DoxyCompactList}\small\item\em Add a grade to a student for a specific course, note that the average is not updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{students_8h_a285c2d0767fb93c9e6df0df3524d0d57}{print\+\_\+student}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu)
+\begin{DoxyCompactList}\small\item\em Print a student and its followed courses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure and functions to handle students data. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{students_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{students_8h_a7a09a7e9994d9eefc07aec5a21385117}\index{students.h@{students.h}!add\_grade\_to\_student@{add\_grade\_to\_student}}
+\index{add\_grade\_to\_student@{add\_grade\_to\_student}!students.h@{students.h}}
+\doxysubsubsection{\texorpdfstring{add\_grade\_to\_student()}{add\_grade\_to\_student()}}
+{\footnotesize\ttfamily \label{students_8h_a7a09a7e9994d9eefc07aec5a21385117} 
+void add\+\_\+grade\+\_\+to\+\_\+student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}}]{stu}{, }\item[{Courses\+Tab \texorpdfstring{$\ast$}{*}}]{ctab}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{course\+\_\+name}{, }\item[{float}]{grade}{}\end{DoxyParamCaption})}
+
+
+
+Add a grade to a student for a specific course, note that the average is not updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stu} & the student \\
+\hline
+{\em ctab} & the courses table (to get the index of the course) \\
+\hline
+{\em course\+\_\+name} & the name of the course \\
+\hline
+{\em grade} & the grade to add \\
+\hline
+\end{DoxyParams}
+\textbackslash{} to recalculate the average EACH time a grade is added (not recommended for performances + implementation)\Hypertarget{students_8h_aea3122e43992dd7876262084e0d00ef0}\index{students.h@{students.h}!free\_student@{free\_student}}
+\index{free\_student@{free\_student}!students.h@{students.h}}
+\doxysubsubsection{\texorpdfstring{free\_student()}{free\_student()}}
+{\footnotesize\ttfamily \label{students_8h_aea3122e43992dd7876262084e0d00ef0} 
+void free\+\_\+student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}}]{stu}{}\end{DoxyParamCaption})}
+
+
+
+Free a student and all its followed courses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stu} & the student to free \\
+\hline
+\end{DoxyParams}
+\Hypertarget{students_8h_aca2f4c6eb237f8a1dee663aef1d72c88}\index{students.h@{students.h}!init\_student@{init\_student}}
+\index{init\_student@{init\_student}!students.h@{students.h}}
+\doxysubsubsection{\texorpdfstring{init\_student()}{init\_student()}}
+{\footnotesize\ttfamily \label{students_8h_aca2f4c6eb237f8a1dee663aef1d72c88} 
+\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} init\+\_\+student (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{first\+\_\+name}{, }\item[{unsigned int}]{student\+\_\+id}{, }\item[{int}]{n\+\_\+courses}{}\end{DoxyParamCaption})}
+
+
+
+Initialise a student, its followed courses are initialised to NULL and n\+\_\+courses to 0. Additionally, average is initialised to -\/1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the student \\
+\hline
+{\em first\+\_\+name} & the first name of the student \\
+\hline
+{\em student\+\_\+id} & the unique identifier of the student \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the allocated student 
+\end{DoxyReturn}
+\Hypertarget{students_8h_a285c2d0767fb93c9e6df0df3524d0d57}\index{students.h@{students.h}!print\_student@{print\_student}}
+\index{print\_student@{print\_student}!students.h@{students.h}}
+\doxysubsubsection{\texorpdfstring{print\_student()}{print\_student()}}
+{\footnotesize\ttfamily \label{students_8h_a285c2d0767fb93c9e6df0df3524d0d57} 
+void print\+\_\+student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}}]{stu}{}\end{DoxyParamCaption})}
+
+
+
+Print a student and its followed courses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stu} & the student to print \\
+\hline
+\end{DoxyParams}
