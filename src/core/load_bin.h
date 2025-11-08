@@ -8,13 +8,6 @@
 #include "../models/promotion.h"
 #include "../other/utils.h"
 
-#endif
-
-/// @brief Loads a promotion from a binary file. Order: courses, students
-/// @param file_path the path to the binary file
-/// @return the loaded Promotion
-Promotion *bin_load_promotion(char *file_path);
-
 /// @brief Loads a course from a binary file. Order: coef, name
 /// @param file the binary file
 /// @return the loaded Course
@@ -29,3 +22,5 @@ Student *bin_load_student(FILE *file);
 /// @param file the binary file
 /// @return the loaded Followed_course
 Followed_course *bin_load_followed_course(FILE *file);
+
+#endif

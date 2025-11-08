@@ -21,6 +21,9 @@ If you encounter an issue, please try before executing :
 make clean
 ```
 
+## Warning :
+Binary file generated is NOT portable
+
 ## Author
 Martin CRISSOT
 CY Tech Student

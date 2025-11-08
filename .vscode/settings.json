@@ -13,7 +13,9 @@
         "utility": "c",
         "promotion.h": "c",
         "load_data.h": "c",
-        "save_bin.h": "c"
+        "save_bin.h": "c",
+        "student_api.h": "c",
+        "utils.h": "c"
     },
     "cSpell.words": [
         "ETUDIANTS",

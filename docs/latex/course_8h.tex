@@ -6,11 +6,21 @@ Structure and functions to handle courses data.
 
 
 {\ttfamily \#include "{}../other/dyn\+\_\+table.\+h"{}}\newline
+{\ttfamily \#include "{}../other/utils.\+h"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structcourse}{course}}
 \begin{DoxyCompactList}\small\item\em Structure containing the name and the coefficient of a course. Should be stored in a dynamic table inside a promotion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{course_8h_ac655271d966dab9369566e0fdfde1ef2}\label{course_8h_ac655271d966dab9369566e0fdfde1ef2} 
+\#define {\bfseries COEF\+\_\+\+MIN}~0.\+0f
+\item 
+\Hypertarget{course_8h_a9b88feb53537bfb9acdad05f55d5df7a}\label{course_8h_a9b88feb53537bfb9acdad05f55d5df7a} 
+\#define {\bfseries COEF\+\_\+\+MAX}~1000.\+0f
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,7 +39,11 @@ int \mbox{\hyperlink{course_8h_a9f1c0aea189564aac75fc84c7f90ee02}{compare\+\_\+c
 int \mbox{\hyperlink{course_8h_a412974a2b5cb4687fea92d19c404bd63}{get\+\_\+course\+\_\+index}} (Courses\+Tab \texorpdfstring{$\ast$}{*}tab, char \texorpdfstring{$\ast$}{*}searched\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Get a course index given a sorted courses tab and the searched name. Use binary search. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{course_8h_a99bf8b3f3c2d5dc7cf798ed445eaaa77}{print\+\_\+course}} (\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structcourse}{course}})
-\begin{DoxyCompactList}\small\item\em print a course \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em print a course \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{course_8h_a74c0657d37a29402da96047a533dc365}{course\+\_\+is\+\_\+valid}} (\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structcourse}{course}})
+\begin{DoxyCompactList}\small\item\em Check if a course is valid. This function prints invalidity reasons to stderr. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{course_8h_a74da410f7e3ca0791e9364c334d6ad82}{coef\+\_\+is\+\_\+valid}} (float coef)
+\begin{DoxyCompactList}\small\item\em Check if a coefficient is valid. This function prints invalidity reasons to stderr. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -40,6 +54,24 @@ Structure and functions to handle courses data.
 \label{doc-func-members}
 \Hypertarget{course_8h_doc-func-members}
 \doxysubsection{Function Documentation}
+\Hypertarget{course_8h_a74da410f7e3ca0791e9364c334d6ad82}\index{course.h@{course.h}!coef\_is\_valid@{coef\_is\_valid}}
+\index{coef\_is\_valid@{coef\_is\_valid}!course.h@{course.h}}
+\doxysubsubsection{\texorpdfstring{coef\_is\_valid()}{coef\_is\_valid()}}
+{\footnotesize\ttfamily \label{course_8h_a74da410f7e3ca0791e9364c334d6ad82} 
+bool coef\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{float}]{coef}{}\end{DoxyParamCaption})}
+
+
+
+Check if a coefficient is valid. This function prints invalidity reasons to stderr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coef} & the coefficient value to check, must be between COEF\+\_\+\+MIN and COEF\+\_\+\+MAX \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if valid, false otherwise 
+\end{DoxyReturn}
 \Hypertarget{course_8h_a9f1c0aea189564aac75fc84c7f90ee02}\index{course.h@{course.h}!compare\_courses@{compare\_courses}}
 \index{compare\_courses@{compare\_courses}!course.h@{course.h}}
 \doxysubsubsection{\texorpdfstring{compare\_courses()}{compare\_courses()}}
@@ -59,6 +91,24 @@ compare two courses by their names. Should be used for qsort
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 the result of strcmp(name1, name2) 
+\end{DoxyReturn}
+\Hypertarget{course_8h_a74c0657d37a29402da96047a533dc365}\index{course.h@{course.h}!course\_is\_valid@{course\_is\_valid}}
+\index{course\_is\_valid@{course\_is\_valid}!course.h@{course.h}}
+\doxysubsubsection{\texorpdfstring{course\_is\_valid()}{course\_is\_valid()}}
+{\footnotesize\ttfamily \label{course_8h_a74c0657d37a29402da96047a533dc365} 
+bool course\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}}]{course}{}\end{DoxyParamCaption})}
+
+
+
+Check if a course is valid. This function prints invalidity reasons to stderr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em course} & the course to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if valid, false otherwise 
 \end{DoxyReturn}
 \Hypertarget{course_8h_a7b533a58022dbc2febd446a2f0ef385b}\index{course.h@{course.h}!free\_course@{free\_course}}
 \index{free\_course@{free\_course}!course.h@{course.h}}

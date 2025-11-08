@@ -5,6 +5,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 // buffer length for reading strings from files (binary or text)
 #define BUF_LEN 4 * 1024
@@ -47,5 +48,25 @@
 /// @param buf_size the size of the buffer
 /// @return the length of the read string (including the null terminator) or -1 on error
 size_t bin_read_string(FILE *file, char buf[], long buf_size);
+
+/// @brief Verify a condition and print an error message and exit if the condition is false
+/// @param condition the condition to verify
+/// @param err_msg the error message to print if the condition is false
+static inline void verify(bool condition, char *err_msg)
+{
+    if (!condition)
+    {
+        fprintf(stderr, BOLD_RED "ERREUR : %s\n" RESET, err_msg);
+        exit(EXIT_FAILURE);
+    }
+}
+
+/// @brief Print a float value with 2 decimals
+/// Used as a callback for Grades_print
+/// @param val the float to print
+static inline void print_float(float val)
+{
+    printf("%.2f", val);
+}
 
 #endif

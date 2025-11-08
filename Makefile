@@ -1,19 +1,29 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -Wpedantic -Werror -O2 -g
+TEST_MODE=true
+CFLAGS=
+ifeq (TEST_MODE, true)
+	CFLAGS=-Wall -Wextra -Wpedantic -Werror -O2 -g
+else
+	CFLAGS=-DNDEBUG -O3
+endif
+
 LDFLAGS=#link flags
 
 #Directory for source code	(.c)
 SRC_DIR=src
-BUILD_DIR=build
 #Directory for .o files
-INC_DIR=inc
+BUILD_DIR=build
+#Directory for the librairie
+LIB_DIR=lib
 #Directory for the librairies to include (.h)
-EXEC=exec
+INC_DIR=inc
 #executable name
+EXEC=exec
 
-SRC = $(shell find $(SRC_DIR) -type f -iname '*.c')
-OBJ = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRC))
-INC=$(shell find $(SRC_DIR) -type f -iname '*.h')
+SRC := $(shell find $(SRC_DIR) -type f -iname '*.c')
+OBJ := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRC))
+INC:=$(shell find $(SRC_DIR) -type f -iname '*.h')
+INC += $(wildcard $(LIB_DIR)/*.h)
 
 
 .PHONY: all
@@ -49,5 +59,5 @@ debug:
 	@echo $(SRC)
 	@echo "objects files :"
 	@echo $(OBJ)
-	@echo "librairies files :"
+	@echo "header files :"
 	@echo $(INC)

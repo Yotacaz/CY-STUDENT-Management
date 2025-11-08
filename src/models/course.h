@@ -5,7 +5,15 @@
 /// @brief Structure and functions to handle courses data
 
 #include "../other/dyn_table.h"
+#include "../other/utils.h"
 
+#ifndef COEF_MIN
+#define COEF_MIN 0.0f
+#endif
+
+#ifndef COEF_MAX
+#define COEF_MAX 1000.0f
+#endif
 
 /// @brief Structure containing the name and the coefficient of a course. 
 ///Should be stored in a dynamic table inside a promotion
@@ -44,5 +52,15 @@ int get_course_index(CoursesTab *tab, char *searched_name);
 /// @brief print a course
 /// @param course course to print
 void print_course(Course *course);
+
+/// @brief Check if a course is valid. This function prints invalidity reasons to stderr.
+/// @param course the course to check
+/// @return true if valid, false otherwise
+bool course_is_valid(Course* course);
+
+/// @brief Check if a coefficient is valid. This function prints invalidity reasons to stderr.
+/// @param coef the coefficient value to check, must be between COEF_MIN and COEF_MAX
+/// @return true if valid, false otherwise
+bool coef_is_valid(float coef);
 
 #endif

@@ -10,8 +10,12 @@
 
 DECLARE_DYN_TABLE(float, Grades)
 
+#ifndef GRADE_MIN
 #define GRADE_MIN -0.0001
+#endif
+#ifndef GRADE_MAX
 #define GRADE_MAX 20.0001
+#endif
 
 /// @brief The courses followed by a specific student.
 typedef struct followed_course
@@ -45,16 +49,18 @@ static inline float get_followed_course_avg(Followed_course *fcourse)
     return n_elem > 0 ? total / n_elem : -1;
 }
 
-/// @brief Print a float value with 2 decimals
-/// Used as a callback for Grades_print
-/// @param val the float to print
-static inline void print_float(float val)
-{
-    printf("%.2f", val);
-}
-
 /// @brief Print a followed course
 /// @param fcourse the followed course to print
 void print_fcourse(Followed_course *fcourse);
+
+/// @brief Check if a followed course is valid. This function prints invalidity reasons to stderr.
+/// @param fcourse the followed course to check
+/// @return true if valid, false otherwise
+bool followed_course_is_valid(Followed_course *fcourse);
+
+/// @brief Check if a grade is valid
+/// @param val the grade value to check
+/// @return true if valid, false otherwise
+bool grade_is_valid(float val);
 
 #endif

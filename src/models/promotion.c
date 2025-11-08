@@ -6,7 +6,7 @@ DEFINE_DYN_TABLE(Student *, StudentsTab)
 Promotion *init_promotion(CoursesTab *ctab, StudentsTab *stu_dtab)
 {
     Promotion *prom = (Promotion *)malloc(sizeof(Promotion));
-    assert(prom);
+    verify(prom, "malloc error");
     prom->courses = ctab;
     prom->stu_dtab = stu_dtab;
     return prom;
@@ -21,6 +21,7 @@ int compare_student_id(const void *a, const void *b)
     const Student *s2 = *pb;
     return (s1->id > s2->id) - (s1->id < s2->id);
 }
+
 // to use in bsearch
 int compare_student_key(const void *a, const void *b)
 {
@@ -32,7 +33,7 @@ int compare_student_key(const void *a, const void *b)
 
 Student *student_tab_bsearch(StudentsTab *stu_dtab, unsigned int searched_id)
 {
-    assert(stu_dtab);
+    assert(StudentsTab_is_valid(stu_dtab, student_is_valid));
     Student tmp = {.id = searched_id}; // dummy student
     Student **res = (Student **)bsearch(&tmp, stu_dtab->tab, stu_dtab->size, sizeof(Student *), compare_student_key);
     return res ? *res : NULL;
@@ -40,7 +41,7 @@ Student *student_tab_bsearch(StudentsTab *stu_dtab, unsigned int searched_id)
 
 void allocate_students_courses(StudentsTab *stu_dtab, int n_courses)
 {
-    assert(stu_dtab && n_courses > 0);
+    assert(StudentsTab_is_valid(stu_dtab, student_is_valid) && n_courses > 0);
     for (int i = 0; i < stu_dtab->size; i++)
     {
         Student *stu = stu_dtab->tab[i];
@@ -57,20 +58,24 @@ void allocate_students_courses(StudentsTab *stu_dtab, int n_courses)
 
 void print_promotion(Promotion *prom)
 {
-    assert(prom);
+    assert(promotion_is_valid(prom));
     CoursesTab_print(prom->courses, print_course);
-    printf("\n-----------\n");
+    printf(BOLD_BLU "\n-------------\n" RESET);
     StudentsTab_print(prom->stu_dtab, print_student);
 }
 
 void free_promotion(Promotion *prom, void (*free_student_f)(Student *), void (*free_course_f)(Course *))
 {
-    assert(prom);
-    //If free_course_f or free_student_f is NULL, that mean we don't want to free them
-    if (free_course_f){
+    assert(prom); // don't check its content
+    // If free_course_f or free_student_f is NULL, that mean we don't want to free them
+    if (free_course_f)
+    {
+        assert(CoursesTab_is_valid(prom->courses, course_is_valid));
         CoursesTab_free(prom->courses, free_course_f);
     }
-    if (free_student_f){
+    if (free_student_f)
+    {
+        assert(StudentsTab_is_valid(prom->stu_dtab, student_is_valid));
         StudentsTab_free(prom->stu_dtab, free_student_f);
     }
     prom->courses = NULL;
@@ -78,9 +83,19 @@ void free_promotion(Promotion *prom, void (*free_student_f)(Student *), void (*f
     free(prom);
 }
 
+bool promotion_is_valid(Promotion *prom)
+{
+    if (!prom)
+    {
+        fprintf(stderr, BOLD_RED "ERROR : promotion is NULL\n" RESET);
+        return false;
+    }
+    return StudentsTab_is_valid(prom->stu_dtab, student_is_valid) && CoursesTab_is_valid(prom->courses, course_is_valid);
+}
+
 StudentsTab *get_top_students(StudentsTab *stu_dtab, int top_max_size)
 {
-    assert(stu_dtab && top_max_size > 0);
+    assert(StudentsTab_is_valid(stu_dtab, student_is_valid) && top_max_size > 0);
 
     StudentsTab *top = StudentsTab_init();
     if (stu_dtab->size == 0)
@@ -116,7 +131,7 @@ StudentsTab *get_top_students(StudentsTab *stu_dtab, int top_max_size)
 
 StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int top_max_size)
 {
-    assert(prom && course_name && top_max_size > 0);
+    assert(promotion_is_valid(prom) && course_name && top_max_size > 0);
 
     int course_id = get_course_index(prom->courses, course_name);
     if (course_id < 0)

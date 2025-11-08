@@ -10,5 +10,6 @@ var promotion_8h =
     [ "get_top_students_in_course", "promotion_8h.html#a6454fc13ca1ddeb3651288c64e85777d", null ],
     [ "init_promotion", "promotion_8h.html#afd3ecf2348f66f5a533169df082ad99f", null ],
     [ "print_promotion", "promotion_8h.html#a03dd021bb828713f0b60805ccf3079ab", null ],
+    [ "promotion_is_valid", "promotion_8h.html#a7b242a8cf9a3c0f01df0018699c46798", null ],
     [ "student_tab_bsearch", "promotion_8h.html#afc22f1d99464e360f3d958f732d22070", null ]
 ];

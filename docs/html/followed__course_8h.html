@@ -126,10 +126,40 @@ Functions</h2></td></tr>
 <tr class="memdesc:ad5899903d48aefecd86d801ea6ce7152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a followed course.  <br /></td></tr>
 <tr class="memitem:ae4a7e635d96c3d5bad7d8feca68f7172" id="r_ae4a7e635d96c3d5bad7d8feca68f7172"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4a7e635d96c3d5bad7d8feca68f7172">print_fcourse</a> (<a class="el" href="#a073a650292b8c9358734e1254a622c67">Followed_course</a> *fcourse)</td></tr>
 <tr class="memdesc:ae4a7e635d96c3d5bad7d8feca68f7172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a followed course.  <br /></td></tr>
+<tr class="memitem:a3fa63a75df11e2f7f8eb8d8bc14db581" id="r_a3fa63a75df11e2f7f8eb8d8bc14db581"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fa63a75df11e2f7f8eb8d8bc14db581">followed_course_is_valid</a> (<a class="el" href="#a073a650292b8c9358734e1254a622c67">Followed_course</a> *fcourse)</td></tr>
+<tr class="memdesc:a3fa63a75df11e2f7f8eb8d8bc14db581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a followed course is valid. This function prints invalidity reasons to stderr.  <br /></td></tr>
+<tr class="memitem:af74dfd678a55f02e7f2c3e80c4a4382e" id="r_af74dfd678a55f02e7f2c3e80c4a4382e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af74dfd678a55f02e7f2c3e80c4a4382e">grade_is_valid</a> (float val)</td></tr>
+<tr class="memdesc:af74dfd678a55f02e7f2c3e80c4a4382e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a grade is valid.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure and functions to handle followed courses data. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a3fa63a75df11e2f7f8eb8d8bc14db581" name="a3fa63a75df11e2f7f8eb8d8bc14db581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fa63a75df11e2f7f8eb8d8bc14db581">&#9670;&#160;</a></span>followed_course_is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool followed_course_is_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a073a650292b8c9358734e1254a622c67">Followed_course</a> *</td>          <td class="paramname"><span class="paramname"><em>fcourse</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a followed course is valid. This function prints invalidity reasons to stderr. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fcourse</td><td>the followed course to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
+
+</div>
+</div>
 <a id="ad5899903d48aefecd86d801ea6ce7152" name="ad5899903d48aefecd86d801ea6ce7152"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5899903d48aefecd86d801ea6ce7152">&#9670;&#160;</a></span>free_followed_course()</h2>
 
@@ -152,6 +182,32 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="af74dfd678a55f02e7f2c3e80c4a4382e" name="af74dfd678a55f02e7f2c3e80c4a4382e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af74dfd678a55f02e7f2c3e80c4a4382e">&#9670;&#160;</a></span>grade_is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool grade_is_valid </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a grade is valid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>the grade value to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
 
 </div>
 </div>

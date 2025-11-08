@@ -57,6 +57,11 @@ void free_promotion(Promotion *prom, void (*free_student_f)(Student *), void (*f
 /// @param prom the promotion to print
 void print_promotion(Promotion *prom);
 
+/// @brief Check if a promotion is valid. This function prints invalidity reasons to stderr.
+/// @param prom the promotion to check
+/// @return true if valid, false otherwise
+bool promotion_is_valid(Promotion* prom);
+
 /// @brief Get the top students in a promotion based on their overall average
 /// @param stu_dtab the students table
 /// @param top_max_size the maximum number of top students to return
@@ -70,6 +75,6 @@ StudentsTab *get_top_students(StudentsTab *stu_dtab, int top_max_size);
 /// @return a StudentsTab containing the top students in the specified course
 StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int top_max_size);
 
-// print promotion is in the macro
+
 
 #endif

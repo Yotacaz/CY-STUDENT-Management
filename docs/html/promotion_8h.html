@@ -125,6 +125,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:a0d3b31688a911c328c8142f0f36181ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a promotion and its contents using the provided free functions. If free_course_f or free_student_f is NULL, that mean we don't want to free the relevant data.  <br /></td></tr>
 <tr class="memitem:a03dd021bb828713f0b60805ccf3079ab" id="r_a03dd021bb828713f0b60805ccf3079ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03dd021bb828713f0b60805ccf3079ab">print_promotion</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom)</td></tr>
 <tr class="memdesc:a03dd021bb828713f0b60805ccf3079ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a promotion (courses and students).  <br /></td></tr>
+<tr class="memitem:a7b242a8cf9a3c0f01df0018699c46798" id="r_a7b242a8cf9a3c0f01df0018699c46798"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b242a8cf9a3c0f01df0018699c46798">promotion_is_valid</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom)</td></tr>
+<tr class="memdesc:a7b242a8cf9a3c0f01df0018699c46798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a promotion is valid. This function prints invalidity reasons to stderr.  <br /></td></tr>
 <tr class="memitem:af0a2a8cd3481045924195f3d1a28be78" id="r_af0a2a8cd3481045924195f3d1a28be78"><td class="memItemLeft" align="right" valign="top">StudentsTab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0a2a8cd3481045924195f3d1a28be78">get_top_students</a> (StudentsTab *stu_dtab, int top_max_size)</td></tr>
 <tr class="memdesc:af0a2a8cd3481045924195f3d1a28be78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top students in a promotion based on their overall average.  <br /></td></tr>
 <tr class="memitem:a6454fc13ca1ddeb3651288c64e85777d" id="r_a6454fc13ca1ddeb3651288c64e85777d"><td class="memItemLeft" align="right" valign="top">StudentsTab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6454fc13ca1ddeb3651288c64e85777d">get_top_students_in_course</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom, char *course_name, int top_max_size)</td></tr>
@@ -382,6 +384,32 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a7b242a8cf9a3c0f01df0018699c46798" name="a7b242a8cf9a3c0f01df0018699c46798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b242a8cf9a3c0f01df0018699c46798">&#9670;&#160;</a></span>promotion_is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool promotion_is_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *</td>          <td class="paramname"><span class="paramname"><em>prom</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a promotion is valid. This function prints invalidity reasons to stderr. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prom</td><td>the promotion to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
 
 </div>
 </div>

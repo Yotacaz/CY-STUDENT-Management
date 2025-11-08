@@ -36,7 +36,11 @@ typedef struct \mbox{\hyperlink{structfollowed__course}{followed\+\_\+course}} {
 void \mbox{\hyperlink{followed__course_8h_ad5899903d48aefecd86d801ea6ce7152}{free\+\_\+followed\+\_\+course}} (\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}f\+\_\+course)
 \begin{DoxyCompactList}\small\item\em Free a followed course. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{followed__course_8h_ae4a7e635d96c3d5bad7d8feca68f7172}{print\+\_\+fcourse}} (\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}fcourse)
-\begin{DoxyCompactList}\small\item\em Print a followed course. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Print a followed course. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{followed__course_8h_a3fa63a75df11e2f7f8eb8d8bc14db581}{followed\+\_\+course\+\_\+is\+\_\+valid}} (\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}fcourse)
+\begin{DoxyCompactList}\small\item\em Check if a followed course is valid. This function prints invalidity reasons to stderr. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{followed__course_8h_af74dfd678a55f02e7f2c3e80c4a4382e}{grade\+\_\+is\+\_\+valid}} (float val)
+\begin{DoxyCompactList}\small\item\em Check if a grade is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -47,6 +51,24 @@ Structure and functions to handle followed courses data.
 \label{doc-func-members}
 \Hypertarget{followed__course_8h_doc-func-members}
 \doxysubsection{Function Documentation}
+\Hypertarget{followed__course_8h_a3fa63a75df11e2f7f8eb8d8bc14db581}\index{followed\_course.h@{followed\_course.h}!followed\_course\_is\_valid@{followed\_course\_is\_valid}}
+\index{followed\_course\_is\_valid@{followed\_course\_is\_valid}!followed\_course.h@{followed\_course.h}}
+\doxysubsubsection{\texorpdfstring{followed\_course\_is\_valid()}{followed\_course\_is\_valid()}}
+{\footnotesize\ttfamily \label{followed__course_8h_a3fa63a75df11e2f7f8eb8d8bc14db581} 
+bool followed\+\_\+course\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}}]{fcourse}{}\end{DoxyParamCaption})}
+
+
+
+Check if a followed course is valid. This function prints invalidity reasons to stderr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fcourse} & the followed course to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if valid, false otherwise 
+\end{DoxyReturn}
 \Hypertarget{followed__course_8h_ad5899903d48aefecd86d801ea6ce7152}\index{followed\_course.h@{followed\_course.h}!free\_followed\_course@{free\_followed\_course}}
 \index{free\_followed\_course@{free\_followed\_course}!followed\_course.h@{followed\_course.h}}
 \doxysubsubsection{\texorpdfstring{free\_followed\_course()}{free\_followed\_course()}}
@@ -62,6 +84,24 @@ Free a followed course.
 {\em f\+\_\+course} & the followed course to free \\
 \hline
 \end{DoxyParams}
+\Hypertarget{followed__course_8h_af74dfd678a55f02e7f2c3e80c4a4382e}\index{followed\_course.h@{followed\_course.h}!grade\_is\_valid@{grade\_is\_valid}}
+\index{grade\_is\_valid@{grade\_is\_valid}!followed\_course.h@{followed\_course.h}}
+\doxysubsubsection{\texorpdfstring{grade\_is\_valid()}{grade\_is\_valid()}}
+{\footnotesize\ttfamily \label{followed__course_8h_af74dfd678a55f02e7f2c3e80c4a4382e} 
+bool grade\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{float}]{val}{}\end{DoxyParamCaption})}
+
+
+
+Check if a grade is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & the grade value to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if valid, false otherwise 
+\end{DoxyReturn}
 \Hypertarget{followed__course_8h_ab3803222ef4996da2c2fb622c601df5b}\index{followed\_course.h@{followed\_course.h}!init\_followed\_course@{init\_followed\_course}}
 \index{init\_followed\_course@{init\_followed\_course}!followed\_course.h@{followed\_course.h}}
 \doxysubsubsection{\texorpdfstring{init\_followed\_course()}{init\_followed\_course()}}

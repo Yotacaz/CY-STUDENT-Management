@@ -108,9 +108,11 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a72cab552d48753679f7f0b8b8feb8720" id="r_a72cab552d48753679f7f0b8b8feb8720"><td class="memItemLeft" align="right" valign="top"><a id="a72cab552d48753679f7f0b8b8feb8720" name="a72cab552d48753679f7f0b8b8feb8720"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PRINT_STUDENT_COURSES</b>&#160;&#160;&#160;false</td></tr>
-<tr class="memdesc:a72cab552d48753679f7f0b8b8feb8720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to true to print the followed courses when printing a student. <br /></td></tr>
+<tr class="memitem:a85ab0d8ab399557bedfa17d427fbd72c" id="r_a85ab0d8ab399557bedfa17d427fbd72c"><td class="memItemLeft" align="right" valign="top"><a id="a85ab0d8ab399557bedfa17d427fbd72c" name="a85ab0d8ab399557bedfa17d427fbd72c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AGE_MIN</b>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a85ab0d8ab399557bedfa17d427fbd72c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define to print the followed courses when printing a student. <br /></td></tr>
+<tr class="memitem:ae1048bcf163cc658a61f4a5f9a30292b" id="r_ae1048bcf163cc658a61f4a5f9a30292b"><td class="memItemLeft" align="right" valign="top"><a id="ae1048bcf163cc658a61f4a5f9a30292b" name="ae1048bcf163cc658a61f4a5f9a30292b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AGE_MAX</b>&#160;&#160;&#160;100</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -120,12 +122,14 @@ typedef struct <a class="el" href="structstudent.html">student</a>&#160;</td><td
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aca2f4c6eb237f8a1dee663aef1d72c88" id="r_aca2f4c6eb237f8a1dee663aef1d72c88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca2f4c6eb237f8a1dee663aef1d72c88">init_student</a> (char *name, char *first_name, unsigned int student_id, int n_courses)</td></tr>
-<tr class="memdesc:aca2f4c6eb237f8a1dee663aef1d72c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a student, its followed courses are initialised to NULL and n_courses to 0. Additionally, average is initialised to -1.  <br /></td></tr>
+<tr class="memitem:aed48995ba41807e5215865a32b02c7c8" id="r_aed48995ba41807e5215865a32b02c7c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed48995ba41807e5215865a32b02c7c8">init_student</a> (char *name, char *first_name, unsigned int student_id, int n_courses, int age)</td></tr>
+<tr class="memdesc:aed48995ba41807e5215865a32b02c7c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a student, its followed courses are initialised to NULL and n_courses to 0. Additionally, average is initialised to -1.  <br /></td></tr>
 <tr class="memitem:aea3122e43992dd7876262084e0d00ef0" id="r_aea3122e43992dd7876262084e0d00ef0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea3122e43992dd7876262084e0d00ef0">free_student</a> (<a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *stu)</td></tr>
 <tr class="memdesc:aea3122e43992dd7876262084e0d00ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a student and all its followed courses.  <br /></td></tr>
 <tr class="memitem:a7a09a7e9994d9eefc07aec5a21385117" id="r_a7a09a7e9994d9eefc07aec5a21385117"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a09a7e9994d9eefc07aec5a21385117">add_grade_to_student</a> (<a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *stu, CoursesTab *ctab, char *course_name, float grade)</td></tr>
 <tr class="memdesc:a7a09a7e9994d9eefc07aec5a21385117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a grade to a student for a specific course, note that the average is not updated.  <br /></td></tr>
+<tr class="memitem:af4e2faccd38b6354983fcd4c3e8a92b7" id="r_af4e2faccd38b6354983fcd4c3e8a92b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4e2faccd38b6354983fcd4c3e8a92b7">student_is_valid</a> (<a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *stu)</td></tr>
+<tr class="memdesc:af4e2faccd38b6354983fcd4c3e8a92b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a student is valid : -1 as average is allowed (for when not yet calculated). This function prints invalidity reasons to stderr.  <br /></td></tr>
 <tr class="memitem:a285c2d0767fb93c9e6df0df3524d0d57" id="r_a285c2d0767fb93c9e6df0df3524d0d57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a285c2d0767fb93c9e6df0df3524d0d57">print_student</a> (<a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *stu)</td></tr>
 <tr class="memdesc:a285c2d0767fb93c9e6df0df3524d0d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a student and its followed courses.  <br /></td></tr>
 </table>
@@ -200,8 +204,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aca2f4c6eb237f8a1dee663aef1d72c88" name="aca2f4c6eb237f8a1dee663aef1d72c88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca2f4c6eb237f8a1dee663aef1d72c88">&#9670;&#160;</a></span>init_student()</h2>
+<a id="aed48995ba41807e5215865a32b02c7c8" name="aed48995ba41807e5215865a32b02c7c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed48995ba41807e5215865a32b02c7c8">&#9670;&#160;</a></span>init_student()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +228,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n_courses</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n_courses</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>age</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -264,6 +273,32 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="af4e2faccd38b6354983fcd4c3e8a92b7" name="af4e2faccd38b6354983fcd4c3e8a92b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4e2faccd38b6354983fcd4c3e8a92b7">&#9670;&#160;</a></span>student_is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool student_is_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *</td>          <td class="paramname"><span class="paramname"><em>stu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a student is valid : -1 as average is allowed (for when not yet calculated). This function prints invalidity reasons to stderr. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stu</td><td>the student to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
 
 </div>
 </div>

@@ -17,9 +17,12 @@ struct \mbox{\hyperlink{structstudent}{student}}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{students_8h_a72cab552d48753679f7f0b8b8feb8720}\label{students_8h_a72cab552d48753679f7f0b8b8feb8720} 
-\#define {\bfseries PRINT\+\_\+\+STUDENT\+\_\+\+COURSES}~false
-\begin{DoxyCompactList}\small\item\em Set to true to print the followed courses when printing a student. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{students_8h_a85ab0d8ab399557bedfa17d427fbd72c}\label{students_8h_a85ab0d8ab399557bedfa17d427fbd72c} 
+\#define {\bfseries AGE\+\_\+\+MIN}~10
+\begin{DoxyCompactList}\small\item\em Define to print the followed courses when printing a student. \end{DoxyCompactList}\item 
+\Hypertarget{students_8h_ae1048bcf163cc658a61f4a5f9a30292b}\label{students_8h_ae1048bcf163cc658a61f4a5f9a30292b} 
+\#define {\bfseries AGE\+\_\+\+MAX}~100
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,12 +32,14 @@ typedef struct \mbox{\hyperlink{structstudent}{student}} {\bfseries Student}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{students_8h_aca2f4c6eb237f8a1dee663aef1d72c88}{init\+\_\+student}} (char \texorpdfstring{$\ast$}{*}name, char \texorpdfstring{$\ast$}{*}first\+\_\+name, unsigned int student\+\_\+id, int n\+\_\+courses)
+\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{students_8h_aed48995ba41807e5215865a32b02c7c8}{init\+\_\+student}} (char \texorpdfstring{$\ast$}{*}name, char \texorpdfstring{$\ast$}{*}first\+\_\+name, unsigned int student\+\_\+id, int n\+\_\+courses, int age)
 \begin{DoxyCompactList}\small\item\em Initialise a student, its followed courses are initialised to NULL and n\+\_\+courses to 0. Additionally, average is initialised to -\/1. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{students_8h_aea3122e43992dd7876262084e0d00ef0}{free\+\_\+student}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu)
 \begin{DoxyCompactList}\small\item\em Free a student and all its followed courses. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{students_8h_a7a09a7e9994d9eefc07aec5a21385117}{add\+\_\+grade\+\_\+to\+\_\+student}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu, Courses\+Tab \texorpdfstring{$\ast$}{*}ctab, char \texorpdfstring{$\ast$}{*}course\+\_\+name, float grade)
 \begin{DoxyCompactList}\small\item\em Add a grade to a student for a specific course, note that the average is not updated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{students_8h_af4e2faccd38b6354983fcd4c3e8a92b7}{student\+\_\+is\+\_\+valid}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu)
+\begin{DoxyCompactList}\small\item\em Check if a student is valid \+: -\/1 as average is allowed (for when not yet calculated). This function prints invalidity reasons to stderr. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{students_8h_a285c2d0767fb93c9e6df0df3524d0d57}{print\+\_\+student}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu)
 \begin{DoxyCompactList}\small\item\em Print a student and its followed courses. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -83,11 +88,11 @@ Free a student and all its followed courses.
 {\em stu} & the student to free \\
 \hline
 \end{DoxyParams}
-\Hypertarget{students_8h_aca2f4c6eb237f8a1dee663aef1d72c88}\index{students.h@{students.h}!init\_student@{init\_student}}
+\Hypertarget{students_8h_aed48995ba41807e5215865a32b02c7c8}\index{students.h@{students.h}!init\_student@{init\_student}}
 \index{init\_student@{init\_student}!students.h@{students.h}}
 \doxysubsubsection{\texorpdfstring{init\_student()}{init\_student()}}
-{\footnotesize\ttfamily \label{students_8h_aca2f4c6eb237f8a1dee663aef1d72c88} 
-\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} init\+\_\+student (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{first\+\_\+name}{, }\item[{unsigned int}]{student\+\_\+id}{, }\item[{int}]{n\+\_\+courses}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{students_8h_aed48995ba41807e5215865a32b02c7c8} 
+\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} init\+\_\+student (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{first\+\_\+name}{, }\item[{unsigned int}]{student\+\_\+id}{, }\item[{int}]{n\+\_\+courses}{, }\item[{int}]{age}{}\end{DoxyParamCaption})}
 
 
 
@@ -120,3 +125,21 @@ Print a student and its followed courses.
 {\em stu} & the student to print \\
 \hline
 \end{DoxyParams}
+\Hypertarget{students_8h_af4e2faccd38b6354983fcd4c3e8a92b7}\index{students.h@{students.h}!student\_is\_valid@{student\_is\_valid}}
+\index{student\_is\_valid@{student\_is\_valid}!students.h@{students.h}}
+\doxysubsubsection{\texorpdfstring{student\_is\_valid()}{student\_is\_valid()}}
+{\footnotesize\ttfamily \label{students_8h_af4e2faccd38b6354983fcd4c3e8a92b7} 
+bool student\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}}]{stu}{}\end{DoxyParamCaption})}
+
+
+
+Check if a student is valid \+: -\/1 as average is allowed (for when not yet calculated). This function prints invalidity reasons to stderr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stu} & the student to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if valid, false otherwise 
+\end{DoxyReturn}

@@ -49,7 +49,8 @@ Macros to declare and define dynamic tables in C. A dynamic table is a structure
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ Name\#\#\_sort(Name\ *tab,\ \textcolor{keywordtype}{int}\ (*compare\_function)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *));\ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ Name\#\#\_print(Name\ *tab,\ \textcolor{keywordtype}{void}\ (*print\_elem)(Type));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ Name\#\#\_save\_to\_bin(Name\ *tab,\ FILE\ *file,\ \textcolor{keywordtype}{void}\ (*save\_elem)(Type,\ FILE\ *));\ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ Name\ *Name\#\#\_load\_from\_bin(FILE\ *file,\ Type\ (*load\_elem)(FILE\ *));}
+\DoxyCodeLine{\ \ \ \ Name\ *Name\#\#\_load\_from\_bin(FILE\ *file,\ Type\ (*load\_elem)(FILE\ *));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ Name\#\#\_is\_valid(Name\ *dtab,\ \textcolor{keywordtype}{bool}\ (*elem\_is\_valid)(Type));}
 
 \end{DoxyCode}
 DECLARE\+\_\+\+DYN\+\_\+\+TABLE should be put in the header file where we would want to declare a dynamic table structure that reallocate itself as needed. 
@@ -61,16 +62,12 @@ DECLARE\+\_\+\+DYN\+\_\+\+TABLE should be put in the header file where we would 
 \item Students\+Tab\texorpdfstring{$\ast$}{*} Students\+Tab\+\_\+init();
 \item void Students\+Tab\+\_\+push(\+Student\texorpdfstring{$\ast$}{*} value, Students\+Tab\texorpdfstring{$\ast$}{*} table) \+: adds an element to the dynamic table
 \item void Students\+Tab\+\_\+free(Students\+Tab\texorpdfstring{$\ast$}{*} tab, void ({\itshape free\+\_\+elem)(\doxylink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}})) \+: frees the dynamic table and its elements using the provided free function~\newline
- ~\newline
 
 \item void Students\+Tab\+\_\+sort(Students\+Tab\texorpdfstring{$\ast$}{*} tab, int ({\itshape compare\+\_\+function)(const void}, const void\texorpdfstring{$\ast$}{*})) \+: sorts the dynamic table using qsort and the provided comparison function~\newline
- ~\newline
 
 \item void Students\+Tab\+\_\+print(Students\+Tab\texorpdfstring{$\ast$}{*} tab, void ({\itshape print\+\_\+elem)(\doxylink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}})) \+: prints the dynamic table using the provided print function~\newline
- ~\newline
 
 \item void Students\+Tab\+\_\+save\+\_\+to\+\_\+bin(Students\+Tab\texorpdfstring{$\ast$}{*} tab, FILE\texorpdfstring{$\ast$}{*} file, void ({\itshape save\+\_\+elem)(\doxylink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}, FILE\texorpdfstring{$\ast$}{*}))\+: saves the dynamic table to a binary file using the provided save function~\newline
- ~\newline
 
 \item Students\+Tab\texorpdfstring{$\ast$}{*} Students\+Tab\+\_\+load\+\_\+from\+\_\+bin(FILE\texorpdfstring{$\ast$}{*} file, Student\texorpdfstring{$\ast$}{*} ({\itshape load\+\_\+elem)(FILE})) \+: loads the dynamic table from a binary file using the provided load function 
 \end{DoxyItemize}\\

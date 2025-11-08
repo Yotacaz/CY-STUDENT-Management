@@ -11,7 +11,7 @@ void test_utils()
 size_t bin_read_string(FILE *file, char buf[], long buf_size)
 {
     assert(file);
-    assert(buf && buf_size>0);
+    assert(buf && buf_size > 0);
     size_t n_read = fread(buf, 1, buf_size - 1, file);
     if (n_read == 0)
     {
@@ -29,9 +29,10 @@ size_t bin_read_string(FILE *file, char buf[], long buf_size)
     long unread_bytes = (long)(n_read - (str_len + 1));
     assert(unread_bytes > -1);
     // put cursor after string
-    if(fseek(file, -unread_bytes, SEEK_CUR)!= 0){
+    if (fseek(file, -unread_bytes, SEEK_CUR) != 0)
+    {
         fprintf(stderr, "ERROR : fseek failed\n");
         exit(EXIT_FAILURE);
-    } 
+    }
     return str_len + 1; // including '\0'
 }

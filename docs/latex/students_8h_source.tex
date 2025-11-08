@@ -11,48 +11,62 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{course_8h}{course.h}}"{}}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{followed__course_8h}{followed\_course.h}}"{}}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ PRINT\_STUDENT\_COURSES\ false\ }}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \#define\ PRINT\_STUDENT\_COURSES}}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structstudent}{student}}}
-\DoxyCodeLine{00019\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ **f\_courses;\ \textcolor{comment}{//\ table\ of\ followed\ courses}}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{char}\ *name;}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ *fname;}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ n\_courses;\ \textcolor{comment}{//\ duplicated\ information\ if\ n\_courses\ followed\ is\ constant}}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ average;}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id;}
-\DoxyCodeLine{00026\ \}\ \mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}};}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00034\ \mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *\mbox{\hyperlink{students_8h_aca2f4c6eb237f8a1dee663aef1d72c88}{init\_student}}(\textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{char}\ *first\_name,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ student\_id,\ \textcolor{keywordtype}{int}\ n\_courses);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{students_8h_aea3122e43992dd7876262084e0d00ef0}{free\_student}}(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu);}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{students_8h_a7a09a7e9994d9eefc07aec5a21385117}{add\_grade\_to\_student}}(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu,\ CoursesTab\ *ctab,\ \textcolor{keywordtype}{char}\ *course\_name,\ \textcolor{keywordtype}{float}\ grade);}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ AGE\_MIN}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ AGE\_MIN\ 10}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ AGE\_MAX}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ AGE\_MAX\ 100}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structstudent}{student}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ **f\_courses;\ \textcolor{comment}{//\ table\ of\ followed\ courses}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{char}\ *name;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{char}\ *fname;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ n\_courses;\ \textcolor{comment}{//\ duplicated\ information\ if\ n\_courses\ followed\ is\ constant}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ age;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ average;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00033\ \}\ \mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *\mbox{\hyperlink{students_8h_aed48995ba41807e5215865a32b02c7c8}{init\_student}}(\textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{char}\ *first\_name,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ student\_id,\ \textcolor{keywordtype}{int}\ n\_courses,\ \textcolor{keywordtype}{int}\ age);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{students_8h_aea3122e43992dd7876262084e0d00ef0}{free\_student}}(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu);}
 \DoxyCodeLine{00046\ }
-\DoxyCodeLine{00052\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ get\_student\_general\_avg(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu,\ CoursesTab\ *ctab)}
-\DoxyCodeLine{00053\ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{float}\ total\_grade\ =\ 0;}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{float}\ total\_coef\ =\ 0;}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ctab-\/>size;\ i++)}
-\DoxyCodeLine{00057\ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ avg\ =\ stu-\/>f\_courses[i]-\/>average;}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (avg\ >\ GRADE\_MIN\ \&\&\ avg\ <\ GRADE\_MAX)}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ coef\ =\ ctab-\/>tab[i]-\/>coef;}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ total\_grade\ +=\ stu-\/>f\_courses[i]-\/>average\ *\ coef;}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ total\_coef\ +=\ coef;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00065\ \ \ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ total\_coef\ >\ 0\ ?\ total\_grade\ /\ total\_coef\ :\ -\/1;}
-\DoxyCodeLine{00067\ \}}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00072\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ student\_is\_valid(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu)}
-\DoxyCodeLine{00073\ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ stu\ !=\ NULL\ \&\&\ stu-\/>fname\ \&\&\ stu-\/>name\ \&\&\ stu-\/>f\_courses;}
-\DoxyCodeLine{00075\ \}}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{students_8h_a285c2d0767fb93c9e6df0df3524d0d57}{print\_student}}(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu);}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{students_8h_a7a09a7e9994d9eefc07aec5a21385117}{add\_grade\_to\_student}}(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu,\ CoursesTab\ *ctab,\ \textcolor{keywordtype}{char}\ *course\_name,\ \textcolor{keywordtype}{float}\ grade);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ get\_student\_general\_avg(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu,\ CoursesTab\ *ctab)}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{float}\ total\_grade\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{float}\ total\_coef\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ctab-\/>size;\ i++)}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ avg\ =\ stu-\/>f\_courses[i]-\/>average;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (avg\ >\ GRADE\_MIN\ \&\&\ avg\ <\ GRADE\_MAX)}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ coef\ =\ ctab-\/>tab[i]-\/>coef;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ total\_grade\ +=\ stu-\/>f\_courses[i]-\/>average\ *\ coef;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ total\_coef\ +=\ coef;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ total\_coef\ >\ 0\ ?\ total\_grade\ /\ total\_coef\ :\ -\/1;}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ age\_is\_valid(\textcolor{keywordtype}{int}\ age)}
+\DoxyCodeLine{00081\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (age\ <\ AGE\_MIN\ ||\ age\ >\ AGE\_MAX)}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ fprintf(stderr,\ BOLD\_RED\ \textcolor{stringliteral}{"{}WARNING\ :\ invalid\ age\ \%d\ (AGE\_MIN=\%d,\ AGE\_MAX=\%d)\(\backslash\)n"{}}\ RESET,\ age,\ \mbox{\hyperlink{students_8h_a85ab0d8ab399557bedfa17d427fbd72c}{AGE\_MIN}},\ AGE\_MAX);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00088\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{students_8h_af4e2faccd38b6354983fcd4c3e8a92b7}{student\_is\_valid}}(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{students_8h_a285c2d0767fb93c9e6df0df3524d0d57}{print\_student}}(\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}}\ *stu);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -2,37 +2,6 @@
 #include <errno.h>
 #include "load_data.h"
 
-Promotion *load_data(char *file_path)
-{
-    assert(file_path);
-    FILE *file = fopen(file_path, "r");
-    if (file == NULL)
-    {
-        fprintf(stderr, "Erreur : %s inexistant.\n", file_path);
-        exit(EXIT_FAILURE);
-    }
-    assert(!feof(file));
-    const Section sections[] = {SECTION_CONTENT};
-    assert(sizeof(sections) / sizeof(sections[0]) == 3);
-
-    // read first section from file
-    // Get to the title of the first part
-    set_cursor_to_next_section(sections[0], file);
-    StudentsTab *stu_dtab = load_student_tab_data(file);
-
-    // read second section from file
-    set_cursor_to_next_section(sections[1], file);
-    CoursesTab *courses = load_courses_data(file);
-
-    allocate_students_courses(stu_dtab, courses->size); // allocate the proper grades dynamic tables (size supposed const for simplicity)
-    // read last section from file
-    set_cursor_to_next_section(sections[2], file);
-    load_grades_data(stu_dtab, courses, file);
-    Promotion *prom = init_promotion(courses, stu_dtab);
-    fclose(file);
-    return prom;
-}
-
 StudentsTab *load_student_tab_data(FILE *file)
 {
     //!\ WARNING : code PARTLY duplicated
@@ -50,8 +19,9 @@ StudentsTab *load_student_tab_data(FILE *file)
     while (fscanf(file, format, &stu_id, name, fname, &age) == 4)
     {
         // we don't know the number of courses yet
-        Student *stu = init_student(name, fname, stu_id, -1);
-        assert(stu);
+        verify(age_is_valid(age), "invalid age while loading student data from text file");
+        Student *stu = init_student(name, fname, stu_id, 0, age);
+        assert(student_is_valid(stu));
         StudentsTab_push(stu, stu_dtab);
     }
     assert(!feof(file) && !ferror(file));
@@ -64,7 +34,7 @@ CoursesTab *load_courses_data(FILE *file)
     // That one didn't work, had to fix it :(
     assert(file);
     CoursesTab *courses = CoursesTab_init();
-    assert(courses);
+    assert(CoursesTab_is_valid(courses, course_is_valid));
 
     char line[BUF_LEN];
     char course_name[BUF_LEN];
@@ -80,7 +50,7 @@ CoursesTab *load_courses_data(FILE *file)
         if (sscanf(line, format, course_name, &coef) == 2)
         {
             Course *cr = init_course(coef, course_name);
-            assert(cr);
+            assert(course_is_valid(cr));
             CoursesTab_push(cr, courses);
         }
         else
@@ -142,6 +112,11 @@ void set_cursor_to_next_section(const Section section, FILE *file)
             break; // section found
         }
     }
+    if (feof(file))
+    {
+        printf(BOLD_RED "ERROR : feof reached while looking for section title %s. " RESET "buffer : %s\n",section.section_title ,buf);
+        exit(EXIT_FAILURE);
+    }
     assert(!feof(file)); // not found
     while (fgets(buf, BUF_LEN, file))
     {
@@ -152,5 +127,10 @@ void set_cursor_to_next_section(const Section section, FILE *file)
             break; // section found
         }
     }
-    assert(!feof(file) && !ferror(file));
+    if (feof(file))
+    {
+        printf(BOLD_RED "ERROR : feof reached while looking for section header %s. " RESET "buffer : %s\n",section.section_title ,buf);
+        exit(EXIT_FAILURE);
+    }
+    assert(!ferror(file));
 }

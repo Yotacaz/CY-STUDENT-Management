@@ -19,11 +19,6 @@ typedef struct sect
         {"MATIERES", "nom;coef"},           \
         {"NOTES", "id;nom;note"}
 
-/// @brief Load data from a file and create a Promotion structure
-/// @param file_path the path to the data file
-/// @return the loaded Promotion
-Promotion* load_data(char *file_path);
-
 /// @brief Load the students data from a file
 /// @param file the file to read from
 /// @return the loaded StudentsTab

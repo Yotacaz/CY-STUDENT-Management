@@ -95,6 +95,7 @@ $(function(){initNavTree('course_8h.html','',''); });
 <p>Structure and functions to handle courses data.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="dyn__table_8h_source.html">../other/dyn_table.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utils_8h_source.html">../other/utils.h</a>&quot;</code><br />
 </div>
 <p><a href="course_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -102,6 +103,13 @@ $(function(){initNavTree('course_8h.html','',''); });
 Classes</h2></td></tr>
 <tr class="memitem:course" id="r_course"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcourse.html">course</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure containing the name and the coefficient of a course. Should be stored in a dynamic table inside a promotion.  <a href="structcourse.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac655271d966dab9369566e0fdfde1ef2" id="r_ac655271d966dab9369566e0fdfde1ef2"><td class="memItemLeft" align="right" valign="top"><a id="ac655271d966dab9369566e0fdfde1ef2" name="ac655271d966dab9369566e0fdfde1ef2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>COEF_MIN</b>&#160;&#160;&#160;0.0f</td></tr>
+<tr class="memitem:a9b88feb53537bfb9acdad05f55d5df7a" id="r_a9b88feb53537bfb9acdad05f55d5df7a"><td class="memItemLeft" align="right" valign="top"><a id="a9b88feb53537bfb9acdad05f55d5df7a" name="a9b88feb53537bfb9acdad05f55d5df7a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>COEF_MAX</b>&#160;&#160;&#160;1000.0f</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -121,10 +129,40 @@ Functions</h2></td></tr>
 <tr class="memdesc:a412974a2b5cb4687fea92d19c404bd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a course index given a sorted courses tab and the searched name. Use binary search.  <br /></td></tr>
 <tr class="memitem:a99bf8b3f3c2d5dc7cf798ed445eaaa77" id="r_a99bf8b3f3c2d5dc7cf798ed445eaaa77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99bf8b3f3c2d5dc7cf798ed445eaaa77">print_course</a> (<a class="el" href="#a7c557a628c793038b8cfd220c9d1cc2c">Course</a> *<a class="el" href="structcourse.html">course</a>)</td></tr>
 <tr class="memdesc:a99bf8b3f3c2d5dc7cf798ed445eaaa77"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a course  <br /></td></tr>
+<tr class="memitem:a74c0657d37a29402da96047a533dc365" id="r_a74c0657d37a29402da96047a533dc365"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74c0657d37a29402da96047a533dc365">course_is_valid</a> (<a class="el" href="#a7c557a628c793038b8cfd220c9d1cc2c">Course</a> *<a class="el" href="structcourse.html">course</a>)</td></tr>
+<tr class="memdesc:a74c0657d37a29402da96047a533dc365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a course is valid. This function prints invalidity reasons to stderr.  <br /></td></tr>
+<tr class="memitem:a74da410f7e3ca0791e9364c334d6ad82" id="r_a74da410f7e3ca0791e9364c334d6ad82"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74da410f7e3ca0791e9364c334d6ad82">coef_is_valid</a> (float coef)</td></tr>
+<tr class="memdesc:a74da410f7e3ca0791e9364c334d6ad82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a coefficient is valid. This function prints invalidity reasons to stderr.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure and functions to handle courses data. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a74da410f7e3ca0791e9364c334d6ad82" name="a74da410f7e3ca0791e9364c334d6ad82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74da410f7e3ca0791e9364c334d6ad82">&#9670;&#160;</a></span>coef_is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool coef_is_valid </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coef</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a coefficient is valid. This function prints invalidity reasons to stderr. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coef</td><td>the coefficient value to check, must be between COEF_MIN and COEF_MAX </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a9f1c0aea189564aac75fc84c7f90ee02" name="a9f1c0aea189564aac75fc84c7f90ee02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f1c0aea189564aac75fc84c7f90ee02">&#9670;&#160;</a></span>compare_courses()</h2>
 
@@ -153,6 +191,32 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of strcmp(name1, name2) </dd></dl>
+
+</div>
+</div>
+<a id="a74c0657d37a29402da96047a533dc365" name="a74c0657d37a29402da96047a533dc365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c0657d37a29402da96047a533dc365">&#9670;&#160;</a></span>course_is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool course_is_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7c557a628c793038b8cfd220c9d1cc2c">Course</a> *</td>          <td class="paramname"><span class="paramname"><em>course</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a course is valid. This function prints invalidity reasons to stderr. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">course</td><td>the course to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
 
 </div>
 </div>

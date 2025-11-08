@@ -9,9 +9,15 @@
 #include "course.h"
 #include "followed_course.h"
 
-/// @brief Set to true to print the followed courses when printing a student
-#define PRINT_STUDENT_COURSES false 
+/// @brief Define to print the followed courses when printing a student
+// #define PRINT_STUDENT_COURSES
 
+#ifndef AGE_MIN
+#define AGE_MIN 10
+#endif
+#ifndef AGE_MAX
+#define AGE_MAX 100
+#endif
 /// @brief Structure representing a student.
 /// We suppose here that every student follows the same number of courses (n_courses).
 /// In the f_courses table, the courses are stored in the same order as in the CoursesTab of the promotion.
@@ -21,6 +27,7 @@ typedef struct student
     char *name;
     char *fname;
     int n_courses; // duplicated information if n_courses followed is constant
+    int age;
     float average;
     unsigned int id;
 } Student;
@@ -31,7 +38,7 @@ typedef struct student
 /// @param first_name the first name of the student
 /// @param student_id the unique identifier of the student
 /// @return the allocated student
-Student *init_student(char *name, char *first_name, unsigned int student_id, int n_courses);
+Student *init_student(char *name, char *first_name, unsigned int student_id, int n_courses, int age);
 
 /// @brief Free a student and all its followed courses
 /// @param stu the student to free
@@ -66,13 +73,25 @@ static inline float get_student_general_avg(Student *stu, CoursesTab *ctab)
     return total_coef > 0 ? total_grade / total_coef : -1;
 }
 
-/// @brief Check if a student is valid (not NULL and has its fields allocated)
+/// @brief Check if an age is valid
+/// This function prints invalidity reasons to stderr.
+/// @param age the age to check
+/// @return true if valid, false otherwise
+static inline bool age_is_valid(int age)
+{
+    if (age < AGE_MIN || age > AGE_MAX)
+    {
+        fprintf(stderr, BOLD_RED "WARNING : invalid age %d (AGE_MIN=%d, AGE_MAX=%d)\n" RESET, age, AGE_MIN, AGE_MAX);
+        return false;
+    }
+    return true;
+}
+
+/// @brief Check if a student is valid : -1 as average is allowed (for when not yet calculated).
+/// This function prints invalidity reasons to stderr.
 /// @param stu the student to check
 /// @return true if valid, false otherwise
-static inline bool student_is_valid(Student *stu)
-{
-    return stu != NULL && stu->fname && stu->name && stu->f_courses;
-}
+bool student_is_valid(Student *stu);
 
 /// @brief Print a student and its followed courses
 /// @param stu the student to print

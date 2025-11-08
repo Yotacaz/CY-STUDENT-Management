@@ -142,7 +142,8 @@ Macros</h2></td></tr>
 <div class="line">    <span class="keywordtype">void</span> Name##_sort(Name *tab, <span class="keywordtype">int</span> (*compare_function)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *)); \</div>
 <div class="line">    <span class="keywordtype">void</span> Name##_print(Name *tab, <span class="keywordtype">void</span> (*print_elem)(Type));                           \</div>
 <div class="line">    <span class="keywordtype">void</span> Name##_save_to_bin(Name *tab, FILE *file, <span class="keywordtype">void</span> (*save_elem)(Type, FILE *));  \</div>
-<div class="line">    Name *Name##_load_from_bin(FILE *file, Type (*load_elem)(FILE *));</div>
+<div class="line">    Name *Name##_load_from_bin(FILE *file, Type (*load_elem)(FILE *));                \</div>
+<div class="line">    <span class="keywordtype">bool</span> Name##_is_valid(Name *dtab, <span class="keywordtype">bool</span> (*elem_is_valid)(Type));</div>
 </div><!-- fragment --><p>DECLARE_DYN_TABLE should be put in the header file where we would want to declare a dynamic table structure that reallocate itself as needed. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Type</td><td>the type of the elements stored in the dynamic table </td></tr>
@@ -150,16 +151,12 @@ Macros</h2></td></tr>
 <li>StudentsTab* StudentsTab_init();</li>
 <li>void StudentsTab_push(Student* value, StudentsTab* table) : adds an element to the dynamic table</li>
 <li>void StudentsTab_free(StudentsTab* tab, void (<em>free_elem)(<a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60" title="Structure representing a student. We suppose here that every student follows the same number of cours...">Student</a></em>)) : frees the dynamic table and its elements using the provided free function<br  />
- <br  />
 </li>
 <li>void StudentsTab_sort(StudentsTab* tab, int (<em>compare_function)(const void</em>, const void*)) : sorts the dynamic table using qsort and the provided comparison function<br  />
- <br  />
 </li>
 <li>void StudentsTab_print(StudentsTab* tab, void (<em>print_elem)(<a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60" title="Structure representing a student. We suppose here that every student follows the same number of cours...">Student</a></em>)) : prints the dynamic table using the provided print function<br  />
- <br  />
 </li>
 <li>void StudentsTab_save_to_bin(StudentsTab* tab, FILE* file, void (<em>save_elem)(<a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60" title="Structure representing a student. We suppose here that every student follows the same number of cours...">Student</a></em>, FILE*)): saves the dynamic table to a binary file using the provided save function<br  />
- <br  />
 </li>
 <li>StudentsTab* StudentsTab_load_from_bin(FILE* file, Student* (<em>load_elem)(FILE</em>)) : loads the dynamic table from a binary file using the provided load function </li>
 </ul>
