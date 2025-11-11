@@ -7,12 +7,18 @@
 
 #include "../models/promotion.h"
 
+/// @brief Saves a promotion to a binary file. Order: courses, students
+/// @param prom the promotion to save
+/// @param file the binary file
+void bin_save_prom(Promotion *prom, FILE *file);
+
 /// @brief Saves a course to a binary file. Order: coef, name
 /// @param course the course to save
 /// @param file the binary file
 void bin_save_course(Course *course, FILE *file);
 
-/// @brief Saves a student to a binary file. Order: id, name, fname, average, n_courses, followed courses
+/// @brief Saves a student to a binary file. Order: id, name, fname, average, n_courses, followed
+/// courses
 /// @param stu the student to save
 /// @param file the binary file
 void bin_save_student(Student *stu, FILE *file);

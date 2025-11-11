@@ -16,13 +16,16 @@ Student *init_student(char *name, char *first_name, unsigned int student_id, int
     stu->n_courses = n_courses;
     if (n_courses > 0)
     {
-        // IF n_courses is known, it is supposed sufficiently constant so that we don't need to reallocate to many times
-        stu->f_courses = (Followed_course **)calloc(n_courses, sizeof(Followed_course *)); // init at NULL for safety
+        // IF n_courses is known, it is supposed sufficiently constant so that we don't need to
+        // reallocate to many times
+        stu->f_courses = (Followed_course **)calloc(
+                n_courses, sizeof(Followed_course *)); // init at NULL for safety
         verify(stu->f_courses, "calloc error");
     }
     else
     {
-        stu->f_courses = NULL; // we don't know how many courses a student will follow yet (but will later)
+        stu->f_courses =
+                NULL; // we don't know how many courses a student will follow yet (but will later)
     }
     int name_len = strlen(name);
     int fname_len = strlen(first_name);
@@ -43,7 +46,8 @@ void add_grade_to_student(Student *stu, CoursesTab *ctab, char *course_name, flo
     Followed_course *fcourse = stu->f_courses[i];
     // recalculating avg supposing that all grades have same coef
     Grades_push(grade, fcourse->grades);
-    //!\ to recalculate the average EACH time a grade is added (not recommended for performances + implementation)
+    //!\ to recalculate the average EACH time a grade is added (not recommended for performances +
+    //! implementation)
     // uncomment the following line :
     // fcourse->average = get_followed_course_avg(fcourse);
     // stu->average = get_student_general_avg(stu, ctab);
@@ -52,7 +56,8 @@ void add_grade_to_student(Student *stu, CoursesTab *ctab, char *course_name, flo
 void print_student(Student *stu)
 {
     assert(student_is_valid(stu));
-    printf(BOLD_CYN UNDERLINE "Student %u: %s %s" RESET CYN ", age = %d, avg = %.2f\n", stu->id, stu->name, stu->fname, stu->age, stu->average);
+    printf(BOLD_CYN UNDERLINE "Student %u: %s %s" RESET CYN ", age = %d, avg = %.2f\n", stu->id,
+           stu->name, stu->fname, stu->age, stu->average);
 
     printf("Courses (%d): " RESET, stu->n_courses);
 #ifndef PRINT_STUDENT_COURSES
@@ -101,7 +106,8 @@ bool student_is_valid(Student *stu)
         fprintf(stderr, BOLD_RED "WARNING : stu name is NULL\n" RESET);
         return false;
     }
-    else if (stu->average != -1 && !grade_is_valid(stu->average)) // stu->average is -1 until later calculation
+    else if (stu->average != -1 &&
+             !grade_is_valid(stu->average)) // stu->average is -1 until later calculation
     {
         fprintf(stderr, BOLD_RED "WARNING : invalid student average\n" RESET);
         return false;
@@ -129,7 +135,8 @@ bool student_is_valid(Student *stu)
     }
     else if (stu->f_courses)
     {
-        fprintf(stderr, BOLD_RED "WARNING : number of courses 0, followed course table should therefore be NULL\n" RESET);
+        fprintf(stderr, BOLD_RED "WARNING : number of courses 0, followed course table should "
+                                 "therefore be NULL\n" RESET);
         return false;
     }
     return true;

@@ -6,47 +6,47 @@
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FOLLOWED\_COURSE\_H}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dyn__table_8h}{../other/dyn\_table.h}}"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{../other/utils.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dyn__table_8h}{../other/dyn\_table.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{../other/utils.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \mbox{\hyperlink{dyn__table_8h_ab9852f08c4f1e62818165cfa3c260d20}{DECLARE\_DYN\_TABLE}}(\textcolor{keywordtype}{float},\ Grades)}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ GRADE\_MIN}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ GRADE\_MIN\ -\/0.0001}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ GRADE\_MAX}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ GRADE\_MAX\ 20.0001}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfollowed__course}{followed\_course}}}
-\DoxyCodeLine{00022\ \{}
-\DoxyCodeLine{00023\ \ \ \ \ Grades\ *grades;}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ average;}
-\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00031\ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *\mbox{\hyperlink{followed__course_8h_ab3803222ef4996da2c2fb622c601df5b}{init\_followed\_course}}(Grades\ *(*init\_grades)());}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{followed__course_8h_ad5899903d48aefecd86d801ea6ce7152}{free\_followed\_course}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *f\_course);}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00040\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ get\_followed\_course\_avg(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse)}
-\DoxyCodeLine{00041\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ assert(fcourse);}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{float}\ total\ =\ 0;}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ n\_elem\ =\ fcourse-\/>grades-\/>size;}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n\_elem;\ i++)}
-\DoxyCodeLine{00046\ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ total\ +=\ fcourse-\/>grades-\/>tab[i];}
-\DoxyCodeLine{00048\ \ \ \ \ \}}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ n\_elem\ >\ 0\ ?\ total\ /\ n\_elem\ :\ -\/1;}
-\DoxyCodeLine{00050\ \}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{followed__course_8h_ae4a7e635d96c3d5bad7d8feca68f7172}{print\_fcourse}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse);}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00059\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{followed__course_8h_a3fa63a75df11e2f7f8eb8d8bc14db581}{followed\_course\_is\_valid}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse);}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ GRADE\_MIN\ -\/0.0001}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ GRADE\_MAX}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ GRADE\_MAX\ 20.0001}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfollowed__course}{followed\_course}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ Grades\ *\mbox{\hyperlink{structfollowed__course_a28e6eca45a367af51f0bcdf4146a6c6e}{grades}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structfollowed__course_ab34e5f81bb1fec1fb93afe63efd3ffb1}{average}};}
+\DoxyCodeLine{00029\ \}\ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *\mbox{\hyperlink{followed__course_8h_ab3803222ef4996da2c2fb622c601df5b}{init\_followed\_course}}(Grades\ *(*init\_grades)());}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{followed__course_8h_ad5899903d48aefecd86d801ea6ce7152}{free\_followed\_course}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *f\_course);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ get\_followed\_course\_avg(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse)}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ assert(fcourse);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ total\ =\ 0;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ n\_elem\ =\ fcourse-\/>\mbox{\hyperlink{structfollowed__course_a28e6eca45a367af51f0bcdf4146a6c6e}{grades}}-\/>size;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n\_elem;\ i++)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ total\ +=\ fcourse-\/>\mbox{\hyperlink{structfollowed__course_a28e6eca45a367af51f0bcdf4146a6c6e}{grades}}-\/>tab[i];}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ n\_elem\ >\ 0\ ?\ total\ /\ n\_elem\ :\ -\/1;}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{followed__course_8h_ae4a7e635d96c3d5bad7d8feca68f7172}{print\_fcourse}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse);}
 \DoxyCodeLine{00060\ }
-\DoxyCodeLine{00064\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{followed__course_8h_af74dfd678a55f02e7f2c3e80c4a4382e}{grade\_is\_valid}}(\textcolor{keywordtype}{float}\ val);}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{followed__course_8h_a3fa63a75df11e2f7f8eb8d8bc14db581}{followed\_course\_is\_valid}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse);}
 \DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{followed__course_8h_af74dfd678a55f02e7f2c3e80c4a4382e}{grade\_is\_valid}}(\textcolor{keywordtype}{float}\ val);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

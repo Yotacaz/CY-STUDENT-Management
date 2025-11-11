@@ -17,12 +17,11 @@ struct \mbox{\hyperlink{structstudent}{student}}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{students_8h_a85ab0d8ab399557bedfa17d427fbd72c}\label{students_8h_a85ab0d8ab399557bedfa17d427fbd72c} 
-\#define {\bfseries AGE\+\_\+\+MIN}~10
+\#define \mbox{\hyperlink{students_8h_a85ab0d8ab399557bedfa17d427fbd72c}{AGE\+\_\+\+MIN}}~10
 \begin{DoxyCompactList}\small\item\em Define to print the followed courses when printing a student. \end{DoxyCompactList}\item 
 \Hypertarget{students_8h_ae1048bcf163cc658a61f4a5f9a30292b}\label{students_8h_ae1048bcf163cc658a61f4a5f9a30292b} 
 \#define {\bfseries AGE\+\_\+\+MAX}~100
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum valid ages for students. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,6 +47,21 @@ void \mbox{\hyperlink{students_8h_a285c2d0767fb93c9e6df0df3524d0d57}{print\+\_\+
 Structure and functions to handle students data. 
 
 
+
+\label{doc-define-members}
+\Hypertarget{students_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{students_8h_a85ab0d8ab399557bedfa17d427fbd72c}\index{students.h@{students.h}!AGE\_MIN@{AGE\_MIN}}
+\index{AGE\_MIN@{AGE\_MIN}!students.h@{students.h}}
+\doxysubsubsection{\texorpdfstring{AGE\_MIN}{AGE\_MIN}}
+{\footnotesize\ttfamily \label{students_8h_a85ab0d8ab399557bedfa17d427fbd72c} 
+\#define AGE\+\_\+\+MIN~10}
+
+
+
+Define to print the followed courses when printing a student. 
+
+Minimum valid ages for students 
 
 \label{doc-func-members}
 \Hypertarget{students_8h_doc-func-members}
@@ -105,6 +119,10 @@ Initialise a student, its followed courses are initialised to NULL and n\+\_\+co
 {\em first\+\_\+name} & the first name of the student \\
 \hline
 {\em student\+\_\+id} & the unique identifier of the student \\
+\hline
+{\em n\+\_\+courses} & the number of courses the student will follow \\
+\hline
+{\em age} & the age of the student \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

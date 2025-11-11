@@ -9,6 +9,8 @@ Functions to save data to binary files, {\itshape {\bfseries{WARNING\+: binary f
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{save__bin_8h_a20cf2618d63595ec1e5e97f538bcd65a}{bin\+\_\+save\+\_\+prom}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom, FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Saves a promotion to a binary file. Order\+: courses, students. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{save__bin_8h_a5694b5058f69b7cac811c18268bede72}{bin\+\_\+save\+\_\+course}} (\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structcourse}{course}}, FILE \texorpdfstring{$\ast$}{*}file)
 \begin{DoxyCompactList}\small\item\em Saves a course to a binary file. Order\+: coef, name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{save__bin_8h_aa15fe2654289b7b1f512800feddc603c}{bin\+\_\+save\+\_\+student}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu, FILE \texorpdfstring{$\ast$}{*}file)
@@ -58,6 +60,23 @@ Saves a followed course to a binary file. Order\+: average, grades.
 
 \begin{DoxyParams}{Parameters}
 {\em fcourse} & the followed course to save \\
+\hline
+{\em file} & the binary file \\
+\hline
+\end{DoxyParams}
+\Hypertarget{save__bin_8h_a20cf2618d63595ec1e5e97f538bcd65a}\index{save\_bin.h@{save\_bin.h}!bin\_save\_prom@{bin\_save\_prom}}
+\index{bin\_save\_prom@{bin\_save\_prom}!save\_bin.h@{save\_bin.h}}
+\doxysubsubsection{\texorpdfstring{bin\_save\_prom()}{bin\_save\_prom()}}
+{\footnotesize\ttfamily \label{save__bin_8h_a20cf2618d63595ec1e5e97f538bcd65a} 
+void bin\+\_\+save\+\_\+prom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}}]{prom}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Saves a promotion to a binary file. Order\+: courses, students. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prom} & the promotion to save \\
 \hline
 {\em file} & the binary file \\
 \hline

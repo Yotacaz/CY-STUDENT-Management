@@ -21,9 +21,9 @@ typedef struct \mbox{\hyperlink{structpromotion}{promotion}} {\bfseries Promotio
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{promotion_8h_afed5bef66f3e38d90fb22dedbb778fab}{compare\+\_\+student\+\_\+key}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
-\begin{DoxyCompactList}\small\item\em compare two students by their IDs. To be used in qsort \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em compare two students by their IDs. To be used in qsort for sorting in growing order \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{promotion_8h_a8129e29a36126a2d8f667173ceaa1359}{compare\+\_\+student\+\_\+id}} (const void \texorpdfstring{$\ast$}{*}s1, const void \texorpdfstring{$\ast$}{*}s2)
-\begin{DoxyCompactList}\small\item\em compare two students by their IDs. To be used in qsort \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em compare two students by their IDs. To be used in bsearch \end{DoxyCompactList}\item 
 \mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_afc22f1d99464e360f3d958f732d22070}{student\+\_\+tab\+\_\+bsearch}} (Students\+Tab \texorpdfstring{$\ast$}{*}prom, unsigned int searched\+\_\+id)
 \begin{DoxyCompactList}\small\item\em Search for a student in a Students\+Tab by its ID using binary search. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{promotion_8h_a725e097db05eb2b0f953a0c4fe6f4533}{allocate\+\_\+students\+\_\+courses}} (Students\+Tab \texorpdfstring{$\ast$}{*}prom, int n\+\_\+courses)
@@ -35,7 +35,9 @@ void \mbox{\hyperlink{promotion_8h_a0d3b31688a911c328c8142f0f36181ac}{free\+\_\+
 void \mbox{\hyperlink{promotion_8h_a03dd021bb828713f0b60805ccf3079ab}{print\+\_\+promotion}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom)
 \begin{DoxyCompactList}\small\item\em Print a promotion (courses and students). \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{promotion_8h_a7b242a8cf9a3c0f01df0018699c46798}{promotion\+\_\+is\+\_\+valid}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom)
-\begin{DoxyCompactList}\small\item\em Check if a promotion is valid. This function prints invalidity reasons to stderr. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Check if a promotion is valid. \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+WARNING \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: does not check for unicity of student ids, for this use students\+\_\+id\+\_\+are\+\_\+sorted\+\_\+and\+\_\+unique. This function prints invalidity reasons to stderr. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{promotion_8h_af58511727a5e4d628dbdf7496ee0f2f9}{students\+\_\+id\+\_\+are\+\_\+sorted\+\_\+and\+\_\+unique}} (Students\+Tab \texorpdfstring{$\ast$}{*}stu\+\_\+dtab)
+\begin{DoxyCompactList}\small\item\em Check if the students IDs in a Students\+Tab are sorted in growing order and unique. \end{DoxyCompactList}\item 
 Students\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_af0a2a8cd3481045924195f3d1a28be78}{get\+\_\+top\+\_\+students}} (Students\+Tab \texorpdfstring{$\ast$}{*}stu\+\_\+dtab, int top\+\_\+max\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Get the top students in a promotion based on their overall average. \end{DoxyCompactList}\item 
 Students\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_a6454fc13ca1ddeb3651288c64e85777d}{get\+\_\+top\+\_\+students\+\_\+in\+\_\+course}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom, char \texorpdfstring{$\ast$}{*}course\+\_\+name, int top\+\_\+max\+\_\+size)
@@ -75,7 +77,7 @@ int compare\+\_\+student\+\_\+id (\begin{DoxyParamCaption}\item[{const void \tex
 
 
 
-compare two students by their IDs. To be used in qsort 
+compare two students by their IDs. To be used in bsearch 
 
 
 \begin{DoxyParams}{Parameters}
@@ -95,7 +97,7 @@ int compare\+\_\+student\+\_\+key (\begin{DoxyParamCaption}\item[{const void \te
 
 
 
-compare two students by their IDs. To be used in qsort 
+compare two students by their IDs. To be used in qsort for sorting in growing order 
 
 
 \begin{DoxyParams}{Parameters}
@@ -166,7 +168,7 @@ Get the top students in a specific course within a promotion.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-a Students\+Tab containing the top students in the specified course 
+a Students\+Tab containing the top students in the specified course, NULL if course not found 
 \end{DoxyReturn}
 \Hypertarget{promotion_8h_afd3ecf2348f66f5a533169df082ad99f}\index{promotion.h@{promotion.h}!init\_promotion@{init\_promotion}}
 \index{init\_promotion@{init\_promotion}!promotion.h@{promotion.h}}
@@ -211,7 +213,7 @@ bool promotion\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperli
 
 
 
-Check if a promotion is valid. This function prints invalidity reasons to stderr. 
+Check if a promotion is valid. \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+WARNING \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: does not check for unicity of student ids, for this use students\+\_\+id\+\_\+are\+\_\+sorted\+\_\+and\+\_\+unique. This function prints invalidity reasons to stderr. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -240,4 +242,22 @@ Search for a student in a Students\+Tab by its ID using binary search.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 the found \doxylink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student} or NULL if not found 
+\end{DoxyReturn}
+\Hypertarget{promotion_8h_af58511727a5e4d628dbdf7496ee0f2f9}\index{promotion.h@{promotion.h}!students\_id\_are\_sorted\_and\_unique@{students\_id\_are\_sorted\_and\_unique}}
+\index{students\_id\_are\_sorted\_and\_unique@{students\_id\_are\_sorted\_and\_unique}!promotion.h@{promotion.h}}
+\doxysubsubsection{\texorpdfstring{students\_id\_are\_sorted\_and\_unique()}{students\_id\_are\_sorted\_and\_unique()}}
+{\footnotesize\ttfamily \label{promotion_8h_af58511727a5e4d628dbdf7496ee0f2f9} 
+bool students\+\_\+id\+\_\+are\+\_\+sorted\+\_\+and\+\_\+unique (\begin{DoxyParamCaption}\item[{Students\+Tab \texorpdfstring{$\ast$}{*}}]{stu\+\_\+dtab}{}\end{DoxyParamCaption})}
+
+
+
+Check if the students IDs in a Students\+Tab are sorted in growing order and unique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stu\+\_\+dtab} & the Students\+Tab to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if sorted and unique, false otherwise 
 \end{DoxyReturn}

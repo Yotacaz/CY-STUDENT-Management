@@ -11,19 +11,21 @@ DECLARE_DYN_TABLE(Student *, StudentsTab)
 /// @brief Structure representing a promotion containing students and courses dynamic tables.
 typedef struct promotion
 {
+    ///@brief dynamic table of students
     StudentsTab *stu_dtab;
+    ///@brief dynamic table of courses
     CoursesTab *courses;
 } Promotion;
 
 // Function prototypes
 
-/// @brief compare two students by their IDs. To be used in qsort
+/// @brief compare two students by their IDs. To be used in qsort for sorting in growing order
 /// @param a first student
 /// @param b second student
 /// @return -1 if a<b, 0 if a==b, 1 if a>b
 int compare_student_key(const void *a, const void *b);
 
-/// @brief compare two students by their IDs. To be used in qsort
+/// @brief compare two students by their IDs. To be used in bsearch
 /// @param s1 first student
 /// @param s2 second student
 /// @return -1 if s1<s2, 0 if s1==s2, 1 if s1>s2
@@ -51,16 +53,24 @@ Promotion *init_promotion(CoursesTab *ctab, StudentsTab *stu_dtab);
 /// @param prom the promotion to free
 /// @param free_student_f function to free a student
 /// @param free_course_f function to free a course
-void free_promotion(Promotion *prom, void (*free_student_f)(Student *), void (*free_course_f)(Course *));
+void free_promotion(Promotion *prom, void (*free_student_f)(Student *),
+                    void (*free_course_f)(Course *));
 
 /// @brief Print a promotion (courses and students)
 /// @param prom the promotion to print
 void print_promotion(Promotion *prom);
 
-/// @brief Check if a promotion is valid. This function prints invalidity reasons to stderr.
+/// @brief Check if a promotion is valid. **WARNING **: does not check for unicity of student ids,
+/// for this use students_id_are_sorted_and_unique. This function prints invalidity reasons to
+/// stderr.
 /// @param prom the promotion to check
 /// @return true if valid, false otherwise
-bool promotion_is_valid(Promotion* prom);
+bool promotion_is_valid(Promotion *prom);
+
+/// @brief Check if the students IDs in a StudentsTab are sorted in growing order and unique
+/// @param stu_dtab the StudentsTab to check
+/// @return true if sorted and unique, false otherwise
+bool students_id_are_sorted_and_unique(StudentsTab *stu_dtab);
 
 /// @brief Get the top students in a promotion based on their overall average
 /// @param stu_dtab the students table
@@ -72,9 +82,8 @@ StudentsTab *get_top_students(StudentsTab *stu_dtab, int top_max_size);
 /// @param prom the promotion
 /// @param course_name the name of the course
 /// @param top_max_size the maximum number of top students to return
-/// @return a StudentsTab containing the top students in the specified course
+/// @return a StudentsTab containing the top students in the specified course, NULL if course not
+/// found
 StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int top_max_size);
-
-
 
 #endif

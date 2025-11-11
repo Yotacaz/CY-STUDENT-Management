@@ -6,5 +6,6 @@ var searchData=
   ['bin_5fread_5fstring_3',['bin_read_string',['../utils_8h.html#a290cabf3313b2303b06136bcee79c892',1,'utils.c']]],
   ['bin_5fsave_5fcourse_4',['bin_save_course',['../save__bin_8h.html#a5694b5058f69b7cac811c18268bede72',1,'save_bin.c']]],
   ['bin_5fsave_5ffollowed_5fcourse_5',['bin_save_followed_course',['../save__bin_8h.html#a587c83cefdc5b49211a8c6491ddaf899',1,'save_bin.c']]],
-  ['bin_5fsave_5fstudent_6',['bin_save_student',['../save__bin_8h.html#aa15fe2654289b7b1f512800feddc603c',1,'save_bin.c']]]
+  ['bin_5fsave_5fprom_6',['bin_save_prom',['../save__bin_8h.html#a20cf2618d63595ec1e5e97f538bcd65a',1,'save_bin.c']]],
+  ['bin_5fsave_5fstudent_7',['bin_save_student',['../save__bin_8h.html#aa15fe2654289b7b1f512800feddc603c',1,'save_bin.c']]]
 ];

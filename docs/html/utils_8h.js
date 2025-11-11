@@ -1,4 +1,28 @@
 var utils_8h =
 [
+    [ "BG_BLU", "utils_8h.html#aa710778d6e43fc83f9db43f9fb4388d8", null ],
+    [ "BG_CYN", "utils_8h.html#a384d244eada398193935e7a7bcce7361", null ],
+    [ "BG_GRN", "utils_8h.html#aea84761b03cdd0f543a4a291510e3a63", null ],
+    [ "BG_MAG", "utils_8h.html#a2245f27d12b071caa4ce08be9966b093", null ],
+    [ "BG_RED", "utils_8h.html#ac317d04c219b630f9c36b0241d9d4be7", null ],
+    [ "BG_WHT", "utils_8h.html#af92b6f91becb4af28d094ba2bc07828c", null ],
+    [ "BG_YEL", "utils_8h.html#a4d817a35efa3a05ab4b75563c463857f", null ],
+    [ "BLU", "utils_8h.html#add9307de87f38e77d336751e305886f6", null ],
+    [ "BOLD_BLU", "utils_8h.html#a0719a599e334b3093d1fe3277a261df2", null ],
+    [ "BOLD_CYN", "utils_8h.html#a0cfd43e8bec4b0ace9d854d4bcd6166b", null ],
+    [ "BOLD_GRN", "utils_8h.html#a5301f88ed7c9de9730b5b16a10332ca4", null ],
+    [ "BOLD_MAG", "utils_8h.html#af4638a7efca672b985ecd70287e163f5", null ],
+    [ "BOLD_RED", "utils_8h.html#a58f9401d546703859ab9c8720c61ee9e", null ],
+    [ "BOLD_WHT", "utils_8h.html#a0013bdf4884e7869980ecd8e4787c120", null ],
+    [ "BOLD_YEL", "utils_8h.html#a266ab7977210849b93352458b0a539eb", null ],
+    [ "BUF_LEN", "utils_8h.html#a8b5839f71a3b6e7d64b2d5e9967e3dd1", null ],
+    [ "CYN", "utils_8h.html#adc708fa688f5d78db361f66c36f0f807", null ],
+    [ "GRN", "utils_8h.html#aea69ffbacdcdf16c21b8c9961df84448", null ],
+    [ "MAG", "utils_8h.html#af54a5a977c0c499323d656315f008ee0", null ],
+    [ "RED", "utils_8h.html#a8d23feea868a983c8c2b661e1e16972f", null ],
+    [ "RESET", "utils_8h.html#ab702106cf3b3e96750b6845ded4e0299", null ],
+    [ "UNDERLINE", "utils_8h.html#aaec1a65734e33bc49e8dc8d90e9546bc", null ],
+    [ "WHT", "utils_8h.html#aeaf3a04d5bf63b204689a714718ea930", null ],
+    [ "YEL", "utils_8h.html#a96fac03c4ab3363f06a0328e0e53a40c", null ],
     [ "bin_read_string", "utils_8h.html#a290cabf3313b2303b06136bcee79c892", null ]
 ];

@@ -1,5 +1,5 @@
-#include <float.h>
 #include "promotion.h"
+#include <float.h>
 
 DEFINE_DYN_TABLE(Student *, StudentsTab)
 
@@ -35,7 +35,8 @@ Student *student_tab_bsearch(StudentsTab *stu_dtab, unsigned int searched_id)
 {
     assert(StudentsTab_is_valid(stu_dtab, student_is_valid));
     Student tmp = {.id = searched_id}; // dummy student
-    Student **res = (Student **)bsearch(&tmp, stu_dtab->tab, stu_dtab->size, sizeof(Student *), compare_student_key);
+    Student **res = (Student **)bsearch(&tmp, stu_dtab->tab, stu_dtab->size, sizeof(Student *),
+                                        compare_student_key);
     return res ? *res : NULL;
 }
 
@@ -64,7 +65,8 @@ void print_promotion(Promotion *prom)
     StudentsTab_print(prom->stu_dtab, print_student);
 }
 
-void free_promotion(Promotion *prom, void (*free_student_f)(Student *), void (*free_course_f)(Course *))
+void free_promotion(Promotion *prom, void (*free_student_f)(Student *),
+                    void (*free_course_f)(Course *))
 {
     assert(prom); // don't check its content
     // If free_course_f or free_student_f is NULL, that mean we don't want to free them
@@ -87,10 +89,28 @@ bool promotion_is_valid(Promotion *prom)
 {
     if (!prom)
     {
-        fprintf(stderr, BOLD_RED "ERROR : promotion is NULL\n" RESET);
+        fprintf(stderr, BOLD_RED "WARNING : promotion is NULL\n" RESET);
         return false;
     }
-    return StudentsTab_is_valid(prom->stu_dtab, student_is_valid) && CoursesTab_is_valid(prom->courses, course_is_valid);
+    return StudentsTab_is_valid(prom->stu_dtab, student_is_valid) &&
+           CoursesTab_is_valid(prom->courses, course_is_valid);
+}
+
+bool students_id_are_sorted_and_unique(StudentsTab *stu_dtab)
+{
+    assert(StudentsTab_is_valid(stu_dtab, student_is_valid));
+    for (int i = 1; i < stu_dtab->size; i++)
+    {
+        if (stu_dtab->tab[i - 1]->id >= stu_dtab->tab[i]->id)
+        {
+            fprintf(stderr,
+                    BOLD_RED "WARNING : student id entry n°%d (id = %u) and %d (id = %u)"
+                             " of student table aren't in strict growing order\n" RESET,
+                    i, stu_dtab->tab[i]->id, i - 1, stu_dtab->tab[i - 1]->id);
+            return false;
+        }
+    }
+    return true;
 }
 
 StudentsTab *get_top_students(StudentsTab *stu_dtab, int top_max_size)
@@ -136,8 +156,8 @@ StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int 
     int course_id = get_course_index(prom->courses, course_name);
     if (course_id < 0)
     {
-        fprintf(stderr, "Course ID not found\n");
-        exit(EXIT_FAILURE);
+        return NULL;
+        // exit(EXIT_FAILURE);
     }
 
     StudentsTab *top = StudentsTab_init();

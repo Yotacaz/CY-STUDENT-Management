@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <errno.h>
 #include "load_data.h"
+#include <errno.h>
+#include <stdio.h>
 
 StudentsTab *load_student_tab_data(FILE *file)
 {
@@ -13,8 +13,10 @@ StudentsTab *load_student_tab_data(FILE *file)
     char format[BUF_LEN];
     int age = -1;
     StudentsTab *stu_dtab = StudentsTab_init();
-    // create the string "%u;%BUF_LEN-1[^;];%BUF_LEN-1[^;\n];%d\n" (safe version of "%u;%s;%s;%d\n"):
-    int n_char = snprintf(format, BUF_LEN, "%%u;%%%d[^;\n];%%%d[^;\n];%%d\n", BUF_LEN - 1, BUF_LEN - 1);
+    // create the string "%u;%BUF_LEN-1[^;];%BUF_LEN-1[^;\n];%d\n" (safe version of
+    // "%u;%s;%s;%d\n"):
+    int n_char =
+            snprintf(format, BUF_LEN, "%%u;%%%d[^;\n];%%%d[^;\n];%%d\n", BUF_LEN - 1, BUF_LEN - 1);
     assert(n_char > 0 && n_char < BUF_LEN); // no error or overflow
     while (fscanf(file, format, &stu_id, name, fname, &age) == 4)
     {
@@ -114,7 +116,9 @@ void set_cursor_to_next_section(const Section section, FILE *file)
     }
     if (feof(file))
     {
-        printf(BOLD_RED "ERROR : feof reached while looking for section title %s. " RESET "buffer : %s\n",section.section_title ,buf);
+        printf(BOLD_RED "ERROR : feof reached while looking for section title %s. " RESET
+                        "buffer : %s\n",
+               section.section_title, buf);
         exit(EXIT_FAILURE);
     }
     assert(!feof(file)); // not found
@@ -129,7 +133,9 @@ void set_cursor_to_next_section(const Section section, FILE *file)
     }
     if (feof(file))
     {
-        printf(BOLD_RED "ERROR : feof reached while looking for section header %s. " RESET "buffer : %s\n",section.section_title ,buf);
+        printf(BOLD_RED "ERROR : feof reached while looking for section header %s. " RESET
+                        "buffer : %s\n",
+               section.section_title, buf);
         exit(EXIT_FAILURE);
     }
     assert(!ferror(file));

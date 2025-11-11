@@ -10,14 +10,13 @@
 /// @brief Structure representing a section in the data file
 typedef struct sect
 {
-    const char *section_title;
-    const char *section_header;
+    const char *section_title;  //!< The title of the section
+    const char *section_header; //!< The header line of the section
 } Section;
 
-#define SECTION_CONTENT                     \
-    {"ETUDIANTS", "numero;prenom;nom;age"}, \
-        {"MATIERES", "nom;coef"},           \
-        {"NOTES", "id;nom;note"}
+/// @brief Define the different content sections in the data file
+#define SECTION_CONTENT                                                                            \
+    {"ETUDIANTS", "numero;prenom;nom;age"}, {"MATIERES", "nom;coef"}, {"NOTES", "id;nom;note"}
 
 /// @brief Load the students data from a file
 /// @param file the file to read from
@@ -39,6 +38,5 @@ void load_grades_data(StudentsTab *prom, CoursesTab *courses, FILE *file);
 /// @param section the section to find
 /// @param file the file to read from
 void set_cursor_to_next_section(const Section section, FILE *file);
-
 
 #endif

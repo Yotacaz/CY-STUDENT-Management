@@ -112,9 +112,9 @@ typedef struct <a class="el" href="structpromotion.html">promotion</a>&#160;</td
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afed5bef66f3e38d90fb22dedbb778fab" id="r_afed5bef66f3e38d90fb22dedbb778fab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afed5bef66f3e38d90fb22dedbb778fab">compare_student_key</a> (const void *a, const void *b)</td></tr>
-<tr class="memdesc:afed5bef66f3e38d90fb22dedbb778fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their IDs. To be used in qsort  <br /></td></tr>
+<tr class="memdesc:afed5bef66f3e38d90fb22dedbb778fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their IDs. To be used in qsort for sorting in growing order  <br /></td></tr>
 <tr class="memitem:a8129e29a36126a2d8f667173ceaa1359" id="r_a8129e29a36126a2d8f667173ceaa1359"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8129e29a36126a2d8f667173ceaa1359">compare_student_id</a> (const void *s1, const void *s2)</td></tr>
-<tr class="memdesc:a8129e29a36126a2d8f667173ceaa1359"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their IDs. To be used in qsort  <br /></td></tr>
+<tr class="memdesc:a8129e29a36126a2d8f667173ceaa1359"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their IDs. To be used in bsearch  <br /></td></tr>
 <tr class="memitem:afc22f1d99464e360f3d958f732d22070" id="r_afc22f1d99464e360f3d958f732d22070"><td class="memItemLeft" align="right" valign="top"><a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60">Student</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc22f1d99464e360f3d958f732d22070">student_tab_bsearch</a> (StudentsTab *prom, unsigned int searched_id)</td></tr>
 <tr class="memdesc:afc22f1d99464e360f3d958f732d22070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for a student in a StudentsTab by its ID using binary search.  <br /></td></tr>
 <tr class="memitem:a725e097db05eb2b0f953a0c4fe6f4533" id="r_a725e097db05eb2b0f953a0c4fe6f4533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a725e097db05eb2b0f953a0c4fe6f4533">allocate_students_courses</a> (StudentsTab *prom, int n_courses)</td></tr>
@@ -126,7 +126,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a03dd021bb828713f0b60805ccf3079ab" id="r_a03dd021bb828713f0b60805ccf3079ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03dd021bb828713f0b60805ccf3079ab">print_promotion</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom)</td></tr>
 <tr class="memdesc:a03dd021bb828713f0b60805ccf3079ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a promotion (courses and students).  <br /></td></tr>
 <tr class="memitem:a7b242a8cf9a3c0f01df0018699c46798" id="r_a7b242a8cf9a3c0f01df0018699c46798"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b242a8cf9a3c0f01df0018699c46798">promotion_is_valid</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom)</td></tr>
-<tr class="memdesc:a7b242a8cf9a3c0f01df0018699c46798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a promotion is valid. This function prints invalidity reasons to stderr.  <br /></td></tr>
+<tr class="memdesc:a7b242a8cf9a3c0f01df0018699c46798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a promotion is valid. **WARNING **: does not check for unicity of student ids, for this use students_id_are_sorted_and_unique. This function prints invalidity reasons to stderr.  <br /></td></tr>
+<tr class="memitem:af58511727a5e4d628dbdf7496ee0f2f9" id="r_af58511727a5e4d628dbdf7496ee0f2f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af58511727a5e4d628dbdf7496ee0f2f9">students_id_are_sorted_and_unique</a> (StudentsTab *stu_dtab)</td></tr>
+<tr class="memdesc:af58511727a5e4d628dbdf7496ee0f2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the students IDs in a StudentsTab are sorted in growing order and unique.  <br /></td></tr>
 <tr class="memitem:af0a2a8cd3481045924195f3d1a28be78" id="r_af0a2a8cd3481045924195f3d1a28be78"><td class="memItemLeft" align="right" valign="top">StudentsTab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0a2a8cd3481045924195f3d1a28be78">get_top_students</a> (StudentsTab *stu_dtab, int top_max_size)</td></tr>
 <tr class="memdesc:af0a2a8cd3481045924195f3d1a28be78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top students in a promotion based on their overall average.  <br /></td></tr>
 <tr class="memitem:a6454fc13ca1ddeb3651288c64e85777d" id="r_a6454fc13ca1ddeb3651288c64e85777d"><td class="memItemLeft" align="right" valign="top">StudentsTab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6454fc13ca1ddeb3651288c64e85777d">get_top_students_in_course</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom, char *course_name, int top_max_size)</td></tr>
@@ -184,7 +186,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>compare two students by their IDs. To be used in qsort </p>
+<p>compare two students by their IDs. To be used in bsearch </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s1</td><td>first student </td></tr>
@@ -215,7 +217,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>compare two students by their IDs. To be used in qsort </p>
+<p>compare two students by their IDs. To be used in qsort for sorting in growing order </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>first student </td></tr>
@@ -327,7 +329,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a StudentsTab containing the top students in the specified course </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a StudentsTab containing the top students in the specified course, NULL if course not found </dd></dl>
 
 </div>
 </div>
@@ -402,7 +404,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check if a promotion is valid. This function prints invalidity reasons to stderr. </p>
+<p>Check if a promotion is valid. **WARNING **: does not check for unicity of student ids, for this use students_id_are_sorted_and_unique. This function prints invalidity reasons to stderr. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">prom</td><td>the promotion to check </td></tr>
@@ -441,6 +443,32 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the found <a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60" title="Structure representing a student. We suppose here that every student follows the same number of cours...">Student</a> or NULL if not found </dd></dl>
+
+</div>
+</div>
+<a id="af58511727a5e4d628dbdf7496ee0f2f9" name="af58511727a5e4d628dbdf7496ee0f2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af58511727a5e4d628dbdf7496ee0f2f9">&#9670;&#160;</a></span>students_id_are_sorted_and_unique()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool students_id_are_sorted_and_unique </td>
+          <td>(</td>
+          <td class="paramtype">StudentsTab *</td>          <td class="paramname"><span class="paramname"><em>stu_dtab</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the students IDs in a StudentsTab are sorted in growing order and unique. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stu_dtab</td><td>the StudentsTab to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if sorted and unique, false otherwise </dd></dl>
 
 </div>
 </div>

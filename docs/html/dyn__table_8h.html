@@ -94,12 +94,12 @@ $(function(){initNavTree('dyn__table_8h.html','',''); });
 
 <p>Macros to declare and define dynamic tables in C. A dynamic table is a structure that can grow as needed when elements are added. It contains a pointer to the elements, the current size, and the capacity.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;arpa/inet.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
-<code>#include &lt;arpa/inet.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div>
 <p><a href="dyn__table_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -129,20 +129,20 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">typedef</span> <span class="keyword">struct </span>Name                                                               \</div>
-<div class="line">    {                                                                                 \</div>
-<div class="line">        Type *tab;                                                                    \</div>
-<div class="line">        <span class="keywordtype">int</span> capacity;                                                                 \</div>
-<div class="line">        <span class="keywordtype">int</span> size;                                                                     \</div>
-<div class="line">    } Name;                                                                           \</div>
-<div class="line">                                                                                      \</div>
-<div class="line">    Name *Name##_init();                                                              \</div>
-<div class="line">    <span class="keywordtype">void</span> Name##_push(Type value, Name *table);                                        \</div>
-<div class="line">    <span class="keywordtype">void</span> Name##_free(Name *tab, <span class="keywordtype">void</span> (*free_elem)(Type));                             \</div>
-<div class="line">    <span class="keywordtype">void</span> Name##_sort(Name *tab, <span class="keywordtype">int</span> (*compare_function)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *)); \</div>
-<div class="line">    <span class="keywordtype">void</span> Name##_print(Name *tab, <span class="keywordtype">void</span> (*print_elem)(Type));                           \</div>
-<div class="line">    <span class="keywordtype">void</span> Name##_save_to_bin(Name *tab, FILE *file, <span class="keywordtype">void</span> (*save_elem)(Type, FILE *));  \</div>
-<div class="line">    Name *Name##_load_from_bin(FILE *file, Type (*load_elem)(FILE *));                \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">typedef</span> <span class="keyword">struct </span>Name                                                                            \</div>
+<div class="line">    {                                                                                              \</div>
+<div class="line">        Type *tab;                                                                                 \</div>
+<div class="line">        <span class="keywordtype">int</span> capacity;                                                                              \</div>
+<div class="line">        <span class="keywordtype">int</span> size;                                                                                  \</div>
+<div class="line">    } Name;                                                                                        \</div>
+<div class="line">                                                                                                   \</div>
+<div class="line">    Name *Name##_init();                                                                           \</div>
+<div class="line">    <span class="keywordtype">void</span> Name##_push(Type value, Name *table);                                                     \</div>
+<div class="line">    <span class="keywordtype">void</span> Name##_free(Name *tab, <span class="keywordtype">void</span> (*free_elem)(Type));                                          \</div>
+<div class="line">    <span class="keywordtype">void</span> Name##_sort(Name *tab, <span class="keywordtype">int</span> (*compare_function)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *));              \</div>
+<div class="line">    <span class="keywordtype">void</span> Name##_print(Name *tab, <span class="keywordtype">void</span> (*print_elem)(Type));                                        \</div>
+<div class="line">    <span class="keywordtype">void</span> Name##_save_to_bin(Name *tab, FILE *file, <span class="keywordtype">void</span> (*save_elem)(Type, FILE *));               \</div>
+<div class="line">    Name *Name##_load_from_bin(FILE *file, Type (*load_elem)(FILE *));                             \</div>
 <div class="line">    <span class="keywordtype">bool</span> Name##_is_valid(Name *dtab, <span class="keywordtype">bool</span> (*elem_is_valid)(Type));</div>
 </div><!-- fragment --><p>DECLARE_DYN_TABLE should be put in the header file where we would want to declare a dynamic table structure that reallocate itself as needed. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

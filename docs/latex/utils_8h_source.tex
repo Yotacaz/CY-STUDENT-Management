@@ -5,61 +5,60 @@
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UTILS\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UTILS\_H}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <assert.h>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{comment}{//\ buffer\ length\ for\ reading\ strings\ from\ files\ (binary\ or\ text)}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ BUF\_LEN\ 4\ *\ 1024}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{comment}{//\ normal\ text\ colors}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ RED\ "{}\(\backslash\)x1B[0;31m"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ GRN\ "{}\(\backslash\)x1B[0;32m"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ YEL\ "{}\(\backslash\)x1B[0;33m"{}}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ BLU\ "{}\(\backslash\)x1B[0;34m"{}}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ MAG\ "{}\(\backslash\)x1B[0;35m"{}}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ CYN\ "{}\(\backslash\)x1B[0;36m"{}}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ WHT\ "{}\(\backslash\)x1B[0;37m"{}}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{comment}{//\ background\ colors}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ BG\_RED\ "{}\(\backslash\)x1B[41m"{}}}
-\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ BG\_GRN\ "{}\(\backslash\)x1B[42m"{}}}
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ BG\_YEL\ "{}\(\backslash\)x1B[43m"{}}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ BG\_BLU\ "{}\(\backslash\)x1B[44m"{}}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ BG\_MAG\ "{}\(\backslash\)x1B[45m"{}}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ BG\_CYN\ "{}\(\backslash\)x1B[46m"{}}}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ BG\_WHT\ "{}\(\backslash\)x1B[47m"{}}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{comment}{//\ bold\ text\ colors}}
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ BOLD\_RED\ "{}\(\backslash\)x1B[1;31m"{}}}
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ BOLD\_GRN\ "{}\(\backslash\)x1B[1;32m"{}}}
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BOLD\_YEL\ "{}\(\backslash\)x1B[1;33m"{}}}
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BOLD\_BLU\ "{}\(\backslash\)x1B[1;34m"{}}}
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ BOLD\_MAG\ "{}\(\backslash\)x1B[1;35m"{}}}
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BOLD\_CYN\ "{}\(\backslash\)x1B[1;36m"{}}}
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ BOLD\_WHT\ "{}\(\backslash\)x1B[1;37m"{}}}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \textcolor{comment}{//\ underline}}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ UNDERLINE\ "{}\(\backslash\)x1B[4m"{}}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ RESET\ "{}\(\backslash\)x1B[0m"{}}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00050\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{utils_8h_a290cabf3313b2303b06136bcee79c892}{bin\_read\_string}}(FILE\ *file,\ \textcolor{keywordtype}{char}\ buf[],\ \textcolor{keywordtype}{long}\ buf\_size);}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00055\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ verify(\textcolor{keywordtype}{bool}\ condition,\ \textcolor{keywordtype}{char}\ *err\_msg)}
-\DoxyCodeLine{00056\ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!condition)}
-\DoxyCodeLine{00058\ \ \ \ \ \{}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ fprintf(stderr,\ BOLD\_RED\ \textcolor{stringliteral}{"{}ERREUR\ :\ \%s\(\backslash\)n"{}}\ RESET,\ err\_msg);}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);}
-\DoxyCodeLine{00061\ \ \ \ \ \}}
-\DoxyCodeLine{00062\ \}}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00067\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ print\_float(\textcolor{keywordtype}{float}\ val)}
-\DoxyCodeLine{00068\ \{}
-\DoxyCodeLine{00069\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%.2f"{}},\ val);}
-\DoxyCodeLine{00070\ \}}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ RED\ "{}\(\backslash\)x1B[0;31m"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ GRN\ "{}\(\backslash\)x1B[0;32m"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ YEL\ "{}\(\backslash\)x1B[0;33m"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ BLU\ "{}\(\backslash\)x1B[0;34m"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ MAG\ "{}\(\backslash\)x1B[0;35m"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ CYN\ "{}\(\backslash\)x1B[0;36m"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ WHT\ "{}\(\backslash\)x1B[0;37m"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ background\ colors}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ BG\_RED\ "{}\(\backslash\)x1B[41m"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BG\_GRN\ "{}\(\backslash\)x1B[42m"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BG\_YEL\ "{}\(\backslash\)x1B[43m"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ BG\_BLU\ "{}\(\backslash\)x1B[44m"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ BG\_MAG\ "{}\(\backslash\)x1B[45m"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ BG\_CYN\ "{}\(\backslash\)x1B[46m"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ BG\_WHT\ "{}\(\backslash\)x1B[47m"{}}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ bold\ text\ colors}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ (some\ terminals\ may\ not\ support\ bold\ colors)}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ BOLD\_RED\ "{}\(\backslash\)x1B[1;31m"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ BOLD\_GRN\ "{}\(\backslash\)x1B[1;32m"{}}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ BOLD\_YEL\ "{}\(\backslash\)x1B[1;33m"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ BOLD\_BLU\ "{}\(\backslash\)x1B[1;34m"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ BOLD\_MAG\ "{}\(\backslash\)x1B[1;35m"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ BOLD\_CYN\ "{}\(\backslash\)x1B[1;36m"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ BOLD\_WHT\ "{}\(\backslash\)x1B[1;37m"{}}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ UNDERLINE\ "{}\(\backslash\)x1B[4m"{}}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ RESET\ "{}\(\backslash\)x1B[0m"{}}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{utils_8h_a290cabf3313b2303b06136bcee79c892}{bin\_read\_string}}(FILE\ *file,\ \textcolor{keywordtype}{char}\ buf[],\ \textcolor{keywordtype}{long}\ buf\_size);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ verify(\textcolor{keywordtype}{bool}\ condition,\ \textcolor{keywordtype}{char}\ *err\_msg)}
+\DoxyCodeLine{00083\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!condition)}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{utils_8h_a58f9401d546703859ab9c8720c61ee9e}{BOLD\_RED}}\ \textcolor{stringliteral}{"{}ERREUR\ :\ \%s\(\backslash\)n"{}}\ \mbox{\hyperlink{utils_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}},\ err\_msg);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ print\_float(\textcolor{keywordtype}{float}\ val)\ \{\ printf(\textcolor{stringliteral}{"{}\%.2f"{}},\ val);\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

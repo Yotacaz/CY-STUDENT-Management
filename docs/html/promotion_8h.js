@@ -1,6 +1,6 @@
 var promotion_8h =
 [
-    [ "promotion", "structpromotion.html", null ],
+    [ "promotion", "structpromotion.html", "structpromotion" ],
     [ "Promotion", "promotion_8h.html#a309ab7fa04c2f6e4bba49e9d342dd42d", null ],
     [ "allocate_students_courses", "promotion_8h.html#a725e097db05eb2b0f953a0c4fe6f4533", null ],
     [ "compare_student_id", "promotion_8h.html#a8129e29a36126a2d8f667173ceaa1359", null ],
@@ -11,5 +11,6 @@ var promotion_8h =
     [ "init_promotion", "promotion_8h.html#afd3ecf2348f66f5a533169df082ad99f", null ],
     [ "print_promotion", "promotion_8h.html#a03dd021bb828713f0b60805ccf3079ab", null ],
     [ "promotion_is_valid", "promotion_8h.html#a7b242a8cf9a3c0f01df0018699c46798", null ],
-    [ "student_tab_bsearch", "promotion_8h.html#afc22f1d99464e360f3d958f732d22070", null ]
+    [ "student_tab_bsearch", "promotion_8h.html#afc22f1d99464e360f3d958f732d22070", null ],
+    [ "students_id_are_sorted_and_unique", "promotion_8h.html#af58511727a5e4d628dbdf7496ee0f2f9", null ]
 ];

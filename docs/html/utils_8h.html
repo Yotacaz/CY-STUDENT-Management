@@ -95,9 +95,9 @@ $(function(){initNavTree('utils_8h.html','',''); });
 <p>Various utility functions.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;stdbool.h&gt;</code><br />
 </div>
 <p><a href="utils_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -105,52 +105,76 @@ $(function(){initNavTree('utils_8h.html','',''); });
 Macros</h2></td></tr>
 <tr class="memitem:a8b5839f71a3b6e7d64b2d5e9967e3dd1" id="r_a8b5839f71a3b6e7d64b2d5e9967e3dd1"><td class="memItemLeft" align="right" valign="top"><a id="a8b5839f71a3b6e7d64b2d5e9967e3dd1" name="a8b5839f71a3b6e7d64b2d5e9967e3dd1"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BUF_LEN</b>&#160;&#160;&#160;4 * 1024</td></tr>
+<tr class="memdesc:a8b5839f71a3b6e7d64b2d5e9967e3dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">buffer length for reading strings from files (binary or text) <br /></td></tr>
 <tr class="memitem:a8d23feea868a983c8c2b661e1e16972f" id="r_a8d23feea868a983c8c2b661e1e16972f"><td class="memItemLeft" align="right" valign="top"><a id="a8d23feea868a983c8c2b661e1e16972f" name="a8d23feea868a983c8c2b661e1e16972f"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RED</b>&#160;&#160;&#160;&quot;\x1B[0;31m&quot;</td></tr>
+<tr class="memdesc:a8d23feea868a983c8c2b661e1e16972f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red text color for terminal output. <br /></td></tr>
 <tr class="memitem:aea69ffbacdcdf16c21b8c9961df84448" id="r_aea69ffbacdcdf16c21b8c9961df84448"><td class="memItemLeft" align="right" valign="top"><a id="aea69ffbacdcdf16c21b8c9961df84448" name="aea69ffbacdcdf16c21b8c9961df84448"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GRN</b>&#160;&#160;&#160;&quot;\x1B[0;32m&quot;</td></tr>
+<tr class="memdesc:aea69ffbacdcdf16c21b8c9961df84448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green text color for terminal output. <br /></td></tr>
 <tr class="memitem:a96fac03c4ab3363f06a0328e0e53a40c" id="r_a96fac03c4ab3363f06a0328e0e53a40c"><td class="memItemLeft" align="right" valign="top"><a id="a96fac03c4ab3363f06a0328e0e53a40c" name="a96fac03c4ab3363f06a0328e0e53a40c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>YEL</b>&#160;&#160;&#160;&quot;\x1B[0;33m&quot;</td></tr>
+<tr class="memdesc:a96fac03c4ab3363f06a0328e0e53a40c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yellow text color for terminal output. <br /></td></tr>
 <tr class="memitem:add9307de87f38e77d336751e305886f6" id="r_add9307de87f38e77d336751e305886f6"><td class="memItemLeft" align="right" valign="top"><a id="add9307de87f38e77d336751e305886f6" name="add9307de87f38e77d336751e305886f6"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BLU</b>&#160;&#160;&#160;&quot;\x1B[0;34m&quot;</td></tr>
+<tr class="memdesc:add9307de87f38e77d336751e305886f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue text color for terminal output. <br /></td></tr>
 <tr class="memitem:af54a5a977c0c499323d656315f008ee0" id="r_af54a5a977c0c499323d656315f008ee0"><td class="memItemLeft" align="right" valign="top"><a id="af54a5a977c0c499323d656315f008ee0" name="af54a5a977c0c499323d656315f008ee0"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAG</b>&#160;&#160;&#160;&quot;\x1B[0;35m&quot;</td></tr>
+<tr class="memdesc:af54a5a977c0c499323d656315f008ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magenta text color for terminal output. <br /></td></tr>
 <tr class="memitem:adc708fa688f5d78db361f66c36f0f807" id="r_adc708fa688f5d78db361f66c36f0f807"><td class="memItemLeft" align="right" valign="top"><a id="adc708fa688f5d78db361f66c36f0f807" name="adc708fa688f5d78db361f66c36f0f807"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CYN</b>&#160;&#160;&#160;&quot;\x1B[0;36m&quot;</td></tr>
+<tr class="memdesc:adc708fa688f5d78db361f66c36f0f807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cyan text color for terminal output. <br /></td></tr>
 <tr class="memitem:aeaf3a04d5bf63b204689a714718ea930" id="r_aeaf3a04d5bf63b204689a714718ea930"><td class="memItemLeft" align="right" valign="top"><a id="aeaf3a04d5bf63b204689a714718ea930" name="aeaf3a04d5bf63b204689a714718ea930"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WHT</b>&#160;&#160;&#160;&quot;\x1B[0;37m&quot;</td></tr>
+<tr class="memdesc:aeaf3a04d5bf63b204689a714718ea930"><td class="mdescLeft">&#160;</td><td class="mdescRight">White text color for terminal output. <br /></td></tr>
 <tr class="memitem:ac317d04c219b630f9c36b0241d9d4be7" id="r_ac317d04c219b630f9c36b0241d9d4be7"><td class="memItemLeft" align="right" valign="top"><a id="ac317d04c219b630f9c36b0241d9d4be7" name="ac317d04c219b630f9c36b0241d9d4be7"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BG_RED</b>&#160;&#160;&#160;&quot;\x1B[41m&quot;</td></tr>
+<tr class="memdesc:ac317d04c219b630f9c36b0241d9d4be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red background color for terminal output. <br /></td></tr>
 <tr class="memitem:aea84761b03cdd0f543a4a291510e3a63" id="r_aea84761b03cdd0f543a4a291510e3a63"><td class="memItemLeft" align="right" valign="top"><a id="aea84761b03cdd0f543a4a291510e3a63" name="aea84761b03cdd0f543a4a291510e3a63"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BG_GRN</b>&#160;&#160;&#160;&quot;\x1B[42m&quot;</td></tr>
+<tr class="memdesc:aea84761b03cdd0f543a4a291510e3a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green background color for terminal output. <br /></td></tr>
 <tr class="memitem:a4d817a35efa3a05ab4b75563c463857f" id="r_a4d817a35efa3a05ab4b75563c463857f"><td class="memItemLeft" align="right" valign="top"><a id="a4d817a35efa3a05ab4b75563c463857f" name="a4d817a35efa3a05ab4b75563c463857f"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BG_YEL</b>&#160;&#160;&#160;&quot;\x1B[43m&quot;</td></tr>
+<tr class="memdesc:a4d817a35efa3a05ab4b75563c463857f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yellow background color for terminal output. <br /></td></tr>
 <tr class="memitem:aa710778d6e43fc83f9db43f9fb4388d8" id="r_aa710778d6e43fc83f9db43f9fb4388d8"><td class="memItemLeft" align="right" valign="top"><a id="aa710778d6e43fc83f9db43f9fb4388d8" name="aa710778d6e43fc83f9db43f9fb4388d8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BG_BLU</b>&#160;&#160;&#160;&quot;\x1B[44m&quot;</td></tr>
+<tr class="memdesc:aa710778d6e43fc83f9db43f9fb4388d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue background color for terminal output. <br /></td></tr>
 <tr class="memitem:a2245f27d12b071caa4ce08be9966b093" id="r_a2245f27d12b071caa4ce08be9966b093"><td class="memItemLeft" align="right" valign="top"><a id="a2245f27d12b071caa4ce08be9966b093" name="a2245f27d12b071caa4ce08be9966b093"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BG_MAG</b>&#160;&#160;&#160;&quot;\x1B[45m&quot;</td></tr>
+<tr class="memdesc:a2245f27d12b071caa4ce08be9966b093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magenta background color for terminal output. <br /></td></tr>
 <tr class="memitem:a384d244eada398193935e7a7bcce7361" id="r_a384d244eada398193935e7a7bcce7361"><td class="memItemLeft" align="right" valign="top"><a id="a384d244eada398193935e7a7bcce7361" name="a384d244eada398193935e7a7bcce7361"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BG_CYN</b>&#160;&#160;&#160;&quot;\x1B[46m&quot;</td></tr>
+<tr class="memdesc:a384d244eada398193935e7a7bcce7361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cyan background color for terminal output. <br /></td></tr>
 <tr class="memitem:af92b6f91becb4af28d094ba2bc07828c" id="r_af92b6f91becb4af28d094ba2bc07828c"><td class="memItemLeft" align="right" valign="top"><a id="af92b6f91becb4af28d094ba2bc07828c" name="af92b6f91becb4af28d094ba2bc07828c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BG_WHT</b>&#160;&#160;&#160;&quot;\x1B[47m&quot;</td></tr>
+<tr class="memdesc:af92b6f91becb4af28d094ba2bc07828c"><td class="mdescLeft">&#160;</td><td class="mdescRight">White background color for terminal output. <br /></td></tr>
 <tr class="memitem:a58f9401d546703859ab9c8720c61ee9e" id="r_a58f9401d546703859ab9c8720c61ee9e"><td class="memItemLeft" align="right" valign="top"><a id="a58f9401d546703859ab9c8720c61ee9e" name="a58f9401d546703859ab9c8720c61ee9e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BOLD_RED</b>&#160;&#160;&#160;&quot;\x1B[1;31m&quot;</td></tr>
+<tr class="memdesc:a58f9401d546703859ab9c8720c61ee9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold red text color for terminal output. <br /></td></tr>
 <tr class="memitem:a5301f88ed7c9de9730b5b16a10332ca4" id="r_a5301f88ed7c9de9730b5b16a10332ca4"><td class="memItemLeft" align="right" valign="top"><a id="a5301f88ed7c9de9730b5b16a10332ca4" name="a5301f88ed7c9de9730b5b16a10332ca4"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BOLD_GRN</b>&#160;&#160;&#160;&quot;\x1B[1;32m&quot;</td></tr>
+<tr class="memdesc:a5301f88ed7c9de9730b5b16a10332ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold green text color for terminal output. <br /></td></tr>
 <tr class="memitem:a266ab7977210849b93352458b0a539eb" id="r_a266ab7977210849b93352458b0a539eb"><td class="memItemLeft" align="right" valign="top"><a id="a266ab7977210849b93352458b0a539eb" name="a266ab7977210849b93352458b0a539eb"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BOLD_YEL</b>&#160;&#160;&#160;&quot;\x1B[1;33m&quot;</td></tr>
+<tr class="memdesc:a266ab7977210849b93352458b0a539eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold yellow text color for terminal output. <br /></td></tr>
 <tr class="memitem:a0719a599e334b3093d1fe3277a261df2" id="r_a0719a599e334b3093d1fe3277a261df2"><td class="memItemLeft" align="right" valign="top"><a id="a0719a599e334b3093d1fe3277a261df2" name="a0719a599e334b3093d1fe3277a261df2"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BOLD_BLU</b>&#160;&#160;&#160;&quot;\x1B[1;34m&quot;</td></tr>
+<tr class="memdesc:a0719a599e334b3093d1fe3277a261df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold blue text color for terminal output. <br /></td></tr>
 <tr class="memitem:af4638a7efca672b985ecd70287e163f5" id="r_af4638a7efca672b985ecd70287e163f5"><td class="memItemLeft" align="right" valign="top"><a id="af4638a7efca672b985ecd70287e163f5" name="af4638a7efca672b985ecd70287e163f5"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BOLD_MAG</b>&#160;&#160;&#160;&quot;\x1B[1;35m&quot;</td></tr>
+<tr class="memdesc:af4638a7efca672b985ecd70287e163f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold magenta text color for terminal output. <br /></td></tr>
 <tr class="memitem:a0cfd43e8bec4b0ace9d854d4bcd6166b" id="r_a0cfd43e8bec4b0ace9d854d4bcd6166b"><td class="memItemLeft" align="right" valign="top"><a id="a0cfd43e8bec4b0ace9d854d4bcd6166b" name="a0cfd43e8bec4b0ace9d854d4bcd6166b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BOLD_CYN</b>&#160;&#160;&#160;&quot;\x1B[1;36m&quot;</td></tr>
+<tr class="memdesc:a0cfd43e8bec4b0ace9d854d4bcd6166b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold cyan text color for terminal output. <br /></td></tr>
 <tr class="memitem:a0013bdf4884e7869980ecd8e4787c120" id="r_a0013bdf4884e7869980ecd8e4787c120"><td class="memItemLeft" align="right" valign="top"><a id="a0013bdf4884e7869980ecd8e4787c120" name="a0013bdf4884e7869980ecd8e4787c120"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BOLD_WHT</b>&#160;&#160;&#160;&quot;\x1B[1;37m&quot;</td></tr>
+<tr class="memdesc:a0013bdf4884e7869980ecd8e4787c120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold white text color for terminal output. <br /></td></tr>
 <tr class="memitem:aaec1a65734e33bc49e8dc8d90e9546bc" id="r_aaec1a65734e33bc49e8dc8d90e9546bc"><td class="memItemLeft" align="right" valign="top"><a id="aaec1a65734e33bc49e8dc8d90e9546bc" name="aaec1a65734e33bc49e8dc8d90e9546bc"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>UNDERLINE</b>&#160;&#160;&#160;&quot;\x1B[4m&quot;</td></tr>
+<tr class="memdesc:aaec1a65734e33bc49e8dc8d90e9546bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Underline text style for terminal output. <br /></td></tr>
 <tr class="memitem:ab702106cf3b3e96750b6845ded4e0299" id="r_ab702106cf3b3e96750b6845ded4e0299"><td class="memItemLeft" align="right" valign="top"><a id="ab702106cf3b3e96750b6845ded4e0299" name="ab702106cf3b3e96750b6845ded4e0299"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RESET</b>&#160;&#160;&#160;&quot;\x1B[0m&quot;</td></tr>
+<tr class="memdesc:ab702106cf3b3e96750b6845ded4e0299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset text formatting for terminal output. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>

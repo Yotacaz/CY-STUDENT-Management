@@ -1,21 +1,21 @@
 # CY-STUDENT Management System
 
 ## Description
-A C program for managing student records at CY Tech. This system allows for storing, retrieving, and manipulating student information efficiently.
+A C program for managing student records at CY Tech. This system allows for storing, retrieving, and manipulating student information efficiently. Libraries are provided in both static and dynamic formats.
 
 ## Features
-- Add new students
-- Search student by their ids
 - Display student information
-- Loading from a specific data format
-- Saving to binary file
-- Delete student entries
+- Loading from a specific data format (see data/data.txt)
+- Saving to binary file / loading from binary file
+- Finding best students based on average grades
+- Modular design with static and dynamic libraries
 
-## Building and Running
-```bash
-make all
-./exec
-```
+## Building
+use ```bash
+make
+``` for more information on compilation.
+
+
 If you encounter an issue, please try before executing :
 ```bash
 make clean

@@ -1,4 +1,8 @@
 #include "../lib/student_api.h"
+#include "../src/core/load_bin.h"
+#include "../src/core/load_data.h"
+#include "../src/core/save_bin.h"
+#include "../src/other/project_info.h"
 
 CLASS_DATA *API_load_students(char *file_path)
 {
@@ -22,7 +26,8 @@ CLASS_DATA *API_load_students(char *file_path)
     set_cursor_to_next_section(sections[1], file);
     CoursesTab *courses = load_courses_data(file);
 
-    allocate_students_courses(stu_dtab, courses->size); // allocate the proper grades dynamic tables (size supposed const for simplicity)
+    allocate_students_courses(stu_dtab, courses->size); // allocate the proper grades dynamic tables
+                                                        // (size supposed const for simplicity)
     // read last section from file
     set_cursor_to_next_section(sections[2], file);
     load_grades_data(stu_dtab, courses, file);
@@ -31,19 +36,18 @@ CLASS_DATA *API_load_students(char *file_path)
     return prom;
 }
 
-int API_save_to_binary_file(CLASS_DATA *prom, char *file_path)
+int API_save_to_binary_file(CLASS_DATA *pClass, char *file_path)
 {
-    assert(prom && file_path);
+    Promotion *prom = (Promotion *)pClass;
+    assert(promotion_is_valid(prom) && file_path);
     FILE *file = fopen(file_path, "wb");
     if (!file)
     {
         perror("fopen");
         exit(EXIT_FAILURE);
     }
-    CoursesTab_save_to_bin(prom->courses, file, bin_save_course);
-    StudentsTab_save_to_bin(prom->stu_dtab, file, bin_save_student);
-    fclose(file);
-    return 1;
+    bin_save_prom(prom, file);
+    return fclose(file) == 0;
 }
 
 CLASS_DATA *API_restore_from_binary_file(char *file_path)
@@ -70,23 +74,59 @@ void API_display(CLASS_DATA *prom)
     print_promotion(prom);
 }
 
-void API_unload(CLASS_DATA *pClass)
+void API_unload(CLASS_DATA *pClass) { free_promotion(pClass, free_student, free_course); }
+
+char **API_get_best_students(CLASS_DATA *pClass)
 {
-    free_promotion(pClass, free_student, free_course);
+    Promotion *prom = (Promotion *)pClass;
+    assert(promotion_is_valid(prom));
+    StudentsTab *stu_dtab = get_top_students(prom->stu_dtab, SIZE_TOP1);
+    assert(stu_dtab);
+    Student **tab = stu_dtab->tab;
+    int size = stu_dtab->size;
+    char **names = (char **)malloc(sizeof(char *) * size);
+    verify(names, "malloc error");
+    for (int i = 0; i < size; i++)
+    {
+        char *name = tab[i]->name;
+        char *fname = tab[i]->fname;
+        size_t name_len = strlen(name);
+        size_t fname_len = strlen(fname);
+        size_t len = name_len + fname_len + 2; //+1 for a space and +1 for '\0'
+        names[i] = (char *)malloc(sizeof(char) * (len));
+        verify(names[i], "malloc error");
+        int res = snprintf(names[i], len, "%s %s", name, fname);
+        assert((size_t)res + 1 == len); // +1 for '\0'
+    }
+    return names;
 }
 
-char **API_get_best_students(CLASS_DATA *pClass) {
-    verify(pClass, "in API_get_best_students, pClass is NULL");
-    StudentsTab* stu_dtab = get_top_students(pClass->stu_dtab, SIZE_TOP1);
-    assert(stu_dtab);
-    // Student ** tab = stu_dtab->tab;
-    // int size = stu_dtab->size;
-    // char **names = malloc(sizeof(char*)* size);
-    // verify(names, "malloc error");
-    // for (int i = 0; i < size; i++)
-    // {
-    //     // char*  name = tab[i];
-
-    // }
-    return NULL;
+char **API_get_best_students_in_course(CLASS_DATA *pClass, char *course)
+{
+    assert(course);
+    assert(promotion_is_valid(pClass));
+    StudentsTab *stu_dtab = get_top_students_in_course(pClass, course, SIZE_TOP2);
+    if (!stu_dtab)
+    {
+        fprintf(stderr, BOLD_RED "Course ID not found\n" RESET);
+        return NULL;
+    }
+    assert(StudentsTab_is_valid(stu_dtab, student_is_valid));
+    Student **tab = stu_dtab->tab;
+    int size = stu_dtab->size;
+    char **names = (char **)malloc(sizeof(char *) * size);
+    verify(names, "malloc error");
+    for (int i = 0; i < size; i++)
+    {
+        char *name = tab[i]->name;
+        char *fname = tab[i]->fname;
+        size_t name_len = strlen(name);
+        size_t fname_len = strlen(fname);
+        size_t len = name_len + fname_len + 2; //+1 for a space and +1 for '\0'
+        names[i] = (char *)malloc(sizeof(char) * (len));
+        verify(names[i], "malloc error");
+        int res = snprintf(names[i], len, "%s %s", name, fname);
+        assert((size_t)res + 1 == len); // +1 for '\0'
+    }
+    return names;
 }

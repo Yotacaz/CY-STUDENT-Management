@@ -1,6 +1,7 @@
 var students_8h =
 [
-    [ "student", "structstudent.html", null ],
+    [ "student", "structstudent.html", "structstudent" ],
+    [ "AGE_MAX", "students_8h.html#ae1048bcf163cc658a61f4a5f9a30292b", null ],
     [ "AGE_MIN", "students_8h.html#a85ab0d8ab399557bedfa17d427fbd72c", null ],
     [ "Student", "students_8h.html#ae8c079733e2570c4a107caf4b38afc60", null ],
     [ "add_grade_to_student", "students_8h.html#a7a09a7e9994d9eefc07aec5a21385117", null ],

@@ -13,7 +13,8 @@
 /// @return the loaded Course
 Course *bin_load_course(FILE *file);
 
-/// @brief Loads a student from a binary file. Order: id, name, fname, average, n_courses, followed courses
+/// @brief Loads a student from a binary file. Order: id, name, fname, average, n_courses, followed
+/// courses
 /// @param file the binary file
 /// @return the loaded Student
 Student *bin_load_student(FILE *file);

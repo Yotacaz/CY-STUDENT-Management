@@ -39,7 +39,9 @@ bool followed_course_is_valid(Followed_course *fcourse)
         fprintf(stderr, BOLD_RED "ERROR : fcourse is NULL\n" RESET);
         return false;
     }
-    if (fcourse->average != -1 && !grade_is_valid(fcourse->average))    //average is = -1 until calculation (with non empty grades tab)
+    if (fcourse->average != -1 &&
+        !grade_is_valid(
+                fcourse->average)) // average is = -1 until calculation (with non empty grades tab)
     {
         fprintf(stderr, BOLD_RED "^ Invalid followed course average\n" RESET);
         return false;
@@ -51,8 +53,9 @@ bool grade_is_valid(float val)
 {
     if (val < GRADE_MIN || val > GRADE_MAX)
     {
-        fprintf(stderr, BOLD_RED "ERROR : grade value %f is invalid"
-                                 "(GRADE_MIN = %f , GRADE_MAX = %f) \n" RESET,
+        fprintf(stderr,
+                BOLD_RED "ERROR : grade value %f is invalid"
+                         "(GRADE_MIN = %f , GRADE_MAX = %f) \n" RESET,
                 val, GRADE_MIN, GRADE_MAX);
         return false;
     }

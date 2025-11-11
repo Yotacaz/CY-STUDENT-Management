@@ -4,28 +4,33 @@
 /// @file followed_course.h
 /// @brief Structure and functions to handle followed courses data
 
-#include <stdio.h>
 #include "../other/dyn_table.h"
 #include "../other/utils.h"
+#include <stdio.h>
 
 DECLARE_DYN_TABLE(float, Grades)
 
 #ifndef GRADE_MIN
+/// @brief Minimum valid grade value
 #define GRADE_MIN -0.0001
 #endif
 #ifndef GRADE_MAX
+/// @brief Maximum valid grade value
 #define GRADE_MAX 20.0001
 #endif
 
 /// @brief The courses followed by a specific student.
 typedef struct followed_course
 {
+    ///@brief dynamic table of grades
     Grades *grades;
+    ///@brief average of the followed course
     float average;
 } Followed_course;
 
 /// @brief Create a followed course, it's average is initialised to -1 and
-/// the Grades are allocated using the init_grades function. If init_grades NULL, this step will be skipped.
+/// the Grades are allocated using the init_grades function. If init_grades NULL, this step will be
+/// skipped.
 /// @param init_grades The function used to allocate
 /// @return The created followed course
 Followed_course *init_followed_course(Grades *(*init_grades)());

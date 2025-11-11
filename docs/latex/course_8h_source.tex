@@ -10,38 +10,36 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{../other/utils.h}}"{}}}
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ COEF\_MIN}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ COEF\_MIN\ 0.0f}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ COEF\_MAX}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COEF\_MAX\ 1000.0f}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcourse}{course}}}
-\DoxyCodeLine{00021\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ *\ name;\ \ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ coef;}
-\DoxyCodeLine{00024\ \}\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}};}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \mbox{\hyperlink{dyn__table_8h_ab9852f08c4f1e62818165cfa3c260d20}{DECLARE\_DYN\_TABLE}}(\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}*,\ CoursesTab)}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00032\ \mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}\ *\ \mbox{\hyperlink{course_8h_aff23ac44c3363f0ee9d3a9cbf390ad0b}{init\_course}}(\textcolor{keywordtype}{float}\ coef,\ \textcolor{keywordtype}{char}\ *\ course\_name);}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{course_8h_a7b533a58022dbc2febd446a2f0ef385b}{free\_course}}(\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}*\ \mbox{\hyperlink{structcourse}{course}});}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ COEF\_MIN\ 0.0f}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ COEF\_MAX}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ COEF\_MAX\ 1000.0f}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcourse}{course}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structcourse_a55c7e9c3d414b3959a2c495569f63351}{name}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structcourse_a4037cdb47b1053f740bcc60294783ec3}{coef}};}
+\DoxyCodeLine{00028\ \}\ \mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \mbox{\hyperlink{dyn__table_8h_ab9852f08c4f1e62818165cfa3c260d20}{DECLARE\_DYN\_TABLE}}(\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}\ *,\ CoursesTab)}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}\ *\mbox{\hyperlink{course_8h_aff23ac44c3363f0ee9d3a9cbf390ad0b}{init\_course}}(\textcolor{keywordtype}{float}\ coef,\ \textcolor{keywordtype}{char}\ *course\_name);}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{course_8h_a9f1c0aea189564aac75fc84c7f90ee02}{compare\_courses}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *c1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *c2);}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00050\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{course_8h_a412974a2b5cb4687fea92d19c404bd63}{get\_course\_index}}(CoursesTab\ *tab,\ \textcolor{keywordtype}{char}\ *searched\_name);}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{course_8h_a99bf8b3f3c2d5dc7cf798ed445eaaa77}{print\_course}}(\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}\ *\mbox{\hyperlink{structcourse}{course}});}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00059\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{course_8h_a74c0657d37a29402da96047a533dc365}{course\_is\_valid}}(\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}*\ \mbox{\hyperlink{structcourse}{course}});}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00064\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{course_8h_a74da410f7e3ca0791e9364c334d6ad82}{coef\_is\_valid}}(\textcolor{keywordtype}{float}\ coef);}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{course_8h_a7b533a58022dbc2febd446a2f0ef385b}{free\_course}}(\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}\ *\mbox{\hyperlink{structcourse}{course}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{course_8h_a9f1c0aea189564aac75fc84c7f90ee02}{compare\_courses}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *c1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *c2);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{course_8h_a412974a2b5cb4687fea92d19c404bd63}{get\_course\_index}}(CoursesTab\ *tab,\ \textcolor{keywordtype}{char}\ *searched\_name);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{course_8h_a99bf8b3f3c2d5dc7cf798ed445eaaa77}{print\_course}}(\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}\ *\mbox{\hyperlink{structcourse}{course}});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{course_8h_a74c0657d37a29402da96047a533dc365}{course\_is\_valid}}(\mbox{\hyperlink{course_8h_a7c557a628c793038b8cfd220c9d1cc2c}{Course}}\ *\mbox{\hyperlink{structcourse}{course}});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{course_8h_a74da410f7e3ca0791e9364c334d6ad82}{coef\_is\_valid}}(\textcolor{keywordtype}{float}\ coef);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

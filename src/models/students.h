@@ -13,22 +13,32 @@
 // #define PRINT_STUDENT_COURSES
 
 #ifndef AGE_MIN
+/// @brief Minimum valid ages for students
 #define AGE_MIN 10
 #endif
 #ifndef AGE_MAX
+/// @brief Maximum valid ages for students
 #define AGE_MAX 100
 #endif
 /// @brief Structure representing a student.
 /// We suppose here that every student follows the same number of courses (n_courses).
-/// In the f_courses table, the courses are stored in the same order as in the CoursesTab of the promotion.
+/// In the f_courses table, the courses are stored in the same order as in the CoursesTab of the
+/// promotion.
 typedef struct student
 {
-    Followed_course **f_courses; // table of followed courses
+    ///@brief table of followed courses
+    Followed_course **f_courses;
+    ///@brief last name
     char *name;
+    ///@brief first name
     char *fname;
-    int n_courses; // duplicated information if n_courses followed is constant
+    ///@brief duplicated information if n_courses followed is constant
+    int n_courses;
+    ///@brief age of the student
     int age;
+    ///@brief general average of the student over all followed courses
     float average;
+    ///@brief unique identifier of the student
     unsigned int id;
 } Student;
 
@@ -37,8 +47,11 @@ typedef struct student
 /// @param name the name of the student
 /// @param first_name the first name of the student
 /// @param student_id the unique identifier of the student
+/// @param n_courses the number of courses the student will follow
+/// @param age the age of the student
 /// @return the allocated student
-Student *init_student(char *name, char *first_name, unsigned int student_id, int n_courses, int age);
+Student *init_student(char *name, char *first_name, unsigned int student_id, int n_courses,
+                      int age);
 
 /// @brief Free a student and all its followed courses
 /// @param stu the student to free
@@ -81,7 +94,8 @@ static inline bool age_is_valid(int age)
 {
     if (age < AGE_MIN || age > AGE_MAX)
     {
-        fprintf(stderr, BOLD_RED "WARNING : invalid age %d (AGE_MIN=%d, AGE_MAX=%d)\n" RESET, age, AGE_MIN, AGE_MAX);
+        fprintf(stderr, BOLD_RED "WARNING : invalid age %d (AGE_MIN=%d, AGE_MAX=%d)\n" RESET, age,
+                AGE_MIN, AGE_MAX);
         return false;
     }
     return true;

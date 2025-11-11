@@ -1,6 +1,6 @@
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 #include <string.h>
 
 #include "course.h"
@@ -96,8 +96,9 @@ bool coef_is_valid(float coef)
 {
     if (coef < COEF_MIN || coef > COEF_MAX)
     {
-        fprintf(stderr, BOLD_RED "ERROR : grade value %f is invalid"
-                                 "(COEF_MIN = %f , COEF_MAX = %f) \n" RESET,
+        fprintf(stderr,
+                BOLD_RED "ERROR : grade value %f is invalid"
+                         "(COEF_MIN = %f , COEF_MAX = %f) \n" RESET,
                 coef, COEF_MIN, COEF_MAX);
         return false;
     }

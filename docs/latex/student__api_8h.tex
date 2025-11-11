@@ -1,0 +1,174 @@
+\doxysection{lib/student\+\_\+api.h File Reference}
+\hypertarget{student__api_8h}{}\label{student__api_8h}\index{lib/student\_api.h@{lib/student\_api.h}}
+
+
+API functions to interact with the student management system.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{student__api_8h_afbe3e8f40bf976d09a4881621d01db79}\label{student__api_8h_afbe3e8f40bf976d09a4881621d01db79} 
+\#define {\bfseries SIZE\+\_\+\+TOP1}~10
+\begin{DoxyCompactList}\small\item\em Number of best students (with highest general average) to retrieve. \end{DoxyCompactList}\item 
+\Hypertarget{student__api_8h_a47fd7d8326ae22c6722da7848d63d024}\label{student__api_8h_a47fd7d8326ae22c6722da7848d63d024} 
+\#define {\bfseries SIZE\+\_\+\+TOP2}~3
+\begin{DoxyCompactList}\small\item\em Number of best students (with highest average) to retrieve for a selected course. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{student__api_8h_a742097baeb22b98239df36e5b8b9238e}\label{student__api_8h_a742097baeb22b98239df36e5b8b9238e} 
+typedef void {\bfseries CLASS\+\_\+\+DATA}
+\begin{DoxyCompactList}\small\item\em Alias for \doxylink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion} structure used in the API. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{student__api_8h_a5fb5e3c4d0c9dd76e4a5edb3e20fe013}{API\+\_\+load\+\_\+students}} (char \texorpdfstring{$\ast$}{*}file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Load data from a formatted {\bfseries{text file}} and create a \doxylink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion} structure Load order \+: courses, students, grades. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{student__api_8h_ab156092fe8381aa6167684095986f314}{API\+\_\+save\+\_\+to\+\_\+binary\+\_\+file}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class, char \texorpdfstring{$\ast$}{*}file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Saves a promotion to a binary file. Order\+: courses, students. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{student__api_8h_a3834fa118dc646b878adda70fa804f74}{API\+\_\+restore\+\_\+from\+\_\+binary\+\_\+file}} (char \texorpdfstring{$\ast$}{*}file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Loads a promotion from a binary file. Order\+: courses, students. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{student__api_8h_a28c4c55622b81c1b3f60a1ca3e21ade2}{API\+\_\+display}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}prom)
+\begin{DoxyCompactList}\small\item\em Print a promotion (courses and students). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{student__api_8h_a9b573175a59abe95e2e79f555e84c4a2}{API\+\_\+unload}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class)
+\begin{DoxyCompactList}\small\item\em free a promotion \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{student__api_8h_ae2130f172cf783bdd78191fab55de446}{API\+\_\+get\+\_\+best\+\_\+students}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class)
+\begin{DoxyCompactList}\small\item\em Get the best students from a promotion. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{student__api_8h_a11ab96e566af524d539559976ab82107}{API\+\_\+get\+\_\+best\+\_\+students\+\_\+in\+\_\+course}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class, char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structcourse}{course}})
+\begin{DoxyCompactList}\small\item\em Get the best students from a promotion for a given course. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+API functions to interact with the student management system. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{student__api_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{student__api_8h_a28c4c55622b81c1b3f60a1ca3e21ade2}\index{student\_api.h@{student\_api.h}!API\_display@{API\_display}}
+\index{API\_display@{API\_display}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_display()}{API\_display()}}
+{\footnotesize\ttfamily \label{student__api_8h_a28c4c55622b81c1b3f60a1ca3e21ade2} 
+void API\+\_\+display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}}]{prom}{}\end{DoxyParamCaption})}
+
+
+
+Print a promotion (courses and students). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prom} & the promotion to print \\
+\hline
+\end{DoxyParams}
+\Hypertarget{student__api_8h_ae2130f172cf783bdd78191fab55de446}\index{student\_api.h@{student\_api.h}!API\_get\_best\_students@{API\_get\_best\_students}}
+\index{API\_get\_best\_students@{API\_get\_best\_students}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_get\_best\_students()}{API\_get\_best\_students()}}
+{\footnotesize\ttfamily \label{student__api_8h_ae2130f172cf783bdd78191fab55de446} 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} API\+\_\+get\+\_\+best\+\_\+students (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}}]{p\+Class}{}\end{DoxyParamCaption})}
+
+
+
+Get the best students from a promotion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Class} & the promotion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dynamic table containing the names of the SIZE\+\_\+\+TOP1 (default 10) best students 
+\end{DoxyReturn}
+\Hypertarget{student__api_8h_a11ab96e566af524d539559976ab82107}\index{student\_api.h@{student\_api.h}!API\_get\_best\_students\_in\_course@{API\_get\_best\_students\_in\_course}}
+\index{API\_get\_best\_students\_in\_course@{API\_get\_best\_students\_in\_course}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_get\_best\_students\_in\_course()}{API\_get\_best\_students\_in\_course()}}
+{\footnotesize\ttfamily \label{student__api_8h_a11ab96e566af524d539559976ab82107} 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} API\+\_\+get\+\_\+best\+\_\+students\+\_\+in\+\_\+course (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}}]{p\+Class}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{course}{}\end{DoxyParamCaption})}
+
+
+
+Get the best students from a promotion for a given course. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Class} & the promotion \\
+\hline
+{\em course} & the course to rank students in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dynamic table containing the names of the SIZE\+\_\+\+TOP2 (default 3) best students in course, NULL if the course isn\textquotesingle{}t found. 
+\end{DoxyReturn}
+\Hypertarget{student__api_8h_a5fb5e3c4d0c9dd76e4a5edb3e20fe013}\index{student\_api.h@{student\_api.h}!API\_load\_students@{API\_load\_students}}
+\index{API\_load\_students@{API\_load\_students}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_load\_students()}{API\_load\_students()}}
+{\footnotesize\ttfamily \label{student__api_8h_a5fb5e3c4d0c9dd76e4a5edb3e20fe013} 
+\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*} API\+\_\+load\+\_\+students (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Load data from a formatted {\bfseries{text file}} and create a \doxylink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion} structure Load order \+: courses, students, grades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & the path to the data file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded \doxylink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion} 
+\end{DoxyReturn}
+\Hypertarget{student__api_8h_a3834fa118dc646b878adda70fa804f74}\index{student\_api.h@{student\_api.h}!API\_restore\_from\_binary\_file@{API\_restore\_from\_binary\_file}}
+\index{API\_restore\_from\_binary\_file@{API\_restore\_from\_binary\_file}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_restore\_from\_binary\_file()}{API\_restore\_from\_binary\_file()}}
+{\footnotesize\ttfamily \label{student__api_8h_a3834fa118dc646b878adda70fa804f74} 
+\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*} API\+\_\+restore\+\_\+from\+\_\+binary\+\_\+file (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Loads a promotion from a binary file. Order\+: courses, students. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & the path to the binary file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded \doxylink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion} 
+\end{DoxyReturn}
+\Hypertarget{student__api_8h_ab156092fe8381aa6167684095986f314}\index{student\_api.h@{student\_api.h}!API\_save\_to\_binary\_file@{API\_save\_to\_binary\_file}}
+\index{API\_save\_to\_binary\_file@{API\_save\_to\_binary\_file}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_save\_to\_binary\_file()}{API\_save\_to\_binary\_file()}}
+{\footnotesize\ttfamily \label{student__api_8h_ab156092fe8381aa6167684095986f314} 
+int API\+\_\+save\+\_\+to\+\_\+binary\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}}]{p\+Class}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Saves a promotion to a binary file. Order\+: courses, students. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Class} & the promotion to save \\
+\hline
+{\em file\+\_\+path} & the path to the binary file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+always return 1 
+\end{DoxyReturn}
+\Hypertarget{student__api_8h_a9b573175a59abe95e2e79f555e84c4a2}\index{student\_api.h@{student\_api.h}!API\_unload@{API\_unload}}
+\index{API\_unload@{API\_unload}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_unload()}{API\_unload()}}
+{\footnotesize\ttfamily \label{student__api_8h_a9b573175a59abe95e2e79f555e84c4a2} 
+void API\+\_\+unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}}]{p\+Class}{}\end{DoxyParamCaption})}
+
+
+
+free a promotion 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Class} & promotion to free. ~\newline
+Warning, all item contained inside p\+Class must be owned by it \\
+\hline
+\end{DoxyParams}
