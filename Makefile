@@ -1,5 +1,9 @@
-CC=gcc
 TEST_MODE=0
+#set to 1 if you need to create a dynamic lib
+DYN_MODE=0
+
+
+CC=gcc
 CFLAGS=
 ifeq ($(TEST_MODE), 1)
 	CFLAGS=-Wall -Wextra -Wpedantic -Werror -O0 -g
@@ -7,7 +11,6 @@ else
 	CFLAGS=-DNDEBUG -O3
 endif
 
-DYN_MODE=1
 ifeq ($(DYN_MODE),1)
 	CFLAGS += -fPIC
 endif
