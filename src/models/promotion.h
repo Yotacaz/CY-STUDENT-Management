@@ -86,4 +86,8 @@ StudentsTab *get_top_students(StudentsTab *stu_dtab, int top_max_size);
 /// found
 StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int top_max_size);
 
+/// @brief Calculate and update the overall average for all students in the promotion
+/// @param prom the promotion
+void calculate_all_student_average(Promotion* prom);
+
 #endif

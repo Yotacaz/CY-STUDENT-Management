@@ -30,8 +30,8 @@ CLASS_DATA *API_load_students(char *file_path)
                                                         // (size supposed const for simplicity)
     // read last section from file
     set_cursor_to_next_section(sections[2], file);
-    load_grades_data(stu_dtab, courses, file);
     Promotion *prom = init_promotion(courses, stu_dtab);
+    load_grades_data(prom, file);
     fclose(file);
     return prom;
 }

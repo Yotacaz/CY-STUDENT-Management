@@ -28,11 +28,10 @@ StudentsTab *load_student_tab_data(FILE *file);
 /// @return the loaded CoursesTab
 CoursesTab *load_courses_data(FILE *file);
 
-/// @brief Load the grades data from a file and update the students' followed courses
-/// @param prom the students table
-/// @param courses the courses table
+/// @brief Load the grades data from a file and update the students' followed courses (and their averages)
+/// @param prom the promotion struct containing students and courses tables
 /// @param file the file to read from
-void load_grades_data(StudentsTab *prom, CoursesTab *courses, FILE *file);
+void load_grades_data(Promotion* prom, FILE *file);
 
 /// @brief Set the file cursor to the beginning of the next section
 /// @param section the section to find

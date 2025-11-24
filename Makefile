@@ -2,7 +2,7 @@ CC=gcc
 TEST_MODE=0
 CFLAGS=
 ifeq ($(TEST_MODE), 1)
-	CFLAGS=-Wall -Wextra -Wpedantic -Werror -O2 -g
+	CFLAGS=-Wall -Wextra -Wpedantic -Werror -O0 -g
 else
 	CFLAGS=-DNDEBUG -O3
 endif

@@ -68,6 +68,9 @@
 ///@brief Reset text formatting for terminal output
 #define RESET "\x1B[0m"
 
+/// @brief CSV separator character
+#define CSV_SEP ';'
+
 /// @brief Read a null-terminated string from a binary file into a buffer, ensuring it fits within
 /// the buffer size.
 /// @param file the binary file

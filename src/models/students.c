@@ -107,7 +107,8 @@ bool student_is_valid(Student *stu)
         return false;
     }
     else if (stu->average != -1 &&
-             !grade_is_valid(stu->average)) // stu->average is -1 until later calculation
+             !grade_is_valid(stu->average)) // stu->average is -1 until later calculation (accepted
+                                            // as special value)
     {
         fprintf(stderr, BOLD_RED "WARNING : invalid student average\n" RESET);
         return false;

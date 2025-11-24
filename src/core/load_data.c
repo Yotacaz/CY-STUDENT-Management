@@ -1,10 +1,10 @@
 #include "load_data.h"
+#include <ctype.h>
 #include <errno.h>
 #include <stdio.h>
 
 StudentsTab *load_student_tab_data(FILE *file)
 {
-    //!\ WARNING : code PARTLY duplicated
     // "if it work, don't fix it"
     assert(file);
     unsigned int stu_id = 0;
@@ -67,39 +67,76 @@ CoursesTab *load_courses_data(FILE *file)
     return courses;
 }
 
-void load_grades_data(StudentsTab *stu_dtab, CoursesTab *courses, FILE *file)
+void load_grades_data(Promotion *prom, FILE *file)
 {
-    //!\ WARNING : code PARTLY duplicated
-    // "if it work, don't fix it"
-    assert(file && stu_dtab && courses);
-    unsigned int stu_id = 0;
-    char course_name[BUF_LEN];
-    float grade = -1;
-    char format[BUF_LEN];
+    // TODO : are the asserts ok in this function ?
+    assert(file && promotion_is_valid(prom));
+    StudentsTab *stu_dtab = prom->stu_dtab;
+    CoursesTab *courses = prom->courses;
     // data format is id;nom;note
-    // create the string format "%u;%BUF_LEN-1[^;\n];%f" (safer version of "%u;%s;%f"):
-    int n_char = snprintf(format, BUF_LEN, "%%u;%%%d[^;\n];%%f", BUF_LEN - 1);
-    assert(n_char > 0 && n_char < BUF_LEN); // no error or overflow
-    int ret = 0;
-    while ((ret = fscanf(file, format, &stu_id, course_name, &grade)) == 3)
+    char buf[BUF_LEN];
+    while (fgets(buf, BUF_LEN, file) == buf && isdigit(*buf))
     {
-        Student *stu = student_tab_bsearch(stu_dtab, stu_id);
+        char *p = buf;
+
+        // parse unsigned int
+        //! WARNING NO OUT OF UNSIGNED INT RANGE DETECTION
+        unsigned int id = 0;    //student id
+        while (*p >= '0' && *p <= '9')
+        {
+            id = id * 10 + (*p - '0');
+            p++;
+        }
+        assert(*p == ';');
+        p++;
+
+        // parse string
+        char *course_name = p;
+        while (*p != ';' && *p != '\n' && *p != '\0')
+        {
+            p++;
+        }
+        assert(*p == ';');
+        *p = '\0';
+        p++;
+
+        // parse grade (float)
+        int sign = 1;
+        if (*p == '-')
+        {
+            sign = -1;
+            p++;
+        }
+
+        float int_part = 0;
+        while (*p >= '0' && *p <= '9')
+        {
+            int_part = int_part * 10 + (*p - '0');
+            p++;
+        }
+
+        float frac_part = 0;
+        float base = 0.1f;
+        if (*p == '.')
+        {
+            p++;
+            while (*p >= '0' && *p <= '9')
+            {
+                frac_part += (*p - '0') * base;
+                base *= 0.1f;
+                p++;
+            }
+        }
+        float grade = sign * (int_part + frac_part);
+
+        // applying modifications
+        Student *stu = student_tab_bsearch(stu_dtab, id);
+        assert(stu);
         add_grade_to_student(stu, courses, course_name, grade);
     }
-    assert(!ferror(file));
-    // calculating grades avg :
-    for (int i = 0; i < stu_dtab->size; i++)
-    {
-        Student *stu = stu_dtab->tab[i];
-        for (int j = 0; j < courses->size; j++)
-        {
-            Followed_course *fcourse = stu->f_courses[j];
-            fcourse->average = get_followed_course_avg(fcourse);
-            assert(fcourse->average > GRADE_MIN && fcourse->average < GRADE_MAX);
-        }
-        stu->average = get_student_general_avg(stu, courses);
-        assert(stu->average > GRADE_MIN && stu->average < GRADE_MAX);
-    }
+    verify(!ferror(file), "Error occurred while reading grades from text file");
+    // updating grades avg :
+    calculate_all_student_average(prom);
 }
 
 void set_cursor_to_next_section(const Section section, FILE *file)

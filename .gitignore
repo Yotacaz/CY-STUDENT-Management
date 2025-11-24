@@ -7,3 +7,5 @@ build/
 exec
 Exercice_API.pdf
 Exercice_Rappels.pdf
+callgrind.out.*
+test*

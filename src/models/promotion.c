@@ -194,3 +194,21 @@ StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int 
     }
     return top;
 }
+
+void calculate_all_student_average(Promotion *prom) {
+    assert(promotion_is_valid(prom));
+    CoursesTab *courses = prom->courses;
+    StudentsTab* stu_dtab = prom->stu_dtab;
+    for (int i = 0; i < stu_dtab->size; i++)
+    {
+        Student *stu = stu_dtab->tab[i];
+        for (int j = 0; j < courses->size; j++)
+        {
+            Followed_course *fcourse = stu->f_courses[j];
+            fcourse->average = get_followed_course_avg(fcourse);
+            assert(fcourse->average > GRADE_MIN && fcourse->average < GRADE_MAX);
+        }
+        stu->average = get_student_general_avg(stu, courses);
+        assert(stu->average > GRADE_MIN && stu->average < GRADE_MAX);
+    }
+}
