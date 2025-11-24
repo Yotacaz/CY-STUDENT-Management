@@ -135,21 +135,29 @@ $(function(){initNavTree('utils_8h_source.html','',''); });
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="utils_8h.html#ab702106cf3b3e96750b6845ded4e0299">   69</a></span><span class="preprocessor">#define RESET &quot;\x1B[0m&quot;</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="utils_8h.html#a290cabf3313b2303b06136bcee79c892">bin_read_string</a>(FILE *file, <span class="keywordtype">char</span> buf[], <span class="keywordtype">long</span> buf_size);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> verify(<span class="keywordtype">bool</span> condition, <span class="keywordtype">char</span> *err_msg)</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span> (!condition)</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        fprintf(stderr, <a class="code hl_define" href="utils_8h.html#a58f9401d546703859ab9c8720c61ee9e">BOLD_RED</a> <span class="stringliteral">&quot;ERREUR : %s\n&quot;</span> <a class="code hl_define" href="utils_8h.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a>, err_msg);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> print_float(<span class="keywordtype">float</span> val) { printf(<span class="stringliteral">&quot;%.2f&quot;</span>, val); }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="utils_8h.html#af79cff29f69e9e9672688534e8a4d702">   72</a></span><span class="preprocessor">#define CSV_SEP &#39;;&#39;</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="utils_8h.html#a290cabf3313b2303b06136bcee79c892">bin_read_string</a>(FILE *file, <span class="keywordtype">char</span> buf[], <span class="keywordtype">long</span> buf_size);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> verify(<span class="keywordtype">bool</span> condition, <span class="keywordtype">char</span> *err_msg)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (!condition)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        fprintf(stderr, <a class="code hl_define" href="utils_8h.html#a58f9401d546703859ab9c8720c61ee9e">BOLD_RED</a> <span class="stringliteral">&quot;ERREUR : %s\n&quot;</span> <a class="code hl_define" href="utils_8h.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a>, err_msg);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> print_float(<span class="keywordtype">float</span> val) { printf(<span class="stringliteral">&quot;%.2f&quot;</span>, val); }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">void</span> <a class="code hl_function" href="utils_8h.html#a5396b74ce929586dfc62b0ae31fcab8c">print_str_tab</a>(<span class="keywordtype">char</span>** tab, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keywordtype">void</span> <a class="code hl_function" href="utils_8h.html#a1fa46850fa4059c42e9685098a0aed34">free_tab_with_alloc</a>(<span class="keywordtype">char</span> **tab, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="autils_8h_html_a1fa46850fa4059c42e9685098a0aed34"><div class="ttname"><a href="utils_8h.html#a1fa46850fa4059c42e9685098a0aed34">free_tab_with_alloc</a></div><div class="ttdeci">void free_tab_with_alloc(char **tab, int len)</div><div class="ttdoc">Free a string table where each string has been dynamically allocated.</div><div class="ttdef"><b>Definition</b> utils.c:44</div></div>
 <div class="ttc" id="autils_8h_html_a290cabf3313b2303b06136bcee79c892"><div class="ttname"><a href="utils_8h.html#a290cabf3313b2303b06136bcee79c892">bin_read_string</a></div><div class="ttdeci">size_t bin_read_string(FILE *file, char buf[], long buf_size)</div><div class="ttdoc">Read a null-terminated string from a binary file into a buffer, ensuring it fits within the buffer si...</div><div class="ttdef"><b>Definition</b> utils.c:6</div></div>
+<div class="ttc" id="autils_8h_html_a5396b74ce929586dfc62b0ae31fcab8c"><div class="ttname"><a href="utils_8h.html#a5396b74ce929586dfc62b0ae31fcab8c">print_str_tab</a></div><div class="ttdeci">void print_str_tab(char **tab, int len)</div><div class="ttdoc">Print a string table.</div><div class="ttdef"><b>Definition</b> utils.c:35</div></div>
 <div class="ttc" id="autils_8h_html_a58f9401d546703859ab9c8720c61ee9e"><div class="ttname"><a href="utils_8h.html#a58f9401d546703859ab9c8720c61ee9e">BOLD_RED</a></div><div class="ttdeci">#define BOLD_RED</div><div class="ttdoc">Bold red text color for terminal output.</div><div class="ttdef"><b>Definition</b> utils.h:51</div></div>
 <div class="ttc" id="autils_8h_html_ab702106cf3b3e96750b6845ded4e0299"><div class="ttname"><a href="utils_8h.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a></div><div class="ttdeci">#define RESET</div><div class="ttdoc">Reset text formatting for terminal output.</div><div class="ttdef"><b>Definition</b> utils.h:69</div></div>
 </div><!-- fragment --></div><!-- contents -->

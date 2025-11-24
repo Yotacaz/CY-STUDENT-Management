@@ -83,12 +83,19 @@ Various utility functions.
 \begin{DoxyCompactList}\small\item\em Underline text style for terminal output. \end{DoxyCompactList}\item 
 \Hypertarget{utils_8h_ab702106cf3b3e96750b6845ded4e0299}\label{utils_8h_ab702106cf3b3e96750b6845ded4e0299} 
 \#define {\bfseries RESET}~"{}\textbackslash{}x1B\mbox{[}0m"{}
-\begin{DoxyCompactList}\small\item\em Reset text formatting for terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reset text formatting for terminal output. \end{DoxyCompactList}\item 
+\Hypertarget{utils_8h_af79cff29f69e9e9672688534e8a4d702}\label{utils_8h_af79cff29f69e9e9672688534e8a4d702} 
+\#define {\bfseries CSV\+\_\+\+SEP}~\textquotesingle{};\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em CSV separator character. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 size\+\_\+t \mbox{\hyperlink{utils_8h_a290cabf3313b2303b06136bcee79c892}{bin\+\_\+read\+\_\+string}} (FILE \texorpdfstring{$\ast$}{*}file, char buf\mbox{[}$\,$\mbox{]}, long buf\+\_\+size)
-\begin{DoxyCompactList}\small\item\em Read a null-\/terminated string from a binary file into a buffer, ensuring it fits within the buffer size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Read a null-\/terminated string from a binary file into a buffer, ensuring it fits within the buffer size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_a5396b74ce929586dfc62b0ae31fcab8c}{print\+\_\+str\+\_\+tab}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tab, int len)
+\begin{DoxyCompactList}\small\item\em Print a string table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_a1fa46850fa4059c42e9685098a0aed34}{free\+\_\+tab\+\_\+with\+\_\+alloc}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tab, int len)
+\begin{DoxyCompactList}\small\item\em Free a string table where each string has been dynamically allocated. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -121,3 +128,37 @@ Read a null-\/terminated string from a binary file into a buffer, ensuring it fi
 \begin{DoxyReturn}{Returns}
 the length of the read string (including the null terminator) or -\/1 on error 
 \end{DoxyReturn}
+\Hypertarget{utils_8h_a1fa46850fa4059c42e9685098a0aed34}\index{utils.h@{utils.h}!free\_tab\_with\_alloc@{free\_tab\_with\_alloc}}
+\index{free\_tab\_with\_alloc@{free\_tab\_with\_alloc}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{free\_tab\_with\_alloc()}{free\_tab\_with\_alloc()}}
+{\footnotesize\ttfamily \label{utils_8h_a1fa46850fa4059c42e9685098a0aed34} 
+void free\+\_\+tab\+\_\+with\+\_\+alloc (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{tab}{, }\item[{int}]{len}{}\end{DoxyParamCaption})}
+
+
+
+Free a string table where each string has been dynamically allocated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab} & the string table \\
+\hline
+{\em len} & the length of the table \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8h_a5396b74ce929586dfc62b0ae31fcab8c}\index{utils.h@{utils.h}!print\_str\_tab@{print\_str\_tab}}
+\index{print\_str\_tab@{print\_str\_tab}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{print\_str\_tab()}{print\_str\_tab()}}
+{\footnotesize\ttfamily \label{utils_8h_a5396b74ce929586dfc62b0ae31fcab8c} 
+void print\+\_\+str\+\_\+tab (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{tab}{, }\item[{int}]{len}{}\end{DoxyParamCaption})}
+
+
+
+Print a string table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab} & the string table \\
+\hline
+{\em len} & the length of the table \\
+\hline
+\end{DoxyParams}

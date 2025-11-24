@@ -31,3 +31,22 @@ size_t bin_read_string(FILE *file, char buf[], long buf_size)
     }
     return str_len + 1; // including '\0'
 }
+
+void print_str_tab(char **tab, int len)
+{
+    assert(tab && len > 0);
+    for (int i = 0; i < len; i++)
+    {
+        printf("%d - %s,\n", i, tab[i]);
+    }
+}
+
+void free_tab_with_alloc(char **tab, int len)
+{
+    assert(tab && len > 0);
+    for (int i = 0; i < len; i++)
+    {
+        free(tab[i]);
+    }
+    free(tab);
+}

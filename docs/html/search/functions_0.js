@@ -8,5 +8,7 @@ var searchData=
   ['api_5fload_5fstudents_5',['API_load_students',['../student__api_8h.html#a5fb5e3c4d0c9dd76e4a5edb3e20fe013',1,'student_api.c']]],
   ['api_5frestore_5ffrom_5fbinary_5ffile_6',['API_restore_from_binary_file',['../student__api_8h.html#a3834fa118dc646b878adda70fa804f74',1,'student_api.c']]],
   ['api_5fsave_5fto_5fbinary_5ffile_7',['API_save_to_binary_file',['../student__api_8h.html#ab156092fe8381aa6167684095986f314',1,'student_api.c']]],
-  ['api_5funload_8',['API_unload',['../student__api_8h.html#a9b573175a59abe95e2e79f555e84c4a2',1,'student_api.c']]]
+  ['api_5fset_5fsorting_5fmode_8',['API_set_sorting_mode',['../student__api_8h.html#a486feb9b20fa2c871344f573c185b022',1,'student_api.c']]],
+  ['api_5fsort_5fstudents_9',['API_sort_students',['../student__api_8h.html#acb7493f8ec624523b8cf0ad32052898e',1,'student_api.c']]],
+  ['api_5funload_10',['API_unload',['../student__api_8h.html#a9b573175a59abe95e2e79f555e84c4a2',1,'student_api.c']]]
 ];

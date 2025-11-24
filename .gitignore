@@ -5,7 +5,6 @@
 build/
 
 exec
-Exercice_API.pdf
-Exercice_Rappels.pdf
+Exercice_*.pdf
 callgrind.out.*
 test*

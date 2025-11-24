@@ -111,10 +111,18 @@ typedef struct <a class="el" href="structpromotion.html">promotion</a>&#160;</td
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afed5bef66f3e38d90fb22dedbb778fab" id="r_afed5bef66f3e38d90fb22dedbb778fab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afed5bef66f3e38d90fb22dedbb778fab">compare_student_key</a> (const void *a, const void *b)</td></tr>
-<tr class="memdesc:afed5bef66f3e38d90fb22dedbb778fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their IDs. To be used in qsort for sorting in growing order  <br /></td></tr>
+<tr class="memitem:aa00ec6f6018fc95b0359192567f6e0e3" id="r_aa00ec6f6018fc95b0359192567f6e0e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa00ec6f6018fc95b0359192567f6e0e3">compare_student_to_key</a> (const void *key, const void *b)</td></tr>
+<tr class="memdesc:aa00ec6f6018fc95b0359192567f6e0e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their IDs. To be used in bsearch for searching in a growing order  <br /></td></tr>
 <tr class="memitem:a8129e29a36126a2d8f667173ceaa1359" id="r_a8129e29a36126a2d8f667173ceaa1359"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8129e29a36126a2d8f667173ceaa1359">compare_student_id</a> (const void *s1, const void *s2)</td></tr>
-<tr class="memdesc:a8129e29a36126a2d8f667173ceaa1359"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their IDs. To be used in bsearch  <br /></td></tr>
+<tr class="memdesc:a8129e29a36126a2d8f667173ceaa1359"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their IDs. To be used in qsort  <br /></td></tr>
+<tr class="memitem:a71e1cb3cdef0654f0aed27f2436a5c15" id="r_a71e1cb3cdef0654f0aed27f2436a5c15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71e1cb3cdef0654f0aed27f2436a5c15">compare_student_fname</a> (const void *a, const void *b)</td></tr>
+<tr class="memdesc:a71e1cb3cdef0654f0aed27f2436a5c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their first names (alphabetical). To be used in qsort  <br /></td></tr>
+<tr class="memitem:a311b9a0db63d747fc4a8053b8c4d9620" id="r_a311b9a0db63d747fc4a8053b8c4d9620"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a311b9a0db63d747fc4a8053b8c4d9620">compare_student_name</a> (const void *a, const void *b)</td></tr>
+<tr class="memdesc:a311b9a0db63d747fc4a8053b8c4d9620"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their last names (alphabetical). To be used in qsort  <br /></td></tr>
+<tr class="memitem:a3207da0e710db9306569647a03acfb26" id="r_a3207da0e710db9306569647a03acfb26"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3207da0e710db9306569647a03acfb26">compare_student_average</a> (const void *a, const void *b)</td></tr>
+<tr class="memdesc:a3207da0e710db9306569647a03acfb26"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their general average. To be used in qsort  <br /></td></tr>
+<tr class="memitem:aca0b63eef1c08367dcec07c5955f9b17" id="r_aca0b63eef1c08367dcec07c5955f9b17"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca0b63eef1c08367dcec07c5955f9b17">compare_student_minimum</a> (const void *a, const void *b)</td></tr>
+<tr class="memdesc:aca0b63eef1c08367dcec07c5955f9b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two students by their minimum grade among followed courses. To be used in qsort  <br /></td></tr>
 <tr class="memitem:afc22f1d99464e360f3d958f732d22070" id="r_afc22f1d99464e360f3d958f732d22070"><td class="memItemLeft" align="right" valign="top"><a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60">Student</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc22f1d99464e360f3d958f732d22070">student_tab_bsearch</a> (StudentsTab *prom, unsigned int searched_id)</td></tr>
 <tr class="memdesc:afc22f1d99464e360f3d958f732d22070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for a student in a StudentsTab by its ID using binary search.  <br /></td></tr>
 <tr class="memitem:a725e097db05eb2b0f953a0c4fe6f4533" id="r_a725e097db05eb2b0f953a0c4fe6f4533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a725e097db05eb2b0f953a0c4fe6f4533">allocate_students_courses</a> (StudentsTab *prom, int n_courses)</td></tr>
@@ -133,6 +141,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:af0a2a8cd3481045924195f3d1a28be78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top students in a promotion based on their overall average.  <br /></td></tr>
 <tr class="memitem:a6454fc13ca1ddeb3651288c64e85777d" id="r_a6454fc13ca1ddeb3651288c64e85777d"><td class="memItemLeft" align="right" valign="top">StudentsTab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6454fc13ca1ddeb3651288c64e85777d">get_top_students_in_course</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom, char *course_name, int top_max_size)</td></tr>
 <tr class="memdesc:a6454fc13ca1ddeb3651288c64e85777d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top students in a specific course within a promotion.  <br /></td></tr>
+<tr class="memitem:a490db0105e1f4a9a646e8b1c442e7a76" id="r_a490db0105e1f4a9a646e8b1c442e7a76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a490db0105e1f4a9a646e8b1c442e7a76">calculate_all_student_average</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom)</td></tr>
+<tr class="memdesc:a490db0105e1f4a9a646e8b1c442e7a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and update the overall average for all students in the promotion.  <br /></td></tr>
+<tr class="memitem:afd8ed2c4d01decfc61fae33a446ac005" id="r_afd8ed2c4d01decfc61fae33a446ac005"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd8ed2c4d01decfc61fae33a446ac005">get_students_names_and_fname</a> (<a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60">Student</a> **tab, int n)</td></tr>
+<tr class="memdesc:afd8ed2c4d01decfc61fae33a446ac005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the names and first names of students in a StudentsTab.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure and functions to handle promotion data. </p>
@@ -167,6 +179,93 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a490db0105e1f4a9a646e8b1c442e7a76" name="a490db0105e1f4a9a646e8b1c442e7a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a490db0105e1f4a9a646e8b1c442e7a76">&#9670;&#160;</a></span>calculate_all_student_average()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculate_all_student_average </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *</td>          <td class="paramname"><span class="paramname"><em>prom</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate and update the overall average for all students in the promotion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prom</td><td>the promotion </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3207da0e710db9306569647a03acfb26" name="a3207da0e710db9306569647a03acfb26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3207da0e710db9306569647a03acfb26">&#9670;&#160;</a></span>compare_student_average()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compare_student_average </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compare two students by their general average. To be used in qsort </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>pointer to first student </td></tr>
+    <tr><td class="paramname">b</td><td>pointer to second student </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>negative if a&lt;b, 0 if a==b, positive if a&gt;b </dd></dl>
+
+</div>
+</div>
+<a id="a71e1cb3cdef0654f0aed27f2436a5c15" name="a71e1cb3cdef0654f0aed27f2436a5c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e1cb3cdef0654f0aed27f2436a5c15">&#9670;&#160;</a></span>compare_student_fname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compare_student_fname </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compare two students by their first names (alphabetical). To be used in qsort </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>pointer to first student </td></tr>
+    <tr><td class="paramname">b</td><td>pointer to second student </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>negative if a&lt;b, 0 if a==b, positive if a&gt;b </dd></dl>
+
+</div>
+</div>
 <a id="a8129e29a36126a2d8f667173ceaa1359" name="a8129e29a36126a2d8f667173ceaa1359"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8129e29a36126a2d8f667173ceaa1359">&#9670;&#160;</a></span>compare_student_id()</h2>
 
@@ -186,7 +285,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>compare two students by their IDs. To be used in bsearch </p>
+<p>compare two students by their IDs. To be used in qsort </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s1</td><td>first student </td></tr>
@@ -198,14 +297,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afed5bef66f3e38d90fb22dedbb778fab" name="afed5bef66f3e38d90fb22dedbb778fab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afed5bef66f3e38d90fb22dedbb778fab">&#9670;&#160;</a></span>compare_student_key()</h2>
+<a id="aca0b63eef1c08367dcec07c5955f9b17" name="aca0b63eef1c08367dcec07c5955f9b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca0b63eef1c08367dcec07c5955f9b17">&#9670;&#160;</a></span>compare_student_minimum()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int compare_student_key </td>
+          <td class="memname">int compare_student_minimum </td>
           <td>(</td>
           <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
@@ -217,15 +316,77 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>compare two students by their IDs. To be used in qsort for sorting in growing order </p>
+<p>compare two students by their minimum grade among followed courses. To be used in qsort </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>first student </td></tr>
-    <tr><td class="paramname">b</td><td>second student </td></tr>
+    <tr><td class="paramname">a</td><td>pointer to first student </td></tr>
+    <tr><td class="paramname">b</td><td>pointer to second student </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>-1 if a&lt;b, 0 if a==b, 1 if a&gt;b </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>negative if a&lt;b, 0 if a==b, positive if a&gt;b </dd></dl>
+
+</div>
+</div>
+<a id="a311b9a0db63d747fc4a8053b8c4d9620" name="a311b9a0db63d747fc4a8053b8c4d9620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a311b9a0db63d747fc4a8053b8c4d9620">&#9670;&#160;</a></span>compare_student_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compare_student_name </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compare two students by their last names (alphabetical). To be used in qsort </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>pointer to first student </td></tr>
+    <tr><td class="paramname">b</td><td>pointer to second student </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>negative if a&lt;b, 0 if a==b, positive if a&gt;b </dd></dl>
+
+</div>
+</div>
+<a id="aa00ec6f6018fc95b0359192567f6e0e3" name="aa00ec6f6018fc95b0359192567f6e0e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa00ec6f6018fc95b0359192567f6e0e3">&#9670;&#160;</a></span>compare_student_to_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compare_student_to_key </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compare two students by their IDs. To be used in bsearch for searching in a growing order </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>pointer to first student </td></tr>
+    <tr><td class="paramname">b</td><td>double pointer to second student </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 if key&lt;b, 0 if key==b, 1 if key&gt;b </dd></dl>
 
 </div>
 </div>
@@ -262,6 +423,37 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="afd8ed2c4d01decfc61fae33a446ac005" name="afd8ed2c4d01decfc61fae33a446ac005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8ed2c4d01decfc61fae33a446ac005">&#9670;&#160;</a></span>get_students_names_and_fname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ** get_students_names_and_fname </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60">Student</a> **</td>          <td class="paramname"><span class="paramname"><em>tab</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the names and first names of students in a StudentsTab. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tab</td><td>array of <a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60" title="Structure representing a student. We suppose here that every student follows the same number of cours...">Student</a> pointers </td></tr>
+    <tr><td class="paramname">n</td><td>number of students in the array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an array of strings containing the names and first names of the students </dd></dl>
 
 </div>
 </div>

@@ -122,8 +122,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:affeacd3d8564a7cef5d26ecc3c8e62d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the students data from a file.  <br /></td></tr>
 <tr class="memitem:a5af573cac1a0bc650fc6d1b34b3b5832" id="r_a5af573cac1a0bc650fc6d1b34b3b5832"><td class="memItemLeft" align="right" valign="top">CoursesTab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5af573cac1a0bc650fc6d1b34b3b5832">load_courses_data</a> (FILE *file)</td></tr>
 <tr class="memdesc:a5af573cac1a0bc650fc6d1b34b3b5832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the courses data from a file.  <br /></td></tr>
-<tr class="memitem:acf5c847f69fd3db9e344f1ec6862e14e" id="r_acf5c847f69fd3db9e344f1ec6862e14e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf5c847f69fd3db9e344f1ec6862e14e">load_grades_data</a> (StudentsTab *prom, CoursesTab *courses, FILE *file)</td></tr>
-<tr class="memdesc:acf5c847f69fd3db9e344f1ec6862e14e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the grades data from a file and update the students' followed courses.  <br /></td></tr>
+<tr class="memitem:a6b072280706eb2f8e48ca4d0efba636b" id="r_a6b072280706eb2f8e48ca4d0efba636b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b072280706eb2f8e48ca4d0efba636b">load_grades_data</a> (<a class="el" href="promotion_8h.html#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom, FILE *file)</td></tr>
+<tr class="memdesc:a6b072280706eb2f8e48ca4d0efba636b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the grades data from a file and update the students' followed courses (and their averages).  <br /></td></tr>
 <tr class="memitem:a2d7c226fde2c516c982203dbb529bf3b" id="r_a2d7c226fde2c516c982203dbb529bf3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d7c226fde2c516c982203dbb529bf3b">set_cursor_to_next_section</a> (const <a class="el" href="#aef02f2f64f0bcd6490171dc1c01cfb37">Section</a> section, FILE *file)</td></tr>
 <tr class="memdesc:a2d7c226fde2c516c982203dbb529bf3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the file cursor to the beginning of the next section.  <br /></td></tr>
 </table>
@@ -156,8 +156,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acf5c847f69fd3db9e344f1ec6862e14e" name="acf5c847f69fd3db9e344f1ec6862e14e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf5c847f69fd3db9e344f1ec6862e14e">&#9670;&#160;</a></span>load_grades_data()</h2>
+<a id="a6b072280706eb2f8e48ca4d0efba636b" name="a6b072280706eb2f8e48ca4d0efba636b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b072280706eb2f8e48ca4d0efba636b">&#9670;&#160;</a></span>load_grades_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,12 +165,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void load_grades_data </td>
           <td>(</td>
-          <td class="paramtype">StudentsTab *</td>          <td class="paramname"><span class="paramname"><em>prom</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">CoursesTab *</td>          <td class="paramname"><span class="paramname"><em>courses</em></span>, </td>
+          <td class="paramtype"><a class="el" href="promotion_8h.html#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *</td>          <td class="paramname"><span class="paramname"><em>prom</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -180,16 +175,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Load the grades data from a file and update the students' followed courses. </p>
+<p>Load the grades data from a file and update the students' followed courses (and their averages). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prom</td><td>the students table </td></tr>
-    <tr><td class="paramname">courses</td><td>the courses table </td></tr>
+    <tr><td class="paramname">prom</td><td>the promotion struct containing students and courses tables </td></tr>
     <tr><td class="paramname">file</td><td>the file to read from </td></tr>
   </table>
   </dd>
 </dl>
-<p>\ WARNING : code PARTLY duplicated</p>
+<p>WARNING NO OUT OF UNSIGNED INT RANGE DETECTION</p>
 
 </div>
 </div>
@@ -216,7 +210,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the loaded StudentsTab </dd></dl>
-<p>\ WARNING : code PARTLY duplicated</p>
 
 </div>
 </div>

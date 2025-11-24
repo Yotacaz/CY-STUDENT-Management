@@ -4,7 +4,6 @@
 /// @file student_api.h
 /// @brief API functions to interact with the student management system
 
-
 /// @brief Alias for Promotion structure used in the API
 typedef void CLASS_DATA;
 
@@ -16,6 +15,18 @@ typedef void CLASS_DATA;
 /// @brief Number of best students (with highest average) to retrieve for a selected course
 #define SIZE_TOP2 3
 #endif
+
+// Sorting modes
+///@brief Sorting mode: by student ID
+#define STUDENT_ID 0
+///@brief Sorting mode: by student first name (alphabetical)
+#define ALPHA_FIRST_NAME 1
+///@brief Sorting mode: by student last name (alphabetical)
+#define ALPHA_LAST_NAME 2
+///@brief Sorting mode: by student average (highest to lowest)
+#define AVERAGE 3
+///@brief Sorting mode: by student minimum grade (highest to lowest)
+#define MINIMUM 4
 
 /// @brief Load data from a formatted **text file** and create a Promotion structure
 /// Load order : courses, students, grades
@@ -54,5 +65,16 @@ char **API_get_best_students(CLASS_DATA *pClass);
 /// @return a dynamic table containing the names of the SIZE_TOP2 (default 3) best students in
 /// course, NULL if the course isn't found.
 char **API_get_best_students_in_course(CLASS_DATA *pClass, char *course);
+
+/// @brief Set the sorting mode for students in the promotion
+/// @param pClass the promotion
+/// @param mode the sorting mode (STUDENT_ID, ALPHA_FIRST_NAME, ALPHA_LAST_NAME, AVERAGE, MINIMUM)
+/// @return 0 if successful, 1 if the mode is incorrect
+int API_set_sorting_mode(CLASS_DATA *pClass, int mode);
+
+/// @brief Sort the students in the promotion according to the current sorting mode
+/// @param pClass the promotion
+/// @return a dynamic table containing the names of all students sorted
+char **API_sort_students(CLASS_DATA *pClass);
 
 #endif

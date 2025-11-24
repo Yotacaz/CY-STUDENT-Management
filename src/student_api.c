@@ -84,21 +84,7 @@ char **API_get_best_students(CLASS_DATA *pClass)
     assert(stu_dtab);
     Student **tab = stu_dtab->tab;
     int size = stu_dtab->size;
-    char **names = (char **)malloc(sizeof(char *) * size);
-    verify(names, "malloc error");
-    for (int i = 0; i < size; i++)
-    {
-        char *name = tab[i]->name;
-        char *fname = tab[i]->fname;
-        size_t name_len = strlen(name);
-        size_t fname_len = strlen(fname);
-        size_t len = name_len + fname_len + 2; //+1 for a space and +1 for '\0'
-        names[i] = (char *)malloc(sizeof(char) * (len));
-        verify(names[i], "malloc error");
-        int res = snprintf(names[i], len, "%s %s", name, fname);
-        assert((size_t)res + 1 == len); // +1 for '\0'
-    }
-    return names;
+    return get_students_names_and_fname(stu_dtab->tab, stu_dtab->size);
 }
 
 char **API_get_best_students_in_course(CLASS_DATA *pClass, char *course)
@@ -112,21 +98,43 @@ char **API_get_best_students_in_course(CLASS_DATA *pClass, char *course)
         return NULL;
     }
     assert(StudentsTab_is_valid(stu_dtab, student_is_valid));
-    Student **tab = stu_dtab->tab;
-    int size = stu_dtab->size;
-    char **names = (char **)malloc(sizeof(char *) * size);
-    verify(names, "malloc error");
-    for (int i = 0; i < size; i++)
+    return get_students_names_and_fname(stu_dtab->tab, stu_dtab->size);
+}
+
+int API_set_sorting_mode(CLASS_DATA *pClass, int mode)
+{
+    assert(promotion_is_valid(pClass));
+    Promotion *prom = (Promotion *)pClass;
+    switch (mode)
     {
-        char *name = tab[i]->name;
-        char *fname = tab[i]->fname;
-        size_t name_len = strlen(name);
-        size_t fname_len = strlen(fname);
-        size_t len = name_len + fname_len + 2; //+1 for a space and +1 for '\0'
-        names[i] = (char *)malloc(sizeof(char) * (len));
-        verify(names[i], "malloc error");
-        int res = snprintf(names[i], len, "%s %s", name, fname);
-        assert((size_t)res + 1 == len); // +1 for '\0'
+    case STUDENT_ID:
+        prom->compare_student = compare_student_id;
+        break;
+    case ALPHA_FIRST_NAME:
+        prom->compare_student = compare_student_fname;
+        break;
+    case ALPHA_LAST_NAME:
+        prom->compare_student = compare_student_name;
+        break;
+    case AVERAGE:
+        prom->compare_student = compare_student_average;
+        break;
+    case MINIMUM:
+        prom->compare_student = compare_student_minimum;
+        break;
+    default:
+        fprintf(stderr, BOLD_RED "WARNING: incorrect sorting mode %d, sorting mode unchanged" RESET,
+                mode);
+        return 1;
     }
-    return names;
+    return 0;
+}
+
+char **API_sort_students(CLASS_DATA *pClass)
+{
+    assert(promotion_is_valid(pClass));
+    Promotion *prom = (Promotion *)pClass;
+    StudentsTab *stu_dtab = prom->stu_dtab;
+    StudentsTab_sort(stu_dtab, prom->compare_student);
+    return get_students_names_and_fname(stu_dtab->tab, SIZE_TOP1);
 }

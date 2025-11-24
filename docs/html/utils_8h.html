@@ -175,11 +175,18 @@ Macros</h2></td></tr>
 <tr class="memitem:ab702106cf3b3e96750b6845ded4e0299" id="r_ab702106cf3b3e96750b6845ded4e0299"><td class="memItemLeft" align="right" valign="top"><a id="ab702106cf3b3e96750b6845ded4e0299" name="ab702106cf3b3e96750b6845ded4e0299"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RESET</b>&#160;&#160;&#160;&quot;\x1B[0m&quot;</td></tr>
 <tr class="memdesc:ab702106cf3b3e96750b6845ded4e0299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset text formatting for terminal output. <br /></td></tr>
+<tr class="memitem:af79cff29f69e9e9672688534e8a4d702" id="r_af79cff29f69e9e9672688534e8a4d702"><td class="memItemLeft" align="right" valign="top"><a id="af79cff29f69e9e9672688534e8a4d702" name="af79cff29f69e9e9672688534e8a4d702"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CSV_SEP</b>&#160;&#160;&#160;';'</td></tr>
+<tr class="memdesc:af79cff29f69e9e9672688534e8a4d702"><td class="mdescLeft">&#160;</td><td class="mdescRight">CSV separator character. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a290cabf3313b2303b06136bcee79c892" id="r_a290cabf3313b2303b06136bcee79c892"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a290cabf3313b2303b06136bcee79c892">bin_read_string</a> (FILE *file, char buf[], long buf_size)</td></tr>
 <tr class="memdesc:a290cabf3313b2303b06136bcee79c892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a null-terminated string from a binary file into a buffer, ensuring it fits within the buffer size.  <br /></td></tr>
+<tr class="memitem:a5396b74ce929586dfc62b0ae31fcab8c" id="r_a5396b74ce929586dfc62b0ae31fcab8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5396b74ce929586dfc62b0ae31fcab8c">print_str_tab</a> (char **tab, int len)</td></tr>
+<tr class="memdesc:a5396b74ce929586dfc62b0ae31fcab8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a string table.  <br /></td></tr>
+<tr class="memitem:a1fa46850fa4059c42e9685098a0aed34" id="r_a1fa46850fa4059c42e9685098a0aed34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fa46850fa4059c42e9685098a0aed34">free_tab_with_alloc</a> (char **tab, int len)</td></tr>
+<tr class="memdesc:a1fa46850fa4059c42e9685098a0aed34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a string table where each string has been dynamically allocated.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Various utility functions. </p>
@@ -218,6 +225,66 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the length of the read string (including the null terminator) or -1 on error </dd></dl>
+
+</div>
+</div>
+<a id="a1fa46850fa4059c42e9685098a0aed34" name="a1fa46850fa4059c42e9685098a0aed34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa46850fa4059c42e9685098a0aed34">&#9670;&#160;</a></span>free_tab_with_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_tab_with_alloc </td>
+          <td>(</td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>tab</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free a string table where each string has been dynamically allocated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tab</td><td>the string table </td></tr>
+    <tr><td class="paramname">len</td><td>the length of the table </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5396b74ce929586dfc62b0ae31fcab8c" name="a5396b74ce929586dfc62b0ae31fcab8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5396b74ce929586dfc62b0ae31fcab8c">&#9670;&#160;</a></span>print_str_tab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_str_tab </td>
+          <td>(</td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>tab</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print a string table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tab</td><td>the string table </td></tr>
+    <tr><td class="paramname">len</td><td>the length of the table </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

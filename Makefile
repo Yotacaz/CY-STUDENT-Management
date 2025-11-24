@@ -89,3 +89,9 @@ debug:
 	@echo $(INC)
 	@echo "librairie name :"
 	@echo $(DYN_LIB) " or " $(STAT_LIB)
+
+#TODO REMOVE
+test_static: $(STAT_LIB)
+
+	gcc -O0 -g  test.c -Llib -lstudent_s -o test
+	./test

@@ -31,8 +31,8 @@ Students\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{load__data_8h_affeacd3
 \begin{DoxyCompactList}\small\item\em Load the students data from a file. \end{DoxyCompactList}\item 
 Courses\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{load__data_8h_a5af573cac1a0bc650fc6d1b34b3b5832}{load\+\_\+courses\+\_\+data}} (FILE \texorpdfstring{$\ast$}{*}file)
 \begin{DoxyCompactList}\small\item\em Load the courses data from a file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{load__data_8h_acf5c847f69fd3db9e344f1ec6862e14e}{load\+\_\+grades\+\_\+data}} (Students\+Tab \texorpdfstring{$\ast$}{*}prom, Courses\+Tab \texorpdfstring{$\ast$}{*}courses, FILE \texorpdfstring{$\ast$}{*}file)
-\begin{DoxyCompactList}\small\item\em Load the grades data from a file and update the students\textquotesingle{} followed courses. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{load__data_8h_a6b072280706eb2f8e48ca4d0efba636b}{load\+\_\+grades\+\_\+data}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom, FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Load the grades data from a file and update the students\textquotesingle{} followed courses (and their averages). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{load__data_8h_a2d7c226fde2c516c982203dbb529bf3b}{set\+\_\+cursor\+\_\+to\+\_\+next\+\_\+section}} (const \mbox{\hyperlink{load__data_8h_aef02f2f64f0bcd6490171dc1c01cfb37}{Section}} section, FILE \texorpdfstring{$\ast$}{*}file)
 \begin{DoxyCompactList}\small\item\em Set the file cursor to the beginning of the next section. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -63,26 +63,24 @@ Load the courses data from a file.
 \begin{DoxyReturn}{Returns}
 the loaded Courses\+Tab 
 \end{DoxyReturn}
-\Hypertarget{load__data_8h_acf5c847f69fd3db9e344f1ec6862e14e}\index{load\_data.h@{load\_data.h}!load\_grades\_data@{load\_grades\_data}}
+\Hypertarget{load__data_8h_a6b072280706eb2f8e48ca4d0efba636b}\index{load\_data.h@{load\_data.h}!load\_grades\_data@{load\_grades\_data}}
 \index{load\_grades\_data@{load\_grades\_data}!load\_data.h@{load\_data.h}}
 \doxysubsubsection{\texorpdfstring{load\_grades\_data()}{load\_grades\_data()}}
-{\footnotesize\ttfamily \label{load__data_8h_acf5c847f69fd3db9e344f1ec6862e14e} 
-void load\+\_\+grades\+\_\+data (\begin{DoxyParamCaption}\item[{Students\+Tab \texorpdfstring{$\ast$}{*}}]{prom}{, }\item[{Courses\+Tab \texorpdfstring{$\ast$}{*}}]{courses}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{load__data_8h_a6b072280706eb2f8e48ca4d0efba636b} 
+void load\+\_\+grades\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}}]{prom}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
 
 
 
-Load the grades data from a file and update the students\textquotesingle{} followed courses. 
+Load the grades data from a file and update the students\textquotesingle{} followed courses (and their averages). 
 
 
 \begin{DoxyParams}{Parameters}
-{\em prom} & the students table \\
-\hline
-{\em courses} & the courses table \\
+{\em prom} & the promotion struct containing students and courses tables \\
 \hline
 {\em file} & the file to read from \\
 \hline
 \end{DoxyParams}
-\textbackslash{} WARNING \+: code PARTLY duplicated\Hypertarget{load__data_8h_affeacd3d8564a7cef5d26ecc3c8e62d2}\index{load\_data.h@{load\_data.h}!load\_student\_tab\_data@{load\_student\_tab\_data}}
+WARNING NO OUT OF UNSIGNED INT RANGE DETECTION\Hypertarget{load__data_8h_affeacd3d8564a7cef5d26ecc3c8e62d2}\index{load\_data.h@{load\_data.h}!load\_student\_tab\_data@{load\_student\_tab\_data}}
 \index{load\_student\_tab\_data@{load\_student\_tab\_data}!load\_data.h@{load\_data.h}}
 \doxysubsubsection{\texorpdfstring{load\_student\_tab\_data()}{load\_student\_tab\_data()}}
 {\footnotesize\ttfamily \label{load__data_8h_affeacd3d8564a7cef5d26ecc3c8e62d2} 
@@ -100,7 +98,7 @@ Load the students data from a file.
 \begin{DoxyReturn}{Returns}
 the loaded Students\+Tab 
 \end{DoxyReturn}
-\textbackslash{} WARNING \+: code PARTLY duplicated\Hypertarget{load__data_8h_a2d7c226fde2c516c982203dbb529bf3b}\index{load\_data.h@{load\_data.h}!set\_cursor\_to\_next\_section@{set\_cursor\_to\_next\_section}}
+\Hypertarget{load__data_8h_a2d7c226fde2c516c982203dbb529bf3b}\index{load\_data.h@{load\_data.h}!set\_cursor\_to\_next\_section@{set\_cursor\_to\_next\_section}}
 \index{set\_cursor\_to\_next\_section@{set\_cursor\_to\_next\_section}!load\_data.h@{load\_data.h}}
 \doxysubsubsection{\texorpdfstring{set\_cursor\_to\_next\_section()}{set\_cursor\_to\_next\_section()}}
 {\footnotesize\ttfamily \label{load__data_8h_a2d7c226fde2c516c982203dbb529bf3b} 

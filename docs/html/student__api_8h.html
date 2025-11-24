@@ -105,6 +105,21 @@ Macros</h2></td></tr>
 <tr class="memitem:a47fd7d8326ae22c6722da7848d63d024" id="r_a47fd7d8326ae22c6722da7848d63d024"><td class="memItemLeft" align="right" valign="top"><a id="a47fd7d8326ae22c6722da7848d63d024" name="a47fd7d8326ae22c6722da7848d63d024"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SIZE_TOP2</b>&#160;&#160;&#160;3</td></tr>
 <tr class="memdesc:a47fd7d8326ae22c6722da7848d63d024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of best students (with highest average) to retrieve for a selected course. <br /></td></tr>
+<tr class="memitem:a708f939981ead4d1db83b3a33c9246ad" id="r_a708f939981ead4d1db83b3a33c9246ad"><td class="memItemLeft" align="right" valign="top"><a id="a708f939981ead4d1db83b3a33c9246ad" name="a708f939981ead4d1db83b3a33c9246ad"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>STUDENT_ID</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a708f939981ead4d1db83b3a33c9246ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorting mode: by student ID. <br /></td></tr>
+<tr class="memitem:ae823f0df78d1075240141b0f64318608" id="r_ae823f0df78d1075240141b0f64318608"><td class="memItemLeft" align="right" valign="top"><a id="ae823f0df78d1075240141b0f64318608" name="ae823f0df78d1075240141b0f64318608"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ALPHA_FIRST_NAME</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ae823f0df78d1075240141b0f64318608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorting mode: by student first name (alphabetical). <br /></td></tr>
+<tr class="memitem:a2295a109c259cc6f5db257f106fb0a89" id="r_a2295a109c259cc6f5db257f106fb0a89"><td class="memItemLeft" align="right" valign="top"><a id="a2295a109c259cc6f5db257f106fb0a89" name="a2295a109c259cc6f5db257f106fb0a89"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ALPHA_LAST_NAME</b>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:a2295a109c259cc6f5db257f106fb0a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorting mode: by student last name (alphabetical). <br /></td></tr>
+<tr class="memitem:a1f98b8446b6c3c9f699cc2c046c49f87" id="r_a1f98b8446b6c3c9f699cc2c046c49f87"><td class="memItemLeft" align="right" valign="top"><a id="a1f98b8446b6c3c9f699cc2c046c49f87" name="a1f98b8446b6c3c9f699cc2c046c49f87"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AVERAGE</b>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a1f98b8446b6c3c9f699cc2c046c49f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorting mode: by student average (highest to lowest). <br /></td></tr>
+<tr class="memitem:ab414b3d93e06e9151175e4084ed3295d" id="r_ab414b3d93e06e9151175e4084ed3295d"><td class="memItemLeft" align="right" valign="top"><a id="ab414b3d93e06e9151175e4084ed3295d" name="ab414b3d93e06e9151175e4084ed3295d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MINIMUM</b>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:ab414b3d93e06e9151175e4084ed3295d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorting mode: by student minimum grade (highest to lowest). <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -128,6 +143,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae2130f172cf783bdd78191fab55de446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the best students from a promotion.  <br /></td></tr>
 <tr class="memitem:a11ab96e566af524d539559976ab82107" id="r_a11ab96e566af524d539559976ab82107"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11ab96e566af524d539559976ab82107">API_get_best_students_in_course</a> (<a class="el" href="#a742097baeb22b98239df36e5b8b9238e">CLASS_DATA</a> *pClass, char *<a class="el" href="structcourse.html">course</a>)</td></tr>
 <tr class="memdesc:a11ab96e566af524d539559976ab82107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the best students from a promotion for a given course.  <br /></td></tr>
+<tr class="memitem:a486feb9b20fa2c871344f573c185b022" id="r_a486feb9b20fa2c871344f573c185b022"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a486feb9b20fa2c871344f573c185b022">API_set_sorting_mode</a> (<a class="el" href="#a742097baeb22b98239df36e5b8b9238e">CLASS_DATA</a> *pClass, int mode)</td></tr>
+<tr class="memdesc:a486feb9b20fa2c871344f573c185b022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting mode for students in the promotion.  <br /></td></tr>
+<tr class="memitem:acb7493f8ec624523b8cf0ad32052898e" id="r_acb7493f8ec624523b8cf0ad32052898e"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb7493f8ec624523b8cf0ad32052898e">API_sort_students</a> (<a class="el" href="#a742097baeb22b98239df36e5b8b9238e">CLASS_DATA</a> *pClass)</td></tr>
+<tr class="memdesc:acb7493f8ec624523b8cf0ad32052898e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort the students in the promotion according to the current sorting mode.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>API functions to interact with the student management system. </p>
@@ -294,6 +313,63 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>always return 1 </dd></dl>
+
+</div>
+</div>
+<a id="a486feb9b20fa2c871344f573c185b022" name="a486feb9b20fa2c871344f573c185b022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a486feb9b20fa2c871344f573c185b022">&#9670;&#160;</a></span>API_set_sorting_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int API_set_sorting_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a742097baeb22b98239df36e5b8b9238e">CLASS_DATA</a> *</td>          <td class="paramname"><span class="paramname"><em>pClass</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the sorting mode for students in the promotion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pClass</td><td>the promotion </td></tr>
+    <tr><td class="paramname">mode</td><td>the sorting mode (STUDENT_ID, ALPHA_FIRST_NAME, ALPHA_LAST_NAME, AVERAGE, MINIMUM) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 if the mode is incorrect </dd></dl>
+
+</div>
+</div>
+<a id="acb7493f8ec624523b8cf0ad32052898e" name="acb7493f8ec624523b8cf0ad32052898e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb7493f8ec624523b8cf0ad32052898e">&#9670;&#160;</a></span>API_sort_students()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ** API_sort_students </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a742097baeb22b98239df36e5b8b9238e">CLASS_DATA</a> *</td>          <td class="paramname"><span class="paramname"><em>pClass</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort the students in the promotion according to the current sorting mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pClass</td><td>the promotion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a dynamic table containing the names of all students sorted </dd></dl>
 
 </div>
 </div>

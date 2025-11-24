@@ -96,4 +96,14 @@ static inline void verify(bool condition, char *err_msg)
 /// @param val the float to print
 static inline void print_float(float val) { printf("%.2f", val); }
 
+/// @brief Print a string table
+/// @param tab the string table
+/// @param len the length of the table
+void print_str_tab(char** tab, int len);
+
+/// @brief Free a string table where each string has been dynamically allocated
+/// @param tab the string table
+/// @param len the length of the table
+void free_tab_with_alloc(char **tab, int len);
+
 #endif

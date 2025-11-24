@@ -20,10 +20,18 @@ typedef struct \mbox{\hyperlink{structpromotion}{promotion}} {\bfseries Promotio
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{promotion_8h_afed5bef66f3e38d90fb22dedbb778fab}{compare\+\_\+student\+\_\+key}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
-\begin{DoxyCompactList}\small\item\em compare two students by their IDs. To be used in qsort for sorting in growing order \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{promotion_8h_aa00ec6f6018fc95b0359192567f6e0e3}{compare\+\_\+student\+\_\+to\+\_\+key}} (const void \texorpdfstring{$\ast$}{*}key, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em compare two students by their IDs. To be used in bsearch for searching in a growing order \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{promotion_8h_a8129e29a36126a2d8f667173ceaa1359}{compare\+\_\+student\+\_\+id}} (const void \texorpdfstring{$\ast$}{*}s1, const void \texorpdfstring{$\ast$}{*}s2)
-\begin{DoxyCompactList}\small\item\em compare two students by their IDs. To be used in bsearch \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em compare two students by their IDs. To be used in qsort \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{promotion_8h_a71e1cb3cdef0654f0aed27f2436a5c15}{compare\+\_\+student\+\_\+fname}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em compare two students by their first names (alphabetical). To be used in qsort \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{promotion_8h_a311b9a0db63d747fc4a8053b8c4d9620}{compare\+\_\+student\+\_\+name}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em compare two students by their last names (alphabetical). To be used in qsort \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{promotion_8h_a3207da0e710db9306569647a03acfb26}{compare\+\_\+student\+\_\+average}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em compare two students by their general average. To be used in qsort \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{promotion_8h_aca0b63eef1c08367dcec07c5955f9b17}{compare\+\_\+student\+\_\+minimum}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em compare two students by their minimum grade among followed courses. To be used in qsort \end{DoxyCompactList}\item 
 \mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_afc22f1d99464e360f3d958f732d22070}{student\+\_\+tab\+\_\+bsearch}} (Students\+Tab \texorpdfstring{$\ast$}{*}prom, unsigned int searched\+\_\+id)
 \begin{DoxyCompactList}\small\item\em Search for a student in a Students\+Tab by its ID using binary search. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{promotion_8h_a725e097db05eb2b0f953a0c4fe6f4533}{allocate\+\_\+students\+\_\+courses}} (Students\+Tab \texorpdfstring{$\ast$}{*}prom, int n\+\_\+courses)
@@ -41,7 +49,11 @@ bool \mbox{\hyperlink{promotion_8h_af58511727a5e4d628dbdf7496ee0f2f9}{students\+
 Students\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_af0a2a8cd3481045924195f3d1a28be78}{get\+\_\+top\+\_\+students}} (Students\+Tab \texorpdfstring{$\ast$}{*}stu\+\_\+dtab, int top\+\_\+max\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Get the top students in a promotion based on their overall average. \end{DoxyCompactList}\item 
 Students\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_a6454fc13ca1ddeb3651288c64e85777d}{get\+\_\+top\+\_\+students\+\_\+in\+\_\+course}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom, char \texorpdfstring{$\ast$}{*}course\+\_\+name, int top\+\_\+max\+\_\+size)
-\begin{DoxyCompactList}\small\item\em Get the top students in a specific course within a promotion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the top students in a specific course within a promotion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{promotion_8h_a490db0105e1f4a9a646e8b1c442e7a76}{calculate\+\_\+all\+\_\+student\+\_\+average}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom)
+\begin{DoxyCompactList}\small\item\em Calculate and update the overall average for all students in the promotion. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_afd8ed2c4d01decfc61fae33a446ac005}{get\+\_\+students\+\_\+names\+\_\+and\+\_\+fname}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tab, int n)
+\begin{DoxyCompactList}\small\item\em Get the names and first names of students in a Students\+Tab. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -69,6 +81,61 @@ Allocate the followed courses for each student in the Students\+Tab.
 {\em n\+\_\+courses} & the number of courses to allocate for each student \\
 \hline
 \end{DoxyParams}
+\Hypertarget{promotion_8h_a490db0105e1f4a9a646e8b1c442e7a76}\index{promotion.h@{promotion.h}!calculate\_all\_student\_average@{calculate\_all\_student\_average}}
+\index{calculate\_all\_student\_average@{calculate\_all\_student\_average}!promotion.h@{promotion.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_all\_student\_average()}{calculate\_all\_student\_average()}}
+{\footnotesize\ttfamily \label{promotion_8h_a490db0105e1f4a9a646e8b1c442e7a76} 
+void calculate\+\_\+all\+\_\+student\+\_\+average (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}}]{prom}{}\end{DoxyParamCaption})}
+
+
+
+Calculate and update the overall average for all students in the promotion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prom} & the promotion \\
+\hline
+\end{DoxyParams}
+\Hypertarget{promotion_8h_a3207da0e710db9306569647a03acfb26}\index{promotion.h@{promotion.h}!compare\_student\_average@{compare\_student\_average}}
+\index{compare\_student\_average@{compare\_student\_average}!promotion.h@{promotion.h}}
+\doxysubsubsection{\texorpdfstring{compare\_student\_average()}{compare\_student\_average()}}
+{\footnotesize\ttfamily \label{promotion_8h_a3207da0e710db9306569647a03acfb26} 
+int compare\+\_\+student\+\_\+average (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+compare two students by their general average. To be used in qsort 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & pointer to first student \\
+\hline
+{\em b} & pointer to second student \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative if a\texorpdfstring{$<$}{<}b, 0 if a==b, positive if a\texorpdfstring{$>$}{>}b 
+\end{DoxyReturn}
+\Hypertarget{promotion_8h_a71e1cb3cdef0654f0aed27f2436a5c15}\index{promotion.h@{promotion.h}!compare\_student\_fname@{compare\_student\_fname}}
+\index{compare\_student\_fname@{compare\_student\_fname}!promotion.h@{promotion.h}}
+\doxysubsubsection{\texorpdfstring{compare\_student\_fname()}{compare\_student\_fname()}}
+{\footnotesize\ttfamily \label{promotion_8h_a71e1cb3cdef0654f0aed27f2436a5c15} 
+int compare\+\_\+student\+\_\+fname (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+compare two students by their first names (alphabetical). To be used in qsort 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & pointer to first student \\
+\hline
+{\em b} & pointer to second student \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative if a\texorpdfstring{$<$}{<}b, 0 if a==b, positive if a\texorpdfstring{$>$}{>}b 
+\end{DoxyReturn}
 \Hypertarget{promotion_8h_a8129e29a36126a2d8f667173ceaa1359}\index{promotion.h@{promotion.h}!compare\_student\_id@{compare\_student\_id}}
 \index{compare\_student\_id@{compare\_student\_id}!promotion.h@{promotion.h}}
 \doxysubsubsection{\texorpdfstring{compare\_student\_id()}{compare\_student\_id()}}
@@ -77,7 +144,7 @@ int compare\+\_\+student\+\_\+id (\begin{DoxyParamCaption}\item[{const void \tex
 
 
 
-compare two students by their IDs. To be used in bsearch 
+compare two students by their IDs. To be used in qsort 
 
 
 \begin{DoxyParams}{Parameters}
@@ -89,25 +156,65 @@ compare two students by their IDs. To be used in bsearch
 \begin{DoxyReturn}{Returns}
 -\/1 if s1\texorpdfstring{$<$}{<}s2, 0 if s1==s2, 1 if s1\texorpdfstring{$>$}{>}s2 
 \end{DoxyReturn}
-\Hypertarget{promotion_8h_afed5bef66f3e38d90fb22dedbb778fab}\index{promotion.h@{promotion.h}!compare\_student\_key@{compare\_student\_key}}
-\index{compare\_student\_key@{compare\_student\_key}!promotion.h@{promotion.h}}
-\doxysubsubsection{\texorpdfstring{compare\_student\_key()}{compare\_student\_key()}}
-{\footnotesize\ttfamily \label{promotion_8h_afed5bef66f3e38d90fb22dedbb778fab} 
-int compare\+\_\+student\+\_\+key (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+\Hypertarget{promotion_8h_aca0b63eef1c08367dcec07c5955f9b17}\index{promotion.h@{promotion.h}!compare\_student\_minimum@{compare\_student\_minimum}}
+\index{compare\_student\_minimum@{compare\_student\_minimum}!promotion.h@{promotion.h}}
+\doxysubsubsection{\texorpdfstring{compare\_student\_minimum()}{compare\_student\_minimum()}}
+{\footnotesize\ttfamily \label{promotion_8h_aca0b63eef1c08367dcec07c5955f9b17} 
+int compare\+\_\+student\+\_\+minimum (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
 
 
 
-compare two students by their IDs. To be used in qsort for sorting in growing order 
+compare two students by their minimum grade among followed courses. To be used in qsort 
 
 
 \begin{DoxyParams}{Parameters}
-{\em a} & first student \\
+{\em a} & pointer to first student \\
 \hline
-{\em b} & second student \\
+{\em b} & pointer to second student \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
--\/1 if a\texorpdfstring{$<$}{<}b, 0 if a==b, 1 if a\texorpdfstring{$>$}{>}b 
+negative if a\texorpdfstring{$<$}{<}b, 0 if a==b, positive if a\texorpdfstring{$>$}{>}b 
+\end{DoxyReturn}
+\Hypertarget{promotion_8h_a311b9a0db63d747fc4a8053b8c4d9620}\index{promotion.h@{promotion.h}!compare\_student\_name@{compare\_student\_name}}
+\index{compare\_student\_name@{compare\_student\_name}!promotion.h@{promotion.h}}
+\doxysubsubsection{\texorpdfstring{compare\_student\_name()}{compare\_student\_name()}}
+{\footnotesize\ttfamily \label{promotion_8h_a311b9a0db63d747fc4a8053b8c4d9620} 
+int compare\+\_\+student\+\_\+name (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+compare two students by their last names (alphabetical). To be used in qsort 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & pointer to first student \\
+\hline
+{\em b} & pointer to second student \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative if a\texorpdfstring{$<$}{<}b, 0 if a==b, positive if a\texorpdfstring{$>$}{>}b 
+\end{DoxyReturn}
+\Hypertarget{promotion_8h_aa00ec6f6018fc95b0359192567f6e0e3}\index{promotion.h@{promotion.h}!compare\_student\_to\_key@{compare\_student\_to\_key}}
+\index{compare\_student\_to\_key@{compare\_student\_to\_key}!promotion.h@{promotion.h}}
+\doxysubsubsection{\texorpdfstring{compare\_student\_to\_key()}{compare\_student\_to\_key()}}
+{\footnotesize\ttfamily \label{promotion_8h_aa00ec6f6018fc95b0359192567f6e0e3} 
+int compare\+\_\+student\+\_\+to\+\_\+key (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+compare two students by their IDs. To be used in bsearch for searching in a growing order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & pointer to first student \\
+\hline
+{\em b} & double pointer to second student \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 if key\texorpdfstring{$<$}{<}b, 0 if key==b, 1 if key\texorpdfstring{$>$}{>}b 
 \end{DoxyReturn}
 \Hypertarget{promotion_8h_a0d3b31688a911c328c8142f0f36181ac}\index{promotion.h@{promotion.h}!free\_promotion@{free\_promotion}}
 \index{free\_promotion@{free\_promotion}!promotion.h@{promotion.h}}
@@ -128,6 +235,26 @@ Free a promotion and its contents using the provided free functions. If free\+\_
 {\em free\+\_\+course\+\_\+f} & function to free a course \\
 \hline
 \end{DoxyParams}
+\Hypertarget{promotion_8h_afd8ed2c4d01decfc61fae33a446ac005}\index{promotion.h@{promotion.h}!get\_students\_names\_and\_fname@{get\_students\_names\_and\_fname}}
+\index{get\_students\_names\_and\_fname@{get\_students\_names\_and\_fname}!promotion.h@{promotion.h}}
+\doxysubsubsection{\texorpdfstring{get\_students\_names\_and\_fname()}{get\_students\_names\_and\_fname()}}
+{\footnotesize\ttfamily \label{promotion_8h_afd8ed2c4d01decfc61fae33a446ac005} 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} get\+\_\+students\+\_\+names\+\_\+and\+\_\+fname (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{tab}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Get the names and first names of students in a Students\+Tab. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab} & array of \doxylink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student} pointers \\
+\hline
+{\em n} & number of students in the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an array of strings containing the names and first names of the students 
+\end{DoxyReturn}
 \Hypertarget{promotion_8h_af0a2a8cd3481045924195f3d1a28be78}\index{promotion.h@{promotion.h}!get\_top\_students@{get\_top\_students}}
 \index{get\_top\_students@{get\_top\_students}!promotion.h@{promotion.h}}
 \doxysubsubsection{\texorpdfstring{get\_top\_students()}{get\_top\_students()}}

@@ -15,21 +15,47 @@ typedef struct promotion
     StudentsTab *stu_dtab;
     ///@brief dynamic table of courses
     CoursesTab *courses;
+    ///@brief compare function to sort students tab
+    int (*compare_student)(const void *, const void *);
 } Promotion;
 
 // Function prototypes
 
-/// @brief compare two students by their IDs. To be used in qsort for sorting in growing order
-/// @param a first student
-/// @param b second student
-/// @return -1 if a<b, 0 if a==b, 1 if a>b
-int compare_student_key(const void *a, const void *b);
+/// @brief compare two students by their IDs. To be used in bsearch for searching in a growing order
+/// @param key pointer to first student
+/// @param b double pointer to second student
+/// @return -1 if key<b, 0 if key==b, 1 if key>b
+int compare_student_to_key(const void *key, const void *b);
 
-/// @brief compare two students by their IDs. To be used in bsearch
+/// @brief compare two students by their IDs. To be used in qsort
 /// @param s1 first student
 /// @param s2 second student
 /// @return -1 if s1<s2, 0 if s1==s2, 1 if s1>s2
 int compare_student_id(const void *s1, const void *s2);
+
+/// @brief compare two students by their first names (alphabetical). To be used in qsort
+/// @param a pointer to first student
+/// @param b pointer to second student
+/// @return negative if a<b, 0 if a==b, positive if a>b
+int compare_student_fname(const void *a, const void *b);
+
+/// @brief compare two students by their last names (alphabetical). To be used in qsort
+/// @param a pointer to first student
+/// @param b pointer to second student
+/// @return negative if a<b, 0 if a==b, positive if a>b
+int compare_student_name(const void *a, const void *b);
+
+/// @brief compare two students by their general average. To be used in qsort
+/// @param a pointer to first student
+/// @param b pointer to second student
+/// @return negative if a<b, 0 if a==b, positive if a>b
+int compare_student_average(const void *a, const void *b);
+
+/// @brief compare two students by their minimum grade among followed courses. To be used in qsort
+/// @param a pointer to first student
+/// @param b pointer to second student
+/// @return negative if a<b, 0 if a==b, positive if a>b
+int compare_student_minimum(const void *a, const void *b);
 
 /// @brief Search for a student in a StudentsTab by its ID using binary search
 /// @param prom the StudentsTab to search in
@@ -88,6 +114,13 @@ StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int 
 
 /// @brief Calculate and update the overall average for all students in the promotion
 /// @param prom the promotion
-void calculate_all_student_average(Promotion* prom);
+void calculate_all_student_average(Promotion *prom);
+
+/// @brief Get the names and first names of students in a StudentsTab
+/// @param tab array of Student pointers
+/// @param n number of students in the array
+/// @return an array of strings containing the names and first names of the students
+char **get_students_names_and_fname(Student **tab, int n);
+
 
 #endif

@@ -9,26 +9,68 @@ Promotion *init_promotion(CoursesTab *ctab, StudentsTab *stu_dtab)
     verify(prom, "malloc error");
     prom->courses = ctab;
     prom->stu_dtab = stu_dtab;
+    prom->compare_student = compare_student_id;
     return prom;
 }
 
 // to use in qsort
 int compare_student_id(const void *a, const void *b)
 {
-    const Student *const *pa = a;
-    const Student *const *pb = b;
-    const Student *s1 = *pa;
-    const Student *s2 = *pb;
+    const Student *s1 = *(const Student **)a;
+    const Student *s2 = *(const Student **)b;
     return (s1->id > s2->id) - (s1->id < s2->id);
 }
 
 // to use in bsearch
-int compare_student_key(const void *a, const void *b)
+int compare_student_to_key(const void *key, const void *b)
 {
-    // for a weird bug i encountered
-    const Student *key = a;
+    const Student *e = key; // a and b are not of the same type
     const Student *const *elem = b;
-    return (key->id > (*elem)->id) - (key->id < (*elem)->id);
+    return (e->id > (*elem)->id) - (e->id < (*elem)->id);
+}
+
+int compare_student_fname(const void *a, const void *b)
+{
+    const Student *s1 = *(const Student **)a;
+    const Student *s2 = *(const Student **)b;
+    return strcmp(s1->fname, s2->fname);
+}
+
+int compare_student_name(const void *a, const void *b)
+{
+    const Student *s1 = *(const Student **)a;
+    const Student *s2 = *(const Student **)b;
+    return strcmp(s1->name, s2->name);
+}
+
+int compare_student_average(const void *a, const void *b)
+{
+    const Student *s1 = *(const Student **)a;
+    const Student *s2 = *(const Student **)b;
+    return s1->average - s2->average;
+}
+
+int compare_student_minimum(const void *a, const void *b)
+{
+    const Student *s1 = *(const Student **)a;
+    const Student *s2 = *(const Student **)b;
+    float min_s1 = GRADE_MAX;
+    float min_s2 = GRADE_MAX;
+    for (int i = 0; i < s1->n_courses; i++)
+    {
+        if (s1->f_courses[i]->average < min_s1)
+        {
+            min_s1 = s1->f_courses[i]->average;
+        }
+    }
+    for (int i = 0; i < s2->n_courses; i++)
+    {
+        if (s2->f_courses[i]->average < min_s2)
+        {
+            min_s1 = s2->f_courses[i]->average;
+        }
+    }
+    return min_s1 - min_s2;
 }
 
 Student *student_tab_bsearch(StudentsTab *stu_dtab, unsigned int searched_id)
@@ -36,7 +78,7 @@ Student *student_tab_bsearch(StudentsTab *stu_dtab, unsigned int searched_id)
     assert(StudentsTab_is_valid(stu_dtab, student_is_valid));
     Student tmp = {.id = searched_id}; // dummy student
     Student **res = (Student **)bsearch(&tmp, stu_dtab->tab, stu_dtab->size, sizeof(Student *),
-                                        compare_student_key);
+                                        compare_student_to_key);
     return res ? *res : NULL;
 }
 
@@ -90,6 +132,11 @@ bool promotion_is_valid(Promotion *prom)
     if (!prom)
     {
         fprintf(stderr, BOLD_RED "WARNING : promotion is NULL\n" RESET);
+        return false;
+    }
+    if (prom->compare_student == NULL)
+    {
+        fprintf(stderr, BOLD_RED "WARNING : student compare function is NULL\n" RESET);
         return false;
     }
     return StudentsTab_is_valid(prom->stu_dtab, student_is_valid) &&
@@ -195,10 +242,11 @@ StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int 
     return top;
 }
 
-void calculate_all_student_average(Promotion *prom) {
+void calculate_all_student_average(Promotion *prom)
+{
     assert(promotion_is_valid(prom));
     CoursesTab *courses = prom->courses;
-    StudentsTab* stu_dtab = prom->stu_dtab;
+    StudentsTab *stu_dtab = prom->stu_dtab;
     for (int i = 0; i < stu_dtab->size; i++)
     {
         Student *stu = stu_dtab->tab[i];
@@ -211,4 +259,23 @@ void calculate_all_student_average(Promotion *prom) {
         stu->average = get_student_general_avg(stu, courses);
         assert(stu->average > GRADE_MIN && stu->average < GRADE_MAX);
     }
+}
+
+char **get_students_names_and_fname(Student **tab, int n)
+{
+    char **names = (char **)malloc(sizeof(char *) * n);
+    verify(names, "malloc error");
+    for (int i = 0; i < n; i++)
+    {
+        char *name = tab[i]->name;
+        char *fname = tab[i]->fname;
+        size_t name_len = strlen(name);
+        size_t fname_len = strlen(fname);
+        size_t len = name_len + fname_len + 2; //+1 for a space and +1 for '\0'
+        names[i] = (char *)malloc(sizeof(char) * (len));
+        verify(names[i], "malloc error");
+        int res = snprintf(names[i], len, "%s %s", name, fname);
+        assert((size_t)res + 1 == len); // +1 for '\0'
+    }
+    return names;
 }

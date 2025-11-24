@@ -13,7 +13,22 @@ API functions to interact with the student management system.
 \begin{DoxyCompactList}\small\item\em Number of best students (with highest general average) to retrieve. \end{DoxyCompactList}\item 
 \Hypertarget{student__api_8h_a47fd7d8326ae22c6722da7848d63d024}\label{student__api_8h_a47fd7d8326ae22c6722da7848d63d024} 
 \#define {\bfseries SIZE\+\_\+\+TOP2}~3
-\begin{DoxyCompactList}\small\item\em Number of best students (with highest average) to retrieve for a selected course. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Number of best students (with highest average) to retrieve for a selected course. \end{DoxyCompactList}\item 
+\Hypertarget{student__api_8h_a708f939981ead4d1db83b3a33c9246ad}\label{student__api_8h_a708f939981ead4d1db83b3a33c9246ad} 
+\#define {\bfseries STUDENT\+\_\+\+ID}~0
+\begin{DoxyCompactList}\small\item\em Sorting mode\+: by student ID. \end{DoxyCompactList}\item 
+\Hypertarget{student__api_8h_ae823f0df78d1075240141b0f64318608}\label{student__api_8h_ae823f0df78d1075240141b0f64318608} 
+\#define {\bfseries ALPHA\+\_\+\+FIRST\+\_\+\+NAME}~1
+\begin{DoxyCompactList}\small\item\em Sorting mode\+: by student first name (alphabetical). \end{DoxyCompactList}\item 
+\Hypertarget{student__api_8h_a2295a109c259cc6f5db257f106fb0a89}\label{student__api_8h_a2295a109c259cc6f5db257f106fb0a89} 
+\#define {\bfseries ALPHA\+\_\+\+LAST\+\_\+\+NAME}~2
+\begin{DoxyCompactList}\small\item\em Sorting mode\+: by student last name (alphabetical). \end{DoxyCompactList}\item 
+\Hypertarget{student__api_8h_a1f98b8446b6c3c9f699cc2c046c49f87}\label{student__api_8h_a1f98b8446b6c3c9f699cc2c046c49f87} 
+\#define {\bfseries AVERAGE}~3
+\begin{DoxyCompactList}\small\item\em Sorting mode\+: by student average (highest to lowest). \end{DoxyCompactList}\item 
+\Hypertarget{student__api_8h_ab414b3d93e06e9151175e4084ed3295d}\label{student__api_8h_ab414b3d93e06e9151175e4084ed3295d} 
+\#define {\bfseries MINIMUM}~4
+\begin{DoxyCompactList}\small\item\em Sorting mode\+: by student minimum grade (highest to lowest). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,7 +51,11 @@ void \mbox{\hyperlink{student__api_8h_a9b573175a59abe95e2e79f555e84c4a2}{API\+\_
 char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{student__api_8h_ae2130f172cf783bdd78191fab55de446}{API\+\_\+get\+\_\+best\+\_\+students}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class)
 \begin{DoxyCompactList}\small\item\em Get the best students from a promotion. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{student__api_8h_a11ab96e566af524d539559976ab82107}{API\+\_\+get\+\_\+best\+\_\+students\+\_\+in\+\_\+course}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class, char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structcourse}{course}})
-\begin{DoxyCompactList}\small\item\em Get the best students from a promotion for a given course. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the best students from a promotion for a given course. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{student__api_8h_a486feb9b20fa2c871344f573c185b022}{API\+\_\+set\+\_\+sorting\+\_\+mode}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class, int mode)
+\begin{DoxyCompactList}\small\item\em Set the sorting mode for students in the promotion. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{student__api_8h_acb7493f8ec624523b8cf0ad32052898e}{API\+\_\+sort\+\_\+students}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class)
+\begin{DoxyCompactList}\small\item\em Sort the students in the promotion according to the current sorting mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -155,6 +174,44 @@ Saves a promotion to a binary file. Order\+: courses, students.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 always return 1 
+\end{DoxyReturn}
+\Hypertarget{student__api_8h_a486feb9b20fa2c871344f573c185b022}\index{student\_api.h@{student\_api.h}!API\_set\_sorting\_mode@{API\_set\_sorting\_mode}}
+\index{API\_set\_sorting\_mode@{API\_set\_sorting\_mode}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_set\_sorting\_mode()}{API\_set\_sorting\_mode()}}
+{\footnotesize\ttfamily \label{student__api_8h_a486feb9b20fa2c871344f573c185b022} 
+int API\+\_\+set\+\_\+sorting\+\_\+mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}}]{p\+Class}{, }\item[{int}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Set the sorting mode for students in the promotion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Class} & the promotion \\
+\hline
+{\em mode} & the sorting mode (STUDENT\+\_\+\+ID, ALPHA\+\_\+\+FIRST\+\_\+\+NAME, ALPHA\+\_\+\+LAST\+\_\+\+NAME, AVERAGE, MINIMUM) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 if the mode is incorrect 
+\end{DoxyReturn}
+\Hypertarget{student__api_8h_acb7493f8ec624523b8cf0ad32052898e}\index{student\_api.h@{student\_api.h}!API\_sort\_students@{API\_sort\_students}}
+\index{API\_sort\_students@{API\_sort\_students}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_sort\_students()}{API\_sort\_students()}}
+{\footnotesize\ttfamily \label{student__api_8h_acb7493f8ec624523b8cf0ad32052898e} 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} API\+\_\+sort\+\_\+students (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}}]{p\+Class}{}\end{DoxyParamCaption})}
+
+
+
+Sort the students in the promotion according to the current sorting mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Class} & the promotion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dynamic table containing the names of all students sorted 
 \end{DoxyReturn}
 \Hypertarget{student__api_8h_a9b573175a59abe95e2e79f555e84c4a2}\index{student\_api.h@{student\_api.h}!API\_unload@{API\_unload}}
 \index{API\_unload@{API\_unload}!student\_api.h@{student\_api.h}}
