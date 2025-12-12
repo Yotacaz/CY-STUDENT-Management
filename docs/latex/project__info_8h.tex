@@ -5,20 +5,43 @@
 Project information macros.  
 
 
+{\ttfamily \#include "{}utils.\+h"{}}\newline
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{project__info_8h_a4a776fa6ea8b7bdf8dfa04ad42b46407}\label{project__info_8h_a4a776fa6ea8b7bdf8dfa04ad42b46407} 
-\#define {\bfseries PROJECT\+\_\+\+VERSION}~"{}1.\+1.\+0"{}
+\#define {\bfseries PROJECT\+\_\+\+VERSION}~"{}0.\+4.\+0"{}
 \begin{DoxyCompactList}\small\item\em Project version. \end{DoxyCompactList}\item 
 \Hypertarget{project__info_8h_a6c8fad838ed64cc67da3f68149009758}\label{project__info_8h_a6c8fad838ed64cc67da3f68149009758} 
 \#define {\bfseries AUTHOR}~"{}Martin CRISSOT (https\+://github.\+com/Yotacaz/)"{}
 \begin{DoxyCompactList}\small\item\em Author information. \end{DoxyCompactList}\item 
 \Hypertarget{project__info_8h_ae73053051efbb45c3a39751f5ce9fb36}\label{project__info_8h_ae73053051efbb45c3a39751f5ce9fb36} 
 \#define {\bfseries PROJECT\+\_\+\+NAME}~"{}CY-\/STUDENT MANAGEMENT"{}
-\begin{DoxyCompactList}\small\item\em Project name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Project name. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{project__info_8h_ac08e6b8c7e5d3b1e34eef2143f17a2cd}{PRINT\+\_\+\+PROJECT\+\_\+\+INFO}}()
+\begin{DoxyCompactList}\small\item\em Macro to print project information. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Project information macros. 
+
+
+
+\label{doc-define-members}
+\Hypertarget{project__info_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{project__info_8h_ac08e6b8c7e5d3b1e34eef2143f17a2cd}\index{project\_info.h@{project\_info.h}!PRINT\_PROJECT\_INFO@{PRINT\_PROJECT\_INFO}}
+\index{PRINT\_PROJECT\_INFO@{PRINT\_PROJECT\_INFO}!project\_info.h@{project\_info.h}}
+\doxysubsubsection{\texorpdfstring{PRINT\_PROJECT\_INFO}{PRINT\_PROJECT\_INFO}}
+{\footnotesize\ttfamily \label{project__info_8h_ac08e6b8c7e5d3b1e34eef2143f17a2cd} 
+\#define PRINT\+\_\+\+PROJECT\+\_\+\+INFO(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{printf(\mbox{\hyperlink{utils_8h_a0719a599e334b3093d1fe3277a261df2}{BOLD\_BLU}}\ \mbox{\hyperlink{project__info_8h_ae73053051efbb45c3a39751f5ce9fb36}{PROJECT\_NAME}}\ \textcolor{stringliteral}{"{}\ ("{}}\ \mbox{\hyperlink{project__info_8h_a4a776fa6ea8b7bdf8dfa04ad42b46407}{PROJECT\_VERSION}}\ \textcolor{stringliteral}{"{})\ |\ Author\ :\ "{}}\ \mbox{\hyperlink{project__info_8h_a6c8fad838ed64cc67da3f68149009758}{AUTHOR}}\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ \mbox{\hyperlink{utils_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}})}
+
+\end{DoxyCode}
+
+
+Macro to print project information. 
 

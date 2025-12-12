@@ -69,7 +69,7 @@ char **API_get_best_students_in_course(CLASS_DATA *pClass, char *course);
 /// @brief Set the sorting mode for students in the promotion
 /// @param pClass the promotion
 /// @param mode the sorting mode (STUDENT_ID, ALPHA_FIRST_NAME, ALPHA_LAST_NAME, AVERAGE, MINIMUM)
-/// @return 0 if successful, 1 if the mode is incorrect
+/// @return 1 if successful, 0 if the mode is incorrect
 int API_set_sorting_mode(CLASS_DATA *pClass, int mode);
 
 /// @brief Sort the students in the promotion according to the current sorting mode
@@ -77,4 +77,19 @@ int API_set_sorting_mode(CLASS_DATA *pClass, int mode);
 /// @return a dynamic table containing the names of all students sorted
 char **API_sort_students(CLASS_DATA *pClass);
 
+/// @brief Display the results of students per field (courses)
+/// @param pClass the promotion
+void API_display_results_per_field(CLASS_DATA *pClass);
+
+/// @brief Cipher a file
+/// @param pIn the input file path (file to cipher)
+/// @param pOut the output file path (ciphered file path)
+/// @return always return 1
+int API_cipher(char *pIn, char *pOut);
+
+/// @brief Decipher a file
+/// @param pIn the input file path (file to decipher)
+/// @param pOut the output file path (deciphered file path)
+/// @return always return 1
+int API_decipher(char *pIn, char *pOut);
 #endif

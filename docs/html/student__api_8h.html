@@ -147,10 +147,78 @@ Functions</h2></td></tr>
 <tr class="memdesc:a486feb9b20fa2c871344f573c185b022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting mode for students in the promotion.  <br /></td></tr>
 <tr class="memitem:acb7493f8ec624523b8cf0ad32052898e" id="r_acb7493f8ec624523b8cf0ad32052898e"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb7493f8ec624523b8cf0ad32052898e">API_sort_students</a> (<a class="el" href="#a742097baeb22b98239df36e5b8b9238e">CLASS_DATA</a> *pClass)</td></tr>
 <tr class="memdesc:acb7493f8ec624523b8cf0ad32052898e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort the students in the promotion according to the current sorting mode.  <br /></td></tr>
+<tr class="memitem:af8bafe6a3966b77b5aa5c60f1d001033" id="r_af8bafe6a3966b77b5aa5c60f1d001033"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8bafe6a3966b77b5aa5c60f1d001033">API_display_results_per_field</a> (<a class="el" href="#a742097baeb22b98239df36e5b8b9238e">CLASS_DATA</a> *pClass)</td></tr>
+<tr class="memdesc:af8bafe6a3966b77b5aa5c60f1d001033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the results of students per field (courses).  <br /></td></tr>
+<tr class="memitem:a09e5b8111b9407f85399a4c757fb70c9" id="r_a09e5b8111b9407f85399a4c757fb70c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09e5b8111b9407f85399a4c757fb70c9">API_cipher</a> (char *pIn, char *pOut)</td></tr>
+<tr class="memdesc:a09e5b8111b9407f85399a4c757fb70c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cipher a file.  <br /></td></tr>
+<tr class="memitem:acb0fa307ac5adf97ff988e46eef5785a" id="r_acb0fa307ac5adf97ff988e46eef5785a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb0fa307ac5adf97ff988e46eef5785a">API_decipher</a> (char *pIn, char *pOut)</td></tr>
+<tr class="memdesc:acb0fa307ac5adf97ff988e46eef5785a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decipher a file.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>API functions to interact with the student management system. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a09e5b8111b9407f85399a4c757fb70c9" name="a09e5b8111b9407f85399a4c757fb70c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e5b8111b9407f85399a4c757fb70c9">&#9670;&#160;</a></span>API_cipher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int API_cipher </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>pIn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>pOut</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cipher a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pIn</td><td>the input file path (file to cipher) </td></tr>
+    <tr><td class="paramname">pOut</td><td>the output file path (ciphered file path) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>always return 1 </dd></dl>
+
+</div>
+</div>
+<a id="acb0fa307ac5adf97ff988e46eef5785a" name="acb0fa307ac5adf97ff988e46eef5785a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb0fa307ac5adf97ff988e46eef5785a">&#9670;&#160;</a></span>API_decipher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int API_decipher </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>pIn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>pOut</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decipher a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pIn</td><td>the input file path (file to decipher) </td></tr>
+    <tr><td class="paramname">pOut</td><td>the output file path (deciphered file path) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>always return 1 </dd></dl>
+
+</div>
+</div>
 <a id="a28c4c55622b81c1b3f60a1ca3e21ade2" name="a28c4c55622b81c1b3f60a1ca3e21ade2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28c4c55622b81c1b3f60a1ca3e21ade2">&#9670;&#160;</a></span>API_display()</h2>
 
@@ -170,6 +238,31 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">prom</td><td>the promotion to print </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af8bafe6a3966b77b5aa5c60f1d001033" name="af8bafe6a3966b77b5aa5c60f1d001033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8bafe6a3966b77b5aa5c60f1d001033">&#9670;&#160;</a></span>API_display_results_per_field()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void API_display_results_per_field </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a742097baeb22b98239df36e5b8b9238e">CLASS_DATA</a> *</td>          <td class="paramname"><span class="paramname"><em>pClass</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display the results of students per field (courses). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pClass</td><td>the promotion </td></tr>
   </table>
   </dd>
 </dl>
@@ -343,7 +436,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 if the mode is incorrect </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if successful, 0 if the mode is incorrect </dd></dl>
 
 </div>
 </div>

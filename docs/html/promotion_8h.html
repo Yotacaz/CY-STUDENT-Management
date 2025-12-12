@@ -141,8 +141,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:af0a2a8cd3481045924195f3d1a28be78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top students in a promotion based on their overall average.  <br /></td></tr>
 <tr class="memitem:a6454fc13ca1ddeb3651288c64e85777d" id="r_a6454fc13ca1ddeb3651288c64e85777d"><td class="memItemLeft" align="right" valign="top">StudentsTab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6454fc13ca1ddeb3651288c64e85777d">get_top_students_in_course</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom, char *course_name, int top_max_size)</td></tr>
 <tr class="memdesc:a6454fc13ca1ddeb3651288c64e85777d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top students in a specific course within a promotion.  <br /></td></tr>
-<tr class="memitem:a490db0105e1f4a9a646e8b1c442e7a76" id="r_a490db0105e1f4a9a646e8b1c442e7a76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a490db0105e1f4a9a646e8b1c442e7a76">calculate_all_student_average</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom)</td></tr>
-<tr class="memdesc:a490db0105e1f4a9a646e8b1c442e7a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and update the overall average for all students in the promotion.  <br /></td></tr>
+<tr class="memitem:ad73a386226eb6f33ac8e4355c4b2614a" id="r_ad73a386226eb6f33ac8e4355c4b2614a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad73a386226eb6f33ac8e4355c4b2614a">evaluate_all_student_average</a> (<a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *prom)</td></tr>
+<tr class="memdesc:ad73a386226eb6f33ac8e4355c4b2614a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and update the overall average for all students in the promotion and set validation bitmask to check if the student validate a followed course.  <br /></td></tr>
 <tr class="memitem:afd8ed2c4d01decfc61fae33a446ac005" id="r_afd8ed2c4d01decfc61fae33a446ac005"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd8ed2c4d01decfc61fae33a446ac005">get_students_names_and_fname</a> (<a class="el" href="students_8h.html#ae8c079733e2570c4a107caf4b38afc60">Student</a> **tab, int n)</td></tr>
 <tr class="memdesc:afd8ed2c4d01decfc61fae33a446ac005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the names and first names of students in a StudentsTab.  <br /></td></tr>
 </table>
@@ -173,31 +173,6 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">prom</td><td>the StudentsTab </td></tr>
     <tr><td class="paramname">n_courses</td><td>the number of courses to allocate for each student </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a490db0105e1f4a9a646e8b1c442e7a76" name="a490db0105e1f4a9a646e8b1c442e7a76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a490db0105e1f4a9a646e8b1c442e7a76">&#9670;&#160;</a></span>calculate_all_student_average()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void calculate_all_student_average </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *</td>          <td class="paramname"><span class="paramname"><em>prom</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculate and update the overall average for all students in the promotion. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">prom</td><td>the promotion </td></tr>
   </table>
   </dd>
 </dl>
@@ -387,6 +362,31 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>-1 if key&lt;b, 0 if key==b, 1 if key&gt;b </dd></dl>
+
+</div>
+</div>
+<a id="ad73a386226eb6f33ac8e4355c4b2614a" name="ad73a386226eb6f33ac8e4355c4b2614a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73a386226eb6f33ac8e4355c4b2614a">&#9670;&#160;</a></span>evaluate_all_student_average()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evaluate_all_student_average </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a309ab7fa04c2f6e4bba49e9d342dd42d">Promotion</a> *</td>          <td class="paramname"><span class="paramname"><em>prom</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate and update the overall average for all students in the promotion and set validation bitmask to check if the student validate a followed course. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prom</td><td>the promotion </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

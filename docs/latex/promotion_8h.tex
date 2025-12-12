@@ -50,8 +50,8 @@ Students\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_af0a2a8cd
 \begin{DoxyCompactList}\small\item\em Get the top students in a promotion based on their overall average. \end{DoxyCompactList}\item 
 Students\+Tab \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_a6454fc13ca1ddeb3651288c64e85777d}{get\+\_\+top\+\_\+students\+\_\+in\+\_\+course}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom, char \texorpdfstring{$\ast$}{*}course\+\_\+name, int top\+\_\+max\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Get the top students in a specific course within a promotion. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{promotion_8h_a490db0105e1f4a9a646e8b1c442e7a76}{calculate\+\_\+all\+\_\+student\+\_\+average}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom)
-\begin{DoxyCompactList}\small\item\em Calculate and update the overall average for all students in the promotion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{promotion_8h_ad73a386226eb6f33ac8e4355c4b2614a}{evaluate\+\_\+all\+\_\+student\+\_\+average}} (\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}prom)
+\begin{DoxyCompactList}\small\item\em Calculate and update the overall average for all students in the promotion and set validation bitmask to check if the student validate a followed course. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{promotion_8h_afd8ed2c4d01decfc61fae33a446ac005}{get\+\_\+students\+\_\+names\+\_\+and\+\_\+fname}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tab, int n)
 \begin{DoxyCompactList}\small\item\em Get the names and first names of students in a Students\+Tab. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -79,21 +79,6 @@ Allocate the followed courses for each student in the Students\+Tab.
 {\em prom} & the Students\+Tab \\
 \hline
 {\em n\+\_\+courses} & the number of courses to allocate for each student \\
-\hline
-\end{DoxyParams}
-\Hypertarget{promotion_8h_a490db0105e1f4a9a646e8b1c442e7a76}\index{promotion.h@{promotion.h}!calculate\_all\_student\_average@{calculate\_all\_student\_average}}
-\index{calculate\_all\_student\_average@{calculate\_all\_student\_average}!promotion.h@{promotion.h}}
-\doxysubsubsection{\texorpdfstring{calculate\_all\_student\_average()}{calculate\_all\_student\_average()}}
-{\footnotesize\ttfamily \label{promotion_8h_a490db0105e1f4a9a646e8b1c442e7a76} 
-void calculate\+\_\+all\+\_\+student\+\_\+average (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}}]{prom}{}\end{DoxyParamCaption})}
-
-
-
-Calculate and update the overall average for all students in the promotion. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em prom} & the promotion \\
 \hline
 \end{DoxyParams}
 \Hypertarget{promotion_8h_a3207da0e710db9306569647a03acfb26}\index{promotion.h@{promotion.h}!compare\_student\_average@{compare\_student\_average}}
@@ -216,6 +201,21 @@ compare two students by their IDs. To be used in bsearch for searching in a grow
 \begin{DoxyReturn}{Returns}
 -\/1 if key\texorpdfstring{$<$}{<}b, 0 if key==b, 1 if key\texorpdfstring{$>$}{>}b 
 \end{DoxyReturn}
+\Hypertarget{promotion_8h_ad73a386226eb6f33ac8e4355c4b2614a}\index{promotion.h@{promotion.h}!evaluate\_all\_student\_average@{evaluate\_all\_student\_average}}
+\index{evaluate\_all\_student\_average@{evaluate\_all\_student\_average}!promotion.h@{promotion.h}}
+\doxysubsubsection{\texorpdfstring{evaluate\_all\_student\_average()}{evaluate\_all\_student\_average()}}
+{\footnotesize\ttfamily \label{promotion_8h_ad73a386226eb6f33ac8e4355c4b2614a} 
+void evaluate\+\_\+all\+\_\+student\+\_\+average (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{promotion_8h_a309ab7fa04c2f6e4bba49e9d342dd42d}{Promotion}} \texorpdfstring{$\ast$}{*}}]{prom}{}\end{DoxyParamCaption})}
+
+
+
+Calculate and update the overall average for all students in the promotion and set validation bitmask to check if the student validate a followed course. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prom} & the promotion \\
+\hline
+\end{DoxyParams}
 \Hypertarget{promotion_8h_a0d3b31688a911c328c8142f0f36181ac}\index{promotion.h@{promotion.h}!free\_promotion@{free\_promotion}}
 \index{free\_promotion@{free\_promotion}!promotion.h@{promotion.h}}
 \doxysubsubsection{\texorpdfstring{free\_promotion()}{free\_promotion()}}

@@ -49,7 +49,7 @@ int compare_courses(const void *c1, const void *c2);
 /// @param tab the table
 /// @param searched_name the name to search
 /// @return the index of the Course in the courses table
-int get_course_index(CoursesTab *tab, char *searched_name);
+int get_course_index_in_table(CoursesTab *tab, char *searched_name);
 
 /// @brief print a course
 /// @param course course to print

@@ -178,6 +178,8 @@ Macros</h2></td></tr>
 <tr class="memitem:af79cff29f69e9e9672688534e8a4d702" id="r_af79cff29f69e9e9672688534e8a4d702"><td class="memItemLeft" align="right" valign="top"><a id="af79cff29f69e9e9672688534e8a4d702" name="af79cff29f69e9e9672688534e8a4d702"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CSV_SEP</b>&#160;&#160;&#160;';'</td></tr>
 <tr class="memdesc:af79cff29f69e9e9672688534e8a4d702"><td class="mdescLeft">&#160;</td><td class="mdescRight">CSV separator character. <br /></td></tr>
+<tr class="memitem:a16612f8f07715fa149286c57bfdfce4a" id="r_a16612f8f07715fa149286c57bfdfce4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16612f8f07715fa149286c57bfdfce4a">verify</a>(condition,  err_msg)</td></tr>
+<tr class="memdesc:a16612f8f07715fa149286c57bfdfce4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify a condition and print an error message and exit if the condition is false.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -187,10 +189,53 @@ Functions</h2></td></tr>
 <tr class="memdesc:a5396b74ce929586dfc62b0ae31fcab8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a string table.  <br /></td></tr>
 <tr class="memitem:a1fa46850fa4059c42e9685098a0aed34" id="r_a1fa46850fa4059c42e9685098a0aed34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fa46850fa4059c42e9685098a0aed34">free_tab_with_alloc</a> (char **tab, int len)</td></tr>
 <tr class="memdesc:a1fa46850fa4059c42e9685098a0aed34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a string table where each string has been dynamically allocated.  <br /></td></tr>
+<tr class="memitem:a1a2a6b17257486663af0ca091e4e554a" id="r_a1a2a6b17257486663af0ca091e4e554a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a2a6b17257486663af0ca091e4e554a">scan_str_of_len_between</a> (size_t min_str_len, size_t max_str_len, char *prompt_msg)</td></tr>
+<tr class="memdesc:a1a2a6b17257486663af0ca091e4e554a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan a string with length between min_str_len and max_str_len from standard input.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Various utility functions. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a16612f8f07715fa149286c57bfdfce4a" name="a16612f8f07715fa149286c57bfdfce4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16612f8f07715fa149286c57bfdfce4a">&#9670;&#160;</a></span>verify</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define verify</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>condition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>err_msg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                                                             \</div>
+<div class="line">    {                                                                                              \</div>
+<div class="line">        if (!(condition))                                                                          \</div>
+<div class="line">        {                                                                                          \</div>
+<div class="line">            fprintf(stderr, <a class="code hl_define" href="#a58f9401d546703859ab9c8720c61ee9e">BOLD_RED</a> <span class="stringliteral">&quot;ERROR (in %s) : %s\n&quot;</span> <a class="code hl_define" href="#ab702106cf3b3e96750b6845ded4e0299">RESET</a>, __func__, err_msg);             \</div>
+<div class="line">            exit(EXIT_FAILURE);                                                                    \</div>
+<div class="line">        }                                                                                          \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="autils_8h_html_a58f9401d546703859ab9c8720c61ee9e"><div class="ttname"><a href="#a58f9401d546703859ab9c8720c61ee9e">BOLD_RED</a></div><div class="ttdeci">#define BOLD_RED</div><div class="ttdoc">Bold red text color for terminal output.</div><div class="ttdef"><b>Definition</b> utils.h:51</div></div>
+<div class="ttc" id="autils_8h_html_ab702106cf3b3e96750b6845ded4e0299"><div class="ttname"><a href="#ab702106cf3b3e96750b6845ded4e0299">RESET</a></div><div class="ttdeci">#define RESET</div><div class="ttdoc">Reset text formatting for terminal output.</div><div class="ttdef"><b>Definition</b> utils.h:69</div></div>
+</div><!-- fragment -->
+<p>Verify a condition and print an error message and exit if the condition is false. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>the condition to verify </td></tr>
+    <tr><td class="paramname">err_msg</td><td>the error message to print if the condition is false </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a290cabf3313b2303b06136bcee79c892" name="a290cabf3313b2303b06136bcee79c892"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a290cabf3313b2303b06136bcee79c892">&#9670;&#160;</a></span>bin_read_string()</h2>
 
@@ -285,6 +330,43 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a1a2a6b17257486663af0ca091e4e554a" name="a1a2a6b17257486663af0ca091e4e554a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2a6b17257486663af0ca091e4e554a">&#9670;&#160;</a></span>scan_str_of_len_between()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * scan_str_of_len_between </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>min_str_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_str_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>prompt_msg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scan a string with length between min_str_len and max_str_len from standard input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min_str_len</td><td>the minimum length of the string to scan (excluding the null terminator) </td></tr>
+    <tr><td class="paramname">max_str_len</td><td>the maximum length of the string to scan (excluding the null terminator) </td></tr>
+    <tr><td class="paramname">prompt_msg</td><td>the prompt message to display to the user </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the scanned string (dynamically allocated, must be freed by the caller) </dd></dl>
 
 </div>
 </div>

@@ -4,7 +4,9 @@
 # Ignore build directory
 build/
 
-exec
-Exercice_*.pdf
+pdf/
 callgrind.out.*
 test*
+
+data/*
+!data/data.txt

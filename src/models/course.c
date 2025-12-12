@@ -36,7 +36,7 @@ int compare_courses(const void *c1, const void *c2)
     return strcmp((*pc1)->name, (*pc2)->name);
 }
 
-int get_course_index(CoursesTab *courses, char *searched_name)
+int get_course_index_in_table(CoursesTab *courses, char *searched_name)
 {
     // we could use bsearch but it would give us a pointer and not an index (cleaner this way)
     assert(CoursesTab_is_valid(courses, course_is_valid) && searched_name);

@@ -40,7 +40,11 @@ void \mbox{\hyperlink{students_8h_a7a09a7e9994d9eefc07aec5a21385117}{add\+\_\+gr
 bool \mbox{\hyperlink{students_8h_af4e2faccd38b6354983fcd4c3e8a92b7}{student\+\_\+is\+\_\+valid}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu)
 \begin{DoxyCompactList}\small\item\em Check if a student is valid \+: -\/1 as average is allowed (for when not yet calculated). This function prints invalidity reasons to stderr. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{students_8h_a285c2d0767fb93c9e6df0df3524d0d57}{print\+\_\+student}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu)
-\begin{DoxyCompactList}\small\item\em Print a student and its followed courses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Print a student and its followed courses. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{students_8h_a287ea3e03f816e5d1330fb2245655235}{print\+\_\+student\+\_\+validation}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu)
+\begin{DoxyCompactList}\small\item\em Print the validation status of a student per field (sciences/humanities). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{students_8h_a15debb389c43ea580df298bf588ecef5}{update\+\_\+student\+\_\+bitmask}} (\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}stu)
+\begin{DoxyCompactList}\small\item\em Update the course validation bitmask of a student for its followed courses. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -143,6 +147,21 @@ Print a student and its followed courses.
 {\em stu} & the student to print \\
 \hline
 \end{DoxyParams}
+\Hypertarget{students_8h_a287ea3e03f816e5d1330fb2245655235}\index{students.h@{students.h}!print\_student\_validation@{print\_student\_validation}}
+\index{print\_student\_validation@{print\_student\_validation}!students.h@{students.h}}
+\doxysubsubsection{\texorpdfstring{print\_student\_validation()}{print\_student\_validation()}}
+{\footnotesize\ttfamily \label{students_8h_a287ea3e03f816e5d1330fb2245655235} 
+void print\+\_\+student\+\_\+validation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}}]{stu}{}\end{DoxyParamCaption})}
+
+
+
+Print the validation status of a student per field (sciences/humanities). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stu} & the student to print \\
+\hline
+\end{DoxyParams}
 \Hypertarget{students_8h_af4e2faccd38b6354983fcd4c3e8a92b7}\index{students.h@{students.h}!student\_is\_valid@{student\_is\_valid}}
 \index{student\_is\_valid@{student\_is\_valid}!students.h@{students.h}}
 \doxysubsubsection{\texorpdfstring{student\_is\_valid()}{student\_is\_valid()}}
@@ -161,3 +180,18 @@ Check if a student is valid \+: -\/1 as average is allowed (for when not yet cal
 \begin{DoxyReturn}{Returns}
 true if valid, false otherwise 
 \end{DoxyReturn}
+\Hypertarget{students_8h_a15debb389c43ea580df298bf588ecef5}\index{students.h@{students.h}!update\_student\_bitmask@{update\_student\_bitmask}}
+\index{update\_student\_bitmask@{update\_student\_bitmask}!students.h@{students.h}}
+\doxysubsubsection{\texorpdfstring{update\_student\_bitmask()}{update\_student\_bitmask()}}
+{\footnotesize\ttfamily \label{students_8h_a15debb389c43ea580df298bf588ecef5} 
+void update\+\_\+student\+\_\+bitmask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{students_8h_ae8c079733e2570c4a107caf4b38afc60}{Student}} \texorpdfstring{$\ast$}{*}}]{stu}{}\end{DoxyParamCaption})}
+
+
+
+Update the course validation bitmask of a student for its followed courses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stu} & the student \\
+\hline
+\end{DoxyParams}

@@ -14,6 +14,7 @@ Student *init_student(char *name, char *first_name, unsigned int student_id, int
     stu->average = -1;
     stu->age = age;
     stu->n_courses = n_courses;
+    stu->course_validation_mask = 0;
     if (n_courses > 0)
     {
         // IF n_courses is known, it is supposed sufficiently constant so that we don't need to
@@ -41,7 +42,7 @@ void add_grade_to_student(Student *stu, CoursesTab *ctab, char *course_name, flo
 {
     assert(grade_is_valid(grade));
     assert(student_is_valid(stu));
-    long i = get_course_index(ctab, course_name);
+    long i = get_course_index_in_table(ctab, course_name);
     verify(i > -1, "course not found in courses table");
     Followed_course *fcourse = stu->f_courses[i];
     // recalculating avg supposing that all grades have same coef
@@ -52,7 +53,7 @@ void add_grade_to_student(Student *stu, CoursesTab *ctab, char *course_name, flo
     // fcourse->average = get_followed_course_avg(fcourse);
     // stu->average = get_student_general_avg(stu, ctab);
 }
-
+// #define PRINT_STUDENT_COURSES
 void print_student(Student *stu)
 {
     assert(student_is_valid(stu));
@@ -69,6 +70,31 @@ void print_student(Student *stu)
     {
         printf(BOLD_BLU "\n%d - " RESET, i);
         print_fcourse(stu->f_courses[i]);
+    }
+}
+
+void print_student_validation(Student *stu)
+{
+    assert(student_is_valid(stu));
+    printf(BOLD_CYN UNDERLINE "Student %u: %s %s" RESET CYN ", age = %d, avg = %.2f\n", stu->id,
+           stu->name, stu->fname, stu->age, stu->average);
+    bool science_is_validated = student_has_validated(stu, SCIENCES_MASK);
+    bool humanities_is_validated = student_has_validated(stu, HUMANITIES_MASK);
+    if (science_is_validated && humanities_is_validated)
+    {
+        printf(CYN "OO - every course is validated\n" RESET);
+    }
+    else if (!science_is_validated && !humanities_is_validated)
+    {
+        printf(RED "XX - humanities and science not validated\n" RESET);
+    }
+    else if (!science_is_validated)
+    {
+        printf(RED "OX - science not validated\n" RESET);
+    }
+    else
+    {
+        printf(RED "XO - humanities not validated\n" RESET);
     }
 }
 
@@ -116,10 +142,10 @@ bool student_is_valid(Student *stu)
     int n_courses = stu->n_courses;
     if (n_courses < 0)
     {
-        fprintf(stderr, BOLD_RED "WARNING : number of courses %d invalid\n" RESET, stu->n_courses);
+        fprintf(stderr, BOLD_RED "WARNING : number of courses %d invalid\n" RESET, n_courses);
         return false;
     }
-    else if (stu->n_courses != 0)
+    else if (n_courses != 0)
     {
         if (!stu->f_courses)
         {
@@ -133,6 +159,17 @@ bool student_is_valid(Student *stu)
                 return false;
             }
         }
+        if ((stu->course_validation_mask & ~((1U << n_courses) - 1)) !=
+            0) // check that no invalid bits are set
+        {
+            // note : could have use YEAR_MASK instead of (1U << n_courses) - 1)
+            fprintf(stderr,
+                    BOLD_RED "WARNING : student course validation bitmask has invalid "
+                             "bits set (n_courses = %d, bitmask = 0x%X, valid bits mask = "
+                             "0x%X,YEAR_MASK : 0x%X)\n" RESET,
+                    n_courses, stu->course_validation_mask, (1U << n_courses) - 1, YEAR_MASK);
+            return false;
+        }
     }
     else if (stu->f_courses)
     {
@@ -141,4 +178,22 @@ bool student_is_valid(Student *stu)
         return false;
     }
     return true;
+}
+
+void update_student_bitmask(Student *stu)
+{
+    assert(student_is_valid(stu));
+    Followed_course **tab = stu->f_courses;
+    for (int i = 0; i < stu->n_courses; i++)
+    {
+        // set i-th bit to 0 or 1 depending on if course is validated
+        if (tab[i]->average >= GRADE_TO_VALIDATE)
+        {
+            stu->course_validation_mask |= 1 << i;
+        }
+        else
+        {
+            stu->course_validation_mask &= 0 << i;
+        }
+    }
 }

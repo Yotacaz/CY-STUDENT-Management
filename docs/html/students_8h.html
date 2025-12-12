@@ -132,6 +132,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:af4e2faccd38b6354983fcd4c3e8a92b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a student is valid : -1 as average is allowed (for when not yet calculated). This function prints invalidity reasons to stderr.  <br /></td></tr>
 <tr class="memitem:a285c2d0767fb93c9e6df0df3524d0d57" id="r_a285c2d0767fb93c9e6df0df3524d0d57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a285c2d0767fb93c9e6df0df3524d0d57">print_student</a> (<a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *stu)</td></tr>
 <tr class="memdesc:a285c2d0767fb93c9e6df0df3524d0d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a student and its followed courses.  <br /></td></tr>
+<tr class="memitem:a287ea3e03f816e5d1330fb2245655235" id="r_a287ea3e03f816e5d1330fb2245655235"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a287ea3e03f816e5d1330fb2245655235">print_student_validation</a> (<a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *stu)</td></tr>
+<tr class="memdesc:a287ea3e03f816e5d1330fb2245655235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the validation status of a student per field (sciences/humanities).  <br /></td></tr>
+<tr class="memitem:a15debb389c43ea580df298bf588ecef5" id="r_a15debb389c43ea580df298bf588ecef5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15debb389c43ea580df298bf588ecef5">update_student_bitmask</a> (<a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *stu)</td></tr>
+<tr class="memdesc:a15debb389c43ea580df298bf588ecef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the course validation bitmask of a student for its followed courses.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure and functions to handle students data. </p>
@@ -296,6 +300,31 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a287ea3e03f816e5d1330fb2245655235" name="a287ea3e03f816e5d1330fb2245655235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a287ea3e03f816e5d1330fb2245655235">&#9670;&#160;</a></span>print_student_validation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_student_validation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *</td>          <td class="paramname"><span class="paramname"><em>stu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the validation status of a student per field (sciences/humanities). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stu</td><td>the student to print </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af4e2faccd38b6354983fcd4c3e8a92b7" name="af4e2faccd38b6354983fcd4c3e8a92b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4e2faccd38b6354983fcd4c3e8a92b7">&#9670;&#160;</a></span>student_is_valid()</h2>
 
@@ -319,6 +348,31 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a15debb389c43ea580df298bf588ecef5" name="a15debb389c43ea580df298bf588ecef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15debb389c43ea580df298bf588ecef5">&#9670;&#160;</a></span>update_student_bitmask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update_student_bitmask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae8c079733e2570c4a107caf4b38afc60">Student</a> *</td>          <td class="paramname"><span class="paramname"><em>stu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the course validation bitmask of a student for its followed courses. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stu</td><td>the student </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

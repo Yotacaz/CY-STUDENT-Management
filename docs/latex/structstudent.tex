@@ -12,9 +12,13 @@ Structure representing a student. We suppose here that every student follows the
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{structstudent_a8d4d0a206077a171fddbaf4475107772}\label{structstudent_a8d4d0a206077a171fddbaf4475107772} 
+u\+\_\+int32\+\_\+t {\bfseries course\+\_\+validation\+\_\+mask}
+\begin{DoxyCompactList}\small\item\em bitmask representing validated courses~\newline
+ if bit n is 1, course n (in enum \doxylink{followed__course_8h_ae152a4e920986ad3baf9e0e3af2f3cc6}{Course\+Index}) is validated else not validated used to quickly check if a student has validated a set of courses (see student\+\_\+has\+\_\+validated function) \end{DoxyCompactList}\item 
 \Hypertarget{structstudent_a7a834c9bac47429c4c2560c5c7eeb9f6}\label{structstudent_a7a834c9bac47429c4c2560c5c7eeb9f6} 
 \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\+\_\+course}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} {\bfseries f\+\_\+courses}
-\begin{DoxyCompactList}\small\item\em table of followed courses \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em table of followed courses, {\bfseries{is ordered alphabetically}} \end{DoxyCompactList}\item 
 \Hypertarget{structstudent_a473ea91ecf604c0a5125eaad19307a39}\label{structstudent_a473ea91ecf604c0a5125eaad19307a39} 
 char \texorpdfstring{$\ast$}{*} {\bfseries name}
 \begin{DoxyCompactList}\small\item\em last name \end{DoxyCompactList}\item 

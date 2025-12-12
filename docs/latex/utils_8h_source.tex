@@ -50,21 +50,25 @@
 \DoxyCodeLine{00073\ }
 \DoxyCodeLine{00080\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{utils_8h_a290cabf3313b2303b06136bcee79c892}{bin\_read\_string}}(FILE\ *file,\ \textcolor{keywordtype}{char}\ buf[],\ \textcolor{keywordtype}{long}\ buf\_size);}
 \DoxyCodeLine{00081\ }
-\DoxyCodeLine{00085\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ verify(\textcolor{keywordtype}{bool}\ condition,\ \textcolor{keywordtype}{char}\ *err\_msg)}
-\DoxyCodeLine{00086\ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (!condition)}
-\DoxyCodeLine{00088\ \ \ \ \ \{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{utils_8h_a58f9401d546703859ab9c8720c61ee9e}{BOLD\_RED}}\ \textcolor{stringliteral}{"{}ERREUR\ :\ \%s\(\backslash\)n"{}}\ \mbox{\hyperlink{utils_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}},\ err\_msg);}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);}
-\DoxyCodeLine{00091\ \ \ \ \ \}}
-\DoxyCodeLine{00092\ \}}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00097\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ print\_float(\textcolor{keywordtype}{float}\ val)\ \{\ printf(\textcolor{stringliteral}{"{}\%.2f"{}},\ val);\ \}}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8h_a5396b74ce929586dfc62b0ae31fcab8c}{print\_str\_tab}}(\textcolor{keywordtype}{char}**\ tab,\ \textcolor{keywordtype}{int}\ len);}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8h_a1fa46850fa4059c42e9685098a0aed34}{free\_tab\_with\_alloc}}(\textcolor{keywordtype}{char}\ **tab,\ \textcolor{keywordtype}{int}\ len);}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ verify(condition,\ err\_msg)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ \ \ do\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (!(condition))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ BOLD\_RED\ "{}ERROR\ (in\ \%s)\ :\ \%s\(\backslash\)n"{}\ RESET,\ \_\_func\_\_,\ err\_msg);\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \}\ while\ (0)}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ print\_float(\textcolor{keywordtype}{float}\ val)\ \{\ printf(\textcolor{stringliteral}{"{}\%.2f"{}},\ val);\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8h_a5396b74ce929586dfc62b0ae31fcab8c}{print\_str\_tab}}(\textcolor{keywordtype}{char}\ **tab,\ \textcolor{keywordtype}{int}\ len);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8h_a1fa46850fa4059c42e9685098a0aed34}{free\_tab\_with\_alloc}}(\textcolor{keywordtype}{char}\ **tab,\ \textcolor{keywordtype}{int}\ len);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{utils_8h_a1a2a6b17257486663af0ca091e4e554a}{scan\_str\_of\_len\_between}}(\textcolor{keywordtype}{size\_t}\ min\_str\_len,\ \textcolor{keywordtype}{size\_t}\ max\_str\_len\ ,\ \textcolor{keywordtype}{char}\ *prompt\_msg);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -82,14 +82,15 @@ size_t bin_read_string(FILE *file, char buf[], long buf_size);
 /// @brief Verify a condition and print an error message and exit if the condition is false
 /// @param condition the condition to verify
 /// @param err_msg the error message to print if the condition is false
-static inline void verify(bool condition, char *err_msg)
-{
-    if (!condition)
-    {
-        fprintf(stderr, BOLD_RED "ERREUR : %s\n" RESET, err_msg);
-        exit(EXIT_FAILURE);
-    }
-}
+#define verify(condition, err_msg)                                                                 \
+    do                                                                                             \
+    {                                                                                              \
+        if (!(condition))                                                                          \
+        {                                                                                          \
+            fprintf(stderr, BOLD_RED "ERROR (in %s) : %s\n" RESET, __func__, err_msg);             \
+            exit(EXIT_FAILURE);                                                                    \
+        }                                                                                          \
+    } while (0)
 
 /// @brief Print a float value with 2 decimals
 /// Used as a callback for Grades_print
@@ -99,11 +100,18 @@ static inline void print_float(float val) { printf("%.2f", val); }
 /// @brief Print a string table
 /// @param tab the string table
 /// @param len the length of the table
-void print_str_tab(char** tab, int len);
+void print_str_tab(char **tab, int len);
 
 /// @brief Free a string table where each string has been dynamically allocated
 /// @param tab the string table
 /// @param len the length of the table
 void free_tab_with_alloc(char **tab, int len);
+
+/// @brief Scan a string with length between min_str_len and max_str_len from standard input
+/// @param min_str_len the minimum length of the string to scan (excluding the null terminator)
+/// @param max_str_len the maximum length of the string to scan (excluding the null terminator)
+/// @param prompt_msg the prompt message to display to the user
+/// @return the scanned string (dynamically allocated, must be freed by the caller)
+char *scan_str_of_len_between(size_t min_str_len, size_t max_str_len, char *prompt_msg);
 
 #endif

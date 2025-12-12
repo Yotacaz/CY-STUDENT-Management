@@ -200,7 +200,7 @@ StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int 
 {
     assert(promotion_is_valid(prom) && course_name && top_max_size > 0);
 
-    int course_id = get_course_index(prom->courses, course_name);
+    int course_id = get_course_index_in_table(prom->courses, course_name);
     if (course_id < 0)
     {
         return NULL;
@@ -242,7 +242,7 @@ StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int 
     return top;
 }
 
-void calculate_all_student_average(Promotion *prom)
+void evaluate_all_student_average(Promotion *prom)
 {
     assert(promotion_is_valid(prom));
     CoursesTab *courses = prom->courses;
@@ -256,6 +256,7 @@ void calculate_all_student_average(Promotion *prom)
             fcourse->average = get_followed_course_avg(fcourse);
             assert(fcourse->average > GRADE_MIN && fcourse->average < GRADE_MAX);
         }
+        update_student_bitmask(stu);
         stu->average = get_student_general_avg(stu, courses);
         assert(stu->average > GRADE_MIN && stu->average < GRADE_MAX);
     }

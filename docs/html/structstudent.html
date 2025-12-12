@@ -99,9 +99,13 @@ $(function(){initNavTree('structstudent.html','','structstudent-members'); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a8d4d0a206077a171fddbaf4475107772" id="r_a8d4d0a206077a171fddbaf4475107772"><td class="memItemLeft" align="right" valign="top"><a id="a8d4d0a206077a171fddbaf4475107772" name="a8d4d0a206077a171fddbaf4475107772"></a>
+u_int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>course_validation_mask</b></td></tr>
+<tr class="memdesc:a8d4d0a206077a171fddbaf4475107772"><td class="mdescLeft">&#160;</td><td class="mdescRight">bitmask representing validated courses<br  />
+ if bit n is 1, course n (in enum <a class="el" href="followed__course_8h.html#ae152a4e920986ad3baf9e0e3af2f3cc6" title="Enum listing all possible courses does not correspond to course id in the CoursesTable,...">CourseIndex</a>) is validated else not validated used to quickly check if a student has validated a set of courses (see student_has_validated function) <br /></td></tr>
 <tr class="memitem:a7a834c9bac47429c4c2560c5c7eeb9f6" id="r_a7a834c9bac47429c4c2560c5c7eeb9f6"><td class="memItemLeft" align="right" valign="top"><a id="a7a834c9bac47429c4c2560c5c7eeb9f6" name="a7a834c9bac47429c4c2560c5c7eeb9f6"></a>
 <a class="el" href="followed__course_8h.html#a073a650292b8c9358734e1254a622c67">Followed_course</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>f_courses</b></td></tr>
-<tr class="memdesc:a7a834c9bac47429c4c2560c5c7eeb9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">table of followed courses <br /></td></tr>
+<tr class="memdesc:a7a834c9bac47429c4c2560c5c7eeb9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">table of followed courses, <b>is ordered alphabetically</b> <br /></td></tr>
 <tr class="memitem:a473ea91ecf604c0a5125eaad19307a39" id="r_a473ea91ecf604c0a5125eaad19307a39"><td class="memItemLeft" align="right" valign="top"><a id="a473ea91ecf604c0a5125eaad19307a39" name="a473ea91ecf604c0a5125eaad19307a39"></a>
 char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="memdesc:a473ea91ecf604c0a5125eaad19307a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">last name <br /></td></tr>

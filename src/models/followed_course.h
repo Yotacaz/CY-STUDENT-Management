@@ -19,6 +19,51 @@ DECLARE_DYN_TABLE(float, Grades)
 #define GRADE_MAX 20.0001
 #endif
 
+/// @brief Grade value used to represent unvalidated courses
+#define GRADE_TO_VALIDATE 9.9999
+
+/// @brief Enum listing all possible courses
+/// does not correspond to course id in the CoursesTable, just a convenient way to refer to courses.
+/// WARNING : **ENUM MUST BE ORDERED ALPHABETICALLY**
+typedef enum _cindex
+{
+    ALLEMAND,
+    ANGLAIS,
+    ARTPLASTIQUE,
+    BIOLOGIE,
+    CHIMIE,
+    EPS,
+    ECONOMIE,
+    ESPAGNOL,
+    FRANCAIS,
+    GEOGRAPHIE,
+    HISTOIRE,
+    INFORMATIQUE,
+    LATIN,
+    MATHEMATIQUES,
+    MUSIQUE,
+    PHILOSOPHIE,
+    PHYSIQUE,
+    SCIENCESSOCIALES,
+    SOCIOLOGIE,
+    TECHNOLOGIE,
+    NB_COURSES
+} CourseIndex;
+
+/// @brief Bitmask definitions for course categories
+#define SCIENCES_MASK                                                                              \
+    ((1 << BIOLOGIE) | (1 << CHIMIE) | (1 << ECONOMIE) | (1 << INFORMATIQUE) |                     \
+     (1 << MATHEMATIQUES) | (1 << PHYSIQUE) | (1 << TECHNOLOGIE))
+
+/// @brief Bitmask definitions for course categories
+#define HUMANITIES_MASK                                                                            \
+    ((1 << ALLEMAND) | (1 << ANGLAIS) | (1 << ARTPLASTIQUE) | (1 << ESPAGNOL) | (1 << FRANCAIS) |  \
+     (1 << GEOGRAPHIE) | (1 << HISTOIRE) | (1 << LATIN) | (1 << MUSIQUE) | (1 << PHILOSOPHIE) |    \
+     (1 << SCIENCESSOCIALES) | (1 << SOCIOLOGIE))
+
+/// @brief Bitmask representing all courses in a year
+#define YEAR_MASK (SCIENCES_MASK | HUMANITIES_MASK)
+
 /// @brief The courses followed by a specific student.
 typedef struct followed_course
 {

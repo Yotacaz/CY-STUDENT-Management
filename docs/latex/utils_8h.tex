@@ -86,7 +86,9 @@ Various utility functions.
 \begin{DoxyCompactList}\small\item\em Reset text formatting for terminal output. \end{DoxyCompactList}\item 
 \Hypertarget{utils_8h_af79cff29f69e9e9672688534e8a4d702}\label{utils_8h_af79cff29f69e9e9672688534e8a4d702} 
 \#define {\bfseries CSV\+\_\+\+SEP}~\textquotesingle{};\textquotesingle{}
-\begin{DoxyCompactList}\small\item\em CSV separator character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em CSV separator character. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{utils_8h_a16612f8f07715fa149286c57bfdfce4a}{verify}}(condition,  err\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Verify a condition and print an error message and exit if the condition is false. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -95,12 +97,48 @@ size\+\_\+t \mbox{\hyperlink{utils_8h_a290cabf3313b2303b06136bcee79c892}{bin\+\_
 void \mbox{\hyperlink{utils_8h_a5396b74ce929586dfc62b0ae31fcab8c}{print\+\_\+str\+\_\+tab}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tab, int len)
 \begin{DoxyCompactList}\small\item\em Print a string table. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8h_a1fa46850fa4059c42e9685098a0aed34}{free\+\_\+tab\+\_\+with\+\_\+alloc}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tab, int len)
-\begin{DoxyCompactList}\small\item\em Free a string table where each string has been dynamically allocated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Free a string table where each string has been dynamically allocated. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{utils_8h_a1a2a6b17257486663af0ca091e4e554a}{scan\+\_\+str\+\_\+of\+\_\+len\+\_\+between}} (size\+\_\+t min\+\_\+str\+\_\+len, size\+\_\+t max\+\_\+str\+\_\+len, char \texorpdfstring{$\ast$}{*}prompt\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Scan a string with length between min\+\_\+str\+\_\+len and max\+\_\+str\+\_\+len from standard input. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Various utility functions. 
 
+
+
+\label{doc-define-members}
+\Hypertarget{utils_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{utils_8h_a16612f8f07715fa149286c57bfdfce4a}\index{utils.h@{utils.h}!verify@{verify}}
+\index{verify@{verify}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{verify}{verify}}
+{\footnotesize\ttfamily \label{utils_8h_a16612f8f07715fa149286c57bfdfce4a} 
+\#define verify(\begin{DoxyParamCaption}\item[{}]{condition}{, }\item[{}]{err\+\_\+msg}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if\ (!(condition))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{utils_8h_a58f9401d546703859ab9c8720c61ee9e}{BOLD\_RED}}\ \textcolor{stringliteral}{"{}ERROR\ (in\ \%s)\ :\ \%s\(\backslash\)n"{}}\ \mbox{\hyperlink{utils_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}},\ \_\_func\_\_,\ err\_msg);\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+
+
+Verify a condition and print an error message and exit if the condition is false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em condition} & the condition to verify \\
+\hline
+{\em err\+\_\+msg} & the error message to print if the condition is false \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
@@ -162,3 +200,25 @@ Print a string table.
 {\em len} & the length of the table \\
 \hline
 \end{DoxyParams}
+\Hypertarget{utils_8h_a1a2a6b17257486663af0ca091e4e554a}\index{utils.h@{utils.h}!scan\_str\_of\_len\_between@{scan\_str\_of\_len\_between}}
+\index{scan\_str\_of\_len\_between@{scan\_str\_of\_len\_between}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{scan\_str\_of\_len\_between()}{scan\_str\_of\_len\_between()}}
+{\footnotesize\ttfamily \label{utils_8h_a1a2a6b17257486663af0ca091e4e554a} 
+char \texorpdfstring{$\ast$}{*} scan\+\_\+str\+\_\+of\+\_\+len\+\_\+between (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{min\+\_\+str\+\_\+len}{, }\item[{size\+\_\+t}]{max\+\_\+str\+\_\+len}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{prompt\+\_\+msg}{}\end{DoxyParamCaption})}
+
+
+
+Scan a string with length between min\+\_\+str\+\_\+len and max\+\_\+str\+\_\+len from standard input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+\_\+str\+\_\+len} & the minimum length of the string to scan (excluding the null terminator) \\
+\hline
+{\em max\+\_\+str\+\_\+len} & the maximum length of the string to scan (excluding the null terminator) \\
+\hline
+{\em prompt\+\_\+msg} & the prompt message to display to the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the scanned string (dynamically allocated, must be freed by the caller) 
+\end{DoxyReturn}

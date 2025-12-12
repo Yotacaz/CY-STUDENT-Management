@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['save_5fbin_2eh_0',['save_bin.h',['../save__bin_8h.html',1,'']]],
+  ['scan_5fstr_5fof_5flen_5fbetween_1',['scan_str_of_len_between',['../utils_8h.html#a1a2a6b17257486663af0ca091e4e554a',1,'utils.c']]],
+  ['sciences_5fmask_2',['SCIENCES_MASK',['../followed__course_8h.html#a648fd6bcdb172519010ddd81b9b3026c',1,'followed_course.h']]],
+  ['sect_3',['sect',['../structsect.html',1,'']]],
+  ['section_4',['Section',['../load__data_8h.html#aef02f2f64f0bcd6490171dc1c01cfb37',1,'load_data.h']]],
+  ['section_5fcontent_5',['SECTION_CONTENT',['../load__data_8h.html#a82f7376fac56bac377c052858b3f8bd7',1,'load_data.h']]],
+  ['section_5fheader_6',['section_header',['../structsect.html#ad1e36075bca61392a0b823d260722a4f',1,'sect']]],
+  ['section_5ftitle_7',['section_title',['../structsect.html#a87957e266f18dfa52f69b63cac55d819',1,'sect']]],
+  ['set_5fcursor_5fto_5fnext_5fsection_8',['set_cursor_to_next_section',['../load__data_8h.html#a2d7c226fde2c516c982203dbb529bf3b',1,'load_data.c']]],
+  ['set_5fmaster_5fkey_9',['set_master_key',['../cipher_8h.html#a676ad79ba3367a7c0d63d49a4918d4e3',1,'cipher.c']]],
+  ['size_5ftop1_10',['SIZE_TOP1',['../student__api_8h.html#afbe3e8f40bf976d09a4881621d01db79',1,'student_api.h']]],
+  ['size_5ftop2_11',['SIZE_TOP2',['../student__api_8h.html#a47fd7d8326ae22c6722da7848d63d024',1,'student_api.h']]],
+  ['stu_5fdtab_12',['stu_dtab',['../structpromotion.html#a73e44eef5edfafd80c97014ab07f8339',1,'promotion']]],
+  ['student_13',['Student',['../students_8h.html#ae8c079733e2570c4a107caf4b38afc60',1,'students.h']]],
+  ['student_14',['student',['../structstudent.html',1,'']]],
+  ['student_5fapi_2eh_15',['student_api.h',['../student__api_8h.html',1,'']]],
+  ['student_5fid_16',['STUDENT_ID',['../student__api_8h.html#a708f939981ead4d1db83b3a33c9246ad',1,'student_api.h']]],
+  ['student_5fis_5fvalid_17',['student_is_valid',['../students_8h.html#af4e2faccd38b6354983fcd4c3e8a92b7',1,'students.c']]],
+  ['student_5ftab_5fbsearch_18',['student_tab_bsearch',['../promotion_8h.html#afc22f1d99464e360f3d958f732d22070',1,'promotion.c']]],
+  ['students_2eh_19',['students.h',['../students_8h.html',1,'']]],
+  ['students_5fid_5fare_5fsorted_5fand_5funique_20',['students_id_are_sorted_and_unique',['../promotion_8h.html#af58511727a5e4d628dbdf7496ee0f2f9',1,'promotion.c']]]
+];

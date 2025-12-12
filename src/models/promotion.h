@@ -113,14 +113,14 @@ StudentsTab *get_top_students(StudentsTab *stu_dtab, int top_max_size);
 StudentsTab *get_top_students_in_course(Promotion *prom, char *course_name, int top_max_size);
 
 /// @brief Calculate and update the overall average for all students in the promotion
+/// and set validation bitmask to check if the student validate a followed course
 /// @param prom the promotion
-void calculate_all_student_average(Promotion *prom);
+void evaluate_all_student_average(Promotion *prom);
 
 /// @brief Get the names and first names of students in a StudentsTab
 /// @param tab array of Student pointers
 /// @param n number of students in the array
 /// @return an array of strings containing the names and first names of the students
 char **get_students_names_and_fname(Student **tab, int n);
-
 
 #endif

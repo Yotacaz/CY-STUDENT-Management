@@ -7,7 +7,7 @@
 /// It contains a pointer to the elements, the current size, and the capacity.
 
 #include <arpa/inet.h>
-#include <assert.h> 
+#include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -156,8 +156,13 @@
         if (load_elem == NULL)                                                                     \
         {                                                                                          \
             /*We assume that if load_elem is NULL, the table does not contain any pointer*/        \
-            verify(fread(dtab->tab, sizeof(Type), dtab->size, file) == (size_t)dtab->size,         \
-                   "couldn't load dynamic table content while loading from binary");               \
+            if (fread(dtab->tab, sizeof(Type), dtab->size, file) != (size_t)dtab->size)            \
+            {                                                                                      \
+                printf("couldn't load dynamic table content while loading from binary");           \
+                perror("fread\n");                                                                 \
+                printf("feof : %d\n", feof(file));                                                 \
+                exit(1);                                                                           \
+            }                                                                                      \
         }                                                                                          \
         else                                                                                       \
         {                                                                                          \

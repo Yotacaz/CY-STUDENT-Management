@@ -19,34 +19,72 @@
 \DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ GRADE\_MAX\ 20.0001}}
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00021\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfollowed__course}{followed\_course}}}
-\DoxyCodeLine{00024\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ Grades\ *\mbox{\hyperlink{structfollowed__course_a28e6eca45a367af51f0bcdf4146a6c6e}{grades}};}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structfollowed__course_ab34e5f81bb1fec1fb93afe63efd3ffb1}{average}};}
-\DoxyCodeLine{00029\ \}\ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}};}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00036\ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *\mbox{\hyperlink{followed__course_8h_ab3803222ef4996da2c2fb622c601df5b}{init\_followed\_course}}(Grades\ *(*init\_grades)());}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{followed__course_8h_ad5899903d48aefecd86d801ea6ce7152}{free\_followed\_course}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *f\_course);}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00045\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ get\_followed\_course\_avg(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse)}
-\DoxyCodeLine{00046\ \{}
-\DoxyCodeLine{00047\ \ \ \ \ assert(fcourse);}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ total\ =\ 0;}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ n\_elem\ =\ fcourse-\/>\mbox{\hyperlink{structfollowed__course_a28e6eca45a367af51f0bcdf4146a6c6e}{grades}}-\/>size;}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n\_elem;\ i++)}
-\DoxyCodeLine{00051\ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ total\ +=\ fcourse-\/>\mbox{\hyperlink{structfollowed__course_a28e6eca45a367af51f0bcdf4146a6c6e}{grades}}-\/>tab[i];}
-\DoxyCodeLine{00053\ \ \ \ \ \}}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ n\_elem\ >\ 0\ ?\ total\ /\ n\_elem\ :\ -\/1;}
-\DoxyCodeLine{00055\ \}}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{followed__course_8h_ae4a7e635d96c3d5bad7d8feca68f7172}{print\_fcourse}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse);}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00064\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{followed__course_8h_a3fa63a75df11e2f7f8eb8d8bc14db581}{followed\_course\_is\_valid}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse);}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00069\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{followed__course_8h_af74dfd678a55f02e7f2c3e80c4a4382e}{grade\_is\_valid}}(\textcolor{keywordtype}{float}\ val);}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ GRADE\_TO\_VALIDATE\ 9.9999}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{followed__course_8h_a85b76d569a67435d5b333ffa620640c8}{\_cindex}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ ALLEMAND,}
+\DoxyCodeLine{00031\ \ \ \ \ ANGLAIS,}
+\DoxyCodeLine{00032\ \ \ \ \ ARTPLASTIQUE,}
+\DoxyCodeLine{00033\ \ \ \ \ BIOLOGIE,}
+\DoxyCodeLine{00034\ \ \ \ \ CHIMIE,}
+\DoxyCodeLine{00035\ \ \ \ \ EPS,}
+\DoxyCodeLine{00036\ \ \ \ \ ECONOMIE,}
+\DoxyCodeLine{00037\ \ \ \ \ ESPAGNOL,}
+\DoxyCodeLine{00038\ \ \ \ \ FRANCAIS,}
+\DoxyCodeLine{00039\ \ \ \ \ GEOGRAPHIE,}
+\DoxyCodeLine{00040\ \ \ \ \ HISTOIRE,}
+\DoxyCodeLine{00041\ \ \ \ \ INFORMATIQUE,}
+\DoxyCodeLine{00042\ \ \ \ \ LATIN,}
+\DoxyCodeLine{00043\ \ \ \ \ MATHEMATIQUES,}
+\DoxyCodeLine{00044\ \ \ \ \ MUSIQUE,}
+\DoxyCodeLine{00045\ \ \ \ \ PHILOSOPHIE,}
+\DoxyCodeLine{00046\ \ \ \ \ PHYSIQUE,}
+\DoxyCodeLine{00047\ \ \ \ \ SCIENCESSOCIALES,}
+\DoxyCodeLine{00048\ \ \ \ \ SOCIOLOGIE,}
+\DoxyCodeLine{00049\ \ \ \ \ TECHNOLOGIE,}
+\DoxyCodeLine{00050\ \ \ \ \ NB\_COURSES}
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{followed__course_8h_ae152a4e920986ad3baf9e0e3af2f3cc6}{CourseIndex}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ SCIENCES\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ ((1\ <<\ BIOLOGIE)\ |\ (1\ <<\ CHIMIE)\ |\ (1\ <<\ ECONOMIE)\ |\ (1\ <<\ INFORMATIQUE)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ \ (1\ <<\ MATHEMATIQUES)\ |\ (1\ <<\ PHYSIQUE)\ |\ (1\ <<\ TECHNOLOGIE))}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ HUMANITIES\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ \ \ ((1\ <<\ ALLEMAND)\ |\ (1\ <<\ ANGLAIS)\ |\ (1\ <<\ ARTPLASTIQUE)\ |\ (1\ <<\ ESPAGNOL)\ |\ (1\ <<\ FRANCAIS)\ |\ \ \(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ (1\ <<\ GEOGRAPHIE)\ |\ (1\ <<\ HISTOIRE)\ |\ (1\ <<\ LATIN)\ |\ (1\ <<\ MUSIQUE)\ |\ (1\ <<\ PHILOSOPHIE)\ |\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \ (1\ <<\ SCIENCESSOCIALES)\ |\ (1\ <<\ SOCIOLOGIE))}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ YEAR\_MASK\ (SCIENCES\_MASK\ |\ HUMANITIES\_MASK)}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfollowed__course}{followed\_course}}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ Grades\ *\mbox{\hyperlink{structfollowed__course_a28e6eca45a367af51f0bcdf4146a6c6e}{grades}};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structfollowed__course_ab34e5f81bb1fec1fb93afe63efd3ffb1}{average}};}
+\DoxyCodeLine{00074\ \}\ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *\mbox{\hyperlink{followed__course_8h_ab3803222ef4996da2c2fb622c601df5b}{init\_followed\_course}}(Grades\ *(*init\_grades)());}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{followed__course_8h_ad5899903d48aefecd86d801ea6ce7152}{free\_followed\_course}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *f\_course);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ get\_followed\_course\_avg(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse)}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ assert(fcourse);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ total\ =\ 0;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{int}\ n\_elem\ =\ fcourse-\/>\mbox{\hyperlink{structfollowed__course_a28e6eca45a367af51f0bcdf4146a6c6e}{grades}}-\/>size;}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n\_elem;\ i++)}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ total\ +=\ fcourse-\/>\mbox{\hyperlink{structfollowed__course_a28e6eca45a367af51f0bcdf4146a6c6e}{grades}}-\/>tab[i];}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ n\_elem\ >\ 0\ ?\ total\ /\ n\_elem\ :\ -\/1;}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{followed__course_8h_ae4a7e635d96c3d5bad7d8feca68f7172}{print\_fcourse}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{followed__course_8h_a3fa63a75df11e2f7f8eb8d8bc14db581}{followed\_course\_is\_valid}}(\mbox{\hyperlink{followed__course_8h_a073a650292b8c9358734e1254a622c67}{Followed\_course}}\ *fcourse);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{followed__course_8h_af74dfd678a55f02e7f2c3e80c4a4382e}{grade\_is\_valid}}(\textcolor{keywordtype}{float}\ val);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

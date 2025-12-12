@@ -4,16 +4,22 @@
 A C program for managing student records at CY Tech. This system allows for storing, retrieving, and manipulating student information efficiently. Libraries are provided in both static and dynamic formats.
 
 ## Features
-- Display student information
-- Loading from a specific data format (see data/data.txt)
+A modular design with static and dynamic libraries with the following functionalities :
+- Loading promotion from a specific data format (see data/data.txt)
 - Saving to binary file / loading from binary file
-- Finding best students based on average grades
-- Modular design with static and dynamic libraries
+- Finding best students in specific courses or overall,
+- Display promotion information, including courses and student grades,
+- Display all student result per field,
+- Sorting students by average grades, name, or ID (after setting sort criteria)
+- Ciphering and deciphering binary files using XOR method, with user-defined keys (prompted at runtime)
+
 
 ## Building
-use ```bash
+use 
+```bash
 make
-``` for more information on compilation.
+``` 
+for more information on compilation.
 
 
 If you encounter an issue, please try before executing :
@@ -22,13 +28,11 @@ make clean
 ```
 
 ## Warning :
-Binary file generated is NOT portable
+Binary files generated are NOT portable between systems with different endianness or different sizes for data types.
 
 ## Author
 Martin CRISSOT
 CY Tech Student
 
 ## License
-This project is part of CY Tech programming coursework.
-
-
+This project is part of CY Tech programming coursework 

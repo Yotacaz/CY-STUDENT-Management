@@ -26,7 +26,13 @@
 /// promotion.
 typedef struct student
 {
-    ///@brief table of followed courses
+    ///@brief bitmask representing validated courses\n
+    /// if bit n is 1, course n (in enum CourseIndex) is validated
+    /// else not validated
+    /// used to quickly check if a student has validated a set of courses
+    /// (see student_has_validated function)
+    u_int32_t course_validation_mask;
+    ///@brief table of followed courses, **is ordered alphabetically**
     Followed_course **f_courses;
     ///@brief last name
     char *name;
@@ -110,5 +116,23 @@ bool student_is_valid(Student *stu);
 /// @brief Print a student and its followed courses
 /// @param stu the student to print
 void print_student(Student *stu);
+
+/// @brief Print the validation status of a student per field (sciences/humanities)
+/// @param stu the student to print
+void print_student_validation(Student *stu);
+
+/// @brief Update the course validation bitmask of a student for its followed courses
+/// @param stu the student
+void update_student_bitmask(Student *stu);
+
+/// @brief Check if a student has validated all courses in the given bitmask
+/// @param stu the student
+/// @param courses_bitmask the bitmask representing the courses to check
+/// @return true if the student has validated all courses in the bitmask, false otherwise
+static inline bool student_has_validated(Student *stu, uint32_t courses_bitmask)
+{
+    assert(student_is_valid(stu));
+    return (stu->course_validation_mask & courses_bitmask) == courses_bitmask;
+}
 
 #endif

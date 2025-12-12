@@ -63,14 +63,14 @@ CoursesTab *load_courses_data(FILE *file)
         }
     }
     assert(!feof(file) && !ferror(file));
-    CoursesTab_sort(courses, compare_courses);
+    CoursesTab_sort(courses, compare_courses); // sort alphabetically
     return courses;
 }
 
 void load_grades_data(Promotion *prom, FILE *file)
 {
     // TODO : are the asserts ok in this function ?
-    assert(file && promotion_is_valid(prom));
+    assert(file && prom);
     StudentsTab *stu_dtab = prom->stu_dtab;
     CoursesTab *courses = prom->courses;
     // data format is id;nom;note
@@ -81,7 +81,7 @@ void load_grades_data(Promotion *prom, FILE *file)
 
         // parse unsigned int
         //! WARNING NO OUT OF UNSIGNED INT RANGE DETECTION
-        unsigned int id = 0;    //student id
+        unsigned int id = 0; // student id
         while (*p >= '0' && *p <= '9')
         {
             id = id * 10 + (*p - '0');
@@ -128,7 +128,7 @@ void load_grades_data(Promotion *prom, FILE *file)
             }
         }
         float grade = sign * (int_part + frac_part);
-
+        verify(grade_is_valid(grade), "invalid grade while loading grades data from text file");
         // applying modifications
         Student *stu = student_tab_bsearch(stu_dtab, id);
         assert(stu);
@@ -136,7 +136,7 @@ void load_grades_data(Promotion *prom, FILE *file)
     }
     verify(!ferror(file), "Error occurred while reading grades from text file");
     // updating grades avg :
-    calculate_all_student_average(prom);
+    evaluate_all_student_average(prom);
 }
 
 void set_cursor_to_next_section(const Section section, FILE *file)

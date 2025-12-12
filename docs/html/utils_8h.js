@@ -23,9 +23,11 @@ var utils_8h =
     [ "RED", "utils_8h.html#a8d23feea868a983c8c2b661e1e16972f", null ],
     [ "RESET", "utils_8h.html#ab702106cf3b3e96750b6845ded4e0299", null ],
     [ "UNDERLINE", "utils_8h.html#aaec1a65734e33bc49e8dc8d90e9546bc", null ],
+    [ "verify", "utils_8h.html#a16612f8f07715fa149286c57bfdfce4a", null ],
     [ "WHT", "utils_8h.html#aeaf3a04d5bf63b204689a714718ea930", null ],
     [ "YEL", "utils_8h.html#a96fac03c4ab3363f06a0328e0e53a40c", null ],
     [ "bin_read_string", "utils_8h.html#a290cabf3313b2303b06136bcee79c892", null ],
     [ "free_tab_with_alloc", "utils_8h.html#a1fa46850fa4059c42e9685098a0aed34", null ],
-    [ "print_str_tab", "utils_8h.html#a5396b74ce929586dfc62b0ae31fcab8c", null ]
+    [ "print_str_tab", "utils_8h.html#a5396b74ce929586dfc62b0ae31fcab8c", null ],
+    [ "scan_str_of_len_between", "utils_8h.html#a1a2a6b17257486663af0ca091e4e554a", null ]
 ];

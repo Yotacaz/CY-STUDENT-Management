@@ -21,13 +21,59 @@ struct \mbox{\hyperlink{structfollowed__course}{followed\+\_\+course}}
 \begin{DoxyCompactList}\small\item\em Minimum valid grade value. \end{DoxyCompactList}\item 
 \Hypertarget{followed__course_8h_ae43cf4df151af6f9140c801ba7c0b68e}\label{followed__course_8h_ae43cf4df151af6f9140c801ba7c0b68e} 
 \#define {\bfseries GRADE\+\_\+\+MAX}~20.\+0001
-\begin{DoxyCompactList}\small\item\em Maximum valid grade value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum valid grade value. \end{DoxyCompactList}\item 
+\Hypertarget{followed__course_8h_a5f3c29eceed480c9d507238d0d64b92e}\label{followed__course_8h_a5f3c29eceed480c9d507238d0d64b92e} 
+\#define {\bfseries GRADE\+\_\+\+TO\+\_\+\+VALIDATE}~9.\+9999
+\begin{DoxyCompactList}\small\item\em Grade value used to represent unvalidated courses. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{followed__course_8h_a648fd6bcdb172519010ddd81b9b3026c}{SCIENCES\+\_\+\+MASK}}
+\begin{DoxyCompactList}\small\item\em Bitmask definitions for course categories. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{followed__course_8h_a7a3616783bd3d89e331e694d2f3bc6cb}{HUMANITIES\+\_\+\+MASK}}
+\begin{DoxyCompactList}\small\item\em Bitmask definitions for course categories. \end{DoxyCompactList}\item 
+\Hypertarget{followed__course_8h_ae71cdbd96e5b1aedb065c626f334e88d}\label{followed__course_8h_ae71cdbd96e5b1aedb065c626f334e88d} 
+\#define {\bfseries YEAR\+\_\+\+MASK}~(\mbox{\hyperlink{followed__course_8h_a648fd6bcdb172519010ddd81b9b3026c}{SCIENCES\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{followed__course_8h_a7a3616783bd3d89e331e694d2f3bc6cb}{HUMANITIES\+\_\+\+MASK}})
+\begin{DoxyCompactList}\small\item\em Bitmask representing all courses in a year. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{followed__course_8h_ae152a4e920986ad3baf9e0e3af2f3cc6}\label{followed__course_8h_ae152a4e920986ad3baf9e0e3af2f3cc6} 
+typedef enum \mbox{\hyperlink{followed__course_8h_a85b76d569a67435d5b333ffa620640c8}{\+\_\+cindex}} {\bfseries Course\+Index}
+\begin{DoxyCompactList}\small\item\em Enum listing all possible courses does not correspond to course id in the Courses\+Table, just a convenient way to refer to courses. WARNING \+: {\bfseries{ENUM MUST BE ORDERED ALPHABETICALLY}}. \end{DoxyCompactList}\item 
 \Hypertarget{followed__course_8h_a073a650292b8c9358734e1254a622c67}\label{followed__course_8h_a073a650292b8c9358734e1254a622c67} 
 typedef struct \mbox{\hyperlink{structfollowed__course}{followed\+\_\+course}} {\bfseries Followed\+\_\+course}
 \begin{DoxyCompactList}\small\item\em The courses followed by a specific student. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{followed__course_8h_a85b76d569a67435d5b333ffa620640c8}\label{followed__course_8h_a85b76d569a67435d5b333ffa620640c8} 
+enum \mbox{\hyperlink{followed__course_8h_a85b76d569a67435d5b333ffa620640c8}{\+\_\+cindex}} \{ \newline
+{\bfseries ALLEMAND}
+, {\bfseries ANGLAIS}
+, {\bfseries ARTPLASTIQUE}
+, {\bfseries BIOLOGIE}
+, \newline
+{\bfseries CHIMIE}
+, {\bfseries EPS}
+, {\bfseries ECONOMIE}
+, {\bfseries ESPAGNOL}
+, \newline
+{\bfseries FRANCAIS}
+, {\bfseries GEOGRAPHIE}
+, {\bfseries HISTOIRE}
+, {\bfseries INFORMATIQUE}
+, \newline
+{\bfseries LATIN}
+, {\bfseries MATHEMATIQUES}
+, {\bfseries MUSIQUE}
+, {\bfseries PHILOSOPHIE}
+, \newline
+{\bfseries PHYSIQUE}
+, {\bfseries SCIENCESSOCIALES}
+, {\bfseries SOCIOLOGIE}
+, {\bfseries TECHNOLOGIE}
+, \newline
+{\bfseries NB\+\_\+\+COURSES}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum listing all possible courses does not correspond to course id in the Courses\+Table, just a convenient way to refer to courses. WARNING \+: {\bfseries{ENUM MUST BE ORDERED ALPHABETICALLY}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,6 +91,44 @@ bool \mbox{\hyperlink{followed__course_8h_af74dfd678a55f02e7f2c3e80c4a4382e}{gra
 
 \doxysubsection{Detailed Description}
 Structure and functions to handle followed courses data. 
+
+
+
+\label{doc-define-members}
+\Hypertarget{followed__course_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{followed__course_8h_a7a3616783bd3d89e331e694d2f3bc6cb}\index{followed\_course.h@{followed\_course.h}!HUMANITIES\_MASK@{HUMANITIES\_MASK}}
+\index{HUMANITIES\_MASK@{HUMANITIES\_MASK}!followed\_course.h@{followed\_course.h}}
+\doxysubsubsection{\texorpdfstring{HUMANITIES\_MASK}{HUMANITIES\_MASK}}
+{\footnotesize\ttfamily \label{followed__course_8h_a7a3616783bd3d89e331e694d2f3bc6cb} 
+\#define HUMANITIES\+\_\+\+MASK}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ ((1\ <<\ ALLEMAND)\ |\ (1\ <<\ ANGLAIS)\ |\ (1\ <<\ ARTPLASTIQUE)\ |\ (1\ <<\ ESPAGNOL)\ |\ (1\ <<\ FRANCAIS)\ |\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ (1\ <<\ GEOGRAPHIE)\ |\ (1\ <<\ HISTOIRE)\ |\ (1\ <<\ LATIN)\ |\ (1\ <<\ MUSIQUE)\ |\ (1\ <<\ PHILOSOPHIE)\ |\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ (1\ <<\ SCIENCESSOCIALES)\ |\ (1\ <<\ SOCIOLOGIE))}
+
+\end{DoxyCode}
+
+
+Bitmask definitions for course categories. 
+
+\Hypertarget{followed__course_8h_a648fd6bcdb172519010ddd81b9b3026c}\index{followed\_course.h@{followed\_course.h}!SCIENCES\_MASK@{SCIENCES\_MASK}}
+\index{SCIENCES\_MASK@{SCIENCES\_MASK}!followed\_course.h@{followed\_course.h}}
+\doxysubsubsection{\texorpdfstring{SCIENCES\_MASK}{SCIENCES\_MASK}}
+{\footnotesize\ttfamily \label{followed__course_8h_a648fd6bcdb172519010ddd81b9b3026c} 
+\#define SCIENCES\+\_\+\+MASK}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ ((1\ <<\ BIOLOGIE)\ |\ (1\ <<\ CHIMIE)\ |\ (1\ <<\ ECONOMIE)\ |\ (1\ <<\ INFORMATIQUE)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ (1\ <<\ MATHEMATIQUES)\ |\ (1\ <<\ PHYSIQUE)\ |\ (1\ <<\ TECHNOLOGIE))}
+
+\end{DoxyCode}
+
+
+Bitmask definitions for course categories. 
 
 
 

@@ -55,7 +55,13 @@ char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{stude
 int \mbox{\hyperlink{student__api_8h_a486feb9b20fa2c871344f573c185b022}{API\+\_\+set\+\_\+sorting\+\_\+mode}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class, int mode)
 \begin{DoxyCompactList}\small\item\em Set the sorting mode for students in the promotion. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{student__api_8h_acb7493f8ec624523b8cf0ad32052898e}{API\+\_\+sort\+\_\+students}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class)
-\begin{DoxyCompactList}\small\item\em Sort the students in the promotion according to the current sorting mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sort the students in the promotion according to the current sorting mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{student__api_8h_af8bafe6a3966b77b5aa5c60f1d001033}{API\+\_\+display\+\_\+results\+\_\+per\+\_\+field}} (\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}p\+Class)
+\begin{DoxyCompactList}\small\item\em Display the results of students per field (courses). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{student__api_8h_a09e5b8111b9407f85399a4c757fb70c9}{API\+\_\+cipher}} (char \texorpdfstring{$\ast$}{*}p\+In, char \texorpdfstring{$\ast$}{*}p\+Out)
+\begin{DoxyCompactList}\small\item\em Cipher a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{student__api_8h_acb0fa307ac5adf97ff988e46eef5785a}{API\+\_\+decipher}} (char \texorpdfstring{$\ast$}{*}p\+In, char \texorpdfstring{$\ast$}{*}p\+Out)
+\begin{DoxyCompactList}\small\item\em Decipher a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -66,6 +72,46 @@ API functions to interact with the student management system.
 \label{doc-func-members}
 \Hypertarget{student__api_8h_doc-func-members}
 \doxysubsection{Function Documentation}
+\Hypertarget{student__api_8h_a09e5b8111b9407f85399a4c757fb70c9}\index{student\_api.h@{student\_api.h}!API\_cipher@{API\_cipher}}
+\index{API\_cipher@{API\_cipher}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_cipher()}{API\_cipher()}}
+{\footnotesize\ttfamily \label{student__api_8h_a09e5b8111b9407f85399a4c757fb70c9} 
+int API\+\_\+cipher (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{p\+In}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{p\+Out}{}\end{DoxyParamCaption})}
+
+
+
+Cipher a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+In} & the input file path (file to cipher) \\
+\hline
+{\em p\+Out} & the output file path (ciphered file path) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+always return 1 
+\end{DoxyReturn}
+\Hypertarget{student__api_8h_acb0fa307ac5adf97ff988e46eef5785a}\index{student\_api.h@{student\_api.h}!API\_decipher@{API\_decipher}}
+\index{API\_decipher@{API\_decipher}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_decipher()}{API\_decipher()}}
+{\footnotesize\ttfamily \label{student__api_8h_acb0fa307ac5adf97ff988e46eef5785a} 
+int API\+\_\+decipher (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{p\+In}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{p\+Out}{}\end{DoxyParamCaption})}
+
+
+
+Decipher a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+In} & the input file path (file to decipher) \\
+\hline
+{\em p\+Out} & the output file path (deciphered file path) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+always return 1 
+\end{DoxyReturn}
 \Hypertarget{student__api_8h_a28c4c55622b81c1b3f60a1ca3e21ade2}\index{student\_api.h@{student\_api.h}!API\_display@{API\_display}}
 \index{API\_display@{API\_display}!student\_api.h@{student\_api.h}}
 \doxysubsubsection{\texorpdfstring{API\_display()}{API\_display()}}
@@ -79,6 +125,21 @@ Print a promotion (courses and students).
 
 \begin{DoxyParams}{Parameters}
 {\em prom} & the promotion to print \\
+\hline
+\end{DoxyParams}
+\Hypertarget{student__api_8h_af8bafe6a3966b77b5aa5c60f1d001033}\index{student\_api.h@{student\_api.h}!API\_display\_results\_per\_field@{API\_display\_results\_per\_field}}
+\index{API\_display\_results\_per\_field@{API\_display\_results\_per\_field}!student\_api.h@{student\_api.h}}
+\doxysubsubsection{\texorpdfstring{API\_display\_results\_per\_field()}{API\_display\_results\_per\_field()}}
+{\footnotesize\ttfamily \label{student__api_8h_af8bafe6a3966b77b5aa5c60f1d001033} 
+void API\+\_\+display\+\_\+results\+\_\+per\+\_\+field (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student__api_8h_a742097baeb22b98239df36e5b8b9238e}{CLASS\+\_\+\+DATA}} \texorpdfstring{$\ast$}{*}}]{p\+Class}{}\end{DoxyParamCaption})}
+
+
+
+Display the results of students per field (courses). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Class} & the promotion \\
 \hline
 \end{DoxyParams}
 \Hypertarget{student__api_8h_ae2130f172cf783bdd78191fab55de446}\index{student\_api.h@{student\_api.h}!API\_get\_best\_students@{API\_get\_best\_students}}
@@ -193,7 +254,7 @@ Set the sorting mode for students in the promotion.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-0 if successful, 1 if the mode is incorrect 
+1 if successful, 0 if the mode is incorrect 
 \end{DoxyReturn}
 \Hypertarget{student__api_8h_acb7493f8ec624523b8cf0ad32052898e}\index{student\_api.h@{student\_api.h}!API\_sort\_students@{API\_sort\_students}}
 \index{API\_sort\_students@{API\_sort\_students}!student\_api.h@{student\_api.h}}

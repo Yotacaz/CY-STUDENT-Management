@@ -1,0 +1,210 @@
+\doxysection{src/core/cipher.h File Reference}
+\hypertarget{cipher_8h}{}\label{cipher_8h}\index{src/core/cipher.h@{src/core/cipher.h}}
+
+
+Functions for file ciphering and deciphering.  
+
+
+{\ttfamily \#include "{}../other/utils.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}\label{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1} 
+\#define {\bfseries KEY\+\_\+\+SIZE}~16UL
+\begin{DoxyCompactList}\small\item\em Size of the keys used for ciphering/deciphering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cipher_8h_a259ce324d4147fd867a19b979e590033}{xor\+\_\+key}} (unsigned char rand\+\_\+key\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, unsigned char master\+\_\+key\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, unsigned char buf\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, size\+\_\+t key\+\_\+sizes)
+\begin{DoxyCompactList}\small\item\em Function prototypes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cipher_8h_a2c8b5283426afe258d75e9efa5631749}{xor\+\_\+file}} (FILE \texorpdfstring{$\ast$}{*}input\+\_\+file, FILE \texorpdfstring{$\ast$}{*}output\+\_\+file, unsigned char rand\+\_\+key\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, size\+\_\+t key\+\_\+size)
+\begin{DoxyCompactList}\small\item\em XOR the contents of an input file with a random key and write to an output file. \end{DoxyCompactList}\item 
+unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cipher_8h_a676ad79ba3367a7c0d63d49a4918d4e3}{set\+\_\+master\+\_\+key}} (char \texorpdfstring{$\ast$}{*}user\+\_\+str, unsigned char master\+\_\+key\+\_\+buf\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, size\+\_\+t master\+\_\+key\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Set the master key based on a user-\/provided string. \end{DoxyCompactList}\item 
+unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cipher_8h_ab6e12ddf0cb4548472f376e0873790ee}{get\+\_\+rand\+\_\+key}} (unsigned char buf\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, size\+\_\+t key\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Generate a random key. \end{DoxyCompactList}\item 
+unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cipher_8h_abd821a03b937a161d2bb3508d87ad03e}{decipher\+\_\+key\+\_\+from\+\_\+file}} (FILE \texorpdfstring{$\ast$}{*}file, unsigned char key\+\_\+buf\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, unsigned char master\+\_\+key\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, size\+\_\+t key\+\_\+sizes)
+\begin{DoxyCompactList}\small\item\em Decipher a key from a file using the master key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cipher_8h_a84121acebbae22e27fa0ee4511f9ca3c}{cipher\+\_\+key\+\_\+in\+\_\+file}} (FILE \texorpdfstring{$\ast$}{*}file, unsigned char plain\+\_\+key\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, unsigned char master\+\_\+key\mbox{[}\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}, size\+\_\+t key\+\_\+sizes)
+\begin{DoxyCompactList}\small\item\em Cipher a key and write it to a file using the master key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cipher_8h_a699d8b6be07b76205e3431a6fa9c8782}{cipher\+\_\+file}} (FILE \texorpdfstring{$\ast$}{*}input\+\_\+file, FILE \texorpdfstring{$\ast$}{*}output\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Cipher the contents of an input file and write to an output file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cipher_8h_a24872b5dc52d0fac585f17bca0ba0033}{decipher\+\_\+file}} (FILE \texorpdfstring{$\ast$}{*}input\+\_\+file, FILE \texorpdfstring{$\ast$}{*}output\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Decipher the contents of an input file and write to an output file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for file ciphering and deciphering. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{cipher_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{cipher_8h_a699d8b6be07b76205e3431a6fa9c8782}\index{cipher.h@{cipher.h}!cipher\_file@{cipher\_file}}
+\index{cipher\_file@{cipher\_file}!cipher.h@{cipher.h}}
+\doxysubsubsection{\texorpdfstring{cipher\_file()}{cipher\_file()}}
+{\footnotesize\ttfamily \label{cipher_8h_a699d8b6be07b76205e3431a6fa9c8782} 
+void cipher\+\_\+file (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{input\+\_\+file}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{output\+\_\+file}{}\end{DoxyParamCaption})}
+
+
+
+Cipher the contents of an input file and write to an output file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+file} & the input file to read from \\
+\hline
+{\em output\+\_\+file} & the output file to write to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cipher_8h_a84121acebbae22e27fa0ee4511f9ca3c}\index{cipher.h@{cipher.h}!cipher\_key\_in\_file@{cipher\_key\_in\_file}}
+\index{cipher\_key\_in\_file@{cipher\_key\_in\_file}!cipher.h@{cipher.h}}
+\doxysubsubsection{\texorpdfstring{cipher\_key\_in\_file()}{cipher\_key\_in\_file()}}
+{\footnotesize\ttfamily \label{cipher_8h_a84121acebbae22e27fa0ee4511f9ca3c} 
+void cipher\+\_\+key\+\_\+in\+\_\+file (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{, }\item[{unsigned char}]{plain\+\_\+key}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{unsigned char}]{master\+\_\+key}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{size\+\_\+t}]{key\+\_\+sizes}{}\end{DoxyParamCaption})}
+
+
+
+Cipher a key and write it to a file using the master key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the file to write the ciphered key to \\
+\hline
+{\em plain\+\_\+key} & the plain key to cipher \\
+\hline
+{\em master\+\_\+key} & the master key to use for ciphering \\
+\hline
+{\em key\+\_\+sizes} & size of the key (must be KEY\+\_\+\+SIZE) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cipher_8h_a24872b5dc52d0fac585f17bca0ba0033}\index{cipher.h@{cipher.h}!decipher\_file@{decipher\_file}}
+\index{decipher\_file@{decipher\_file}!cipher.h@{cipher.h}}
+\doxysubsubsection{\texorpdfstring{decipher\_file()}{decipher\_file()}}
+{\footnotesize\ttfamily \label{cipher_8h_a24872b5dc52d0fac585f17bca0ba0033} 
+void decipher\+\_\+file (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{input\+\_\+file}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{output\+\_\+file}{}\end{DoxyParamCaption})}
+
+
+
+Decipher the contents of an input file and write to an output file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+file} & the input file to read from \\
+\hline
+{\em output\+\_\+file} & the output file to write to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cipher_8h_abd821a03b937a161d2bb3508d87ad03e}\index{cipher.h@{cipher.h}!decipher\_key\_from\_file@{decipher\_key\_from\_file}}
+\index{decipher\_key\_from\_file@{decipher\_key\_from\_file}!cipher.h@{cipher.h}}
+\doxysubsubsection{\texorpdfstring{decipher\_key\_from\_file()}{decipher\_key\_from\_file()}}
+{\footnotesize\ttfamily \label{cipher_8h_abd821a03b937a161d2bb3508d87ad03e} 
+unsigned char \texorpdfstring{$\ast$}{*} decipher\+\_\+key\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{, }\item[{unsigned char}]{key\+\_\+buf}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{unsigned char}]{master\+\_\+key}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{size\+\_\+t}]{key\+\_\+sizes}{}\end{DoxyParamCaption})}
+
+
+
+Decipher a key from a file using the master key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the file to read the ciphered key from \\
+\hline
+{\em key\+\_\+buf} & buffer to store the deciphered key \\
+\hline
+{\em master\+\_\+key} & the master key to use for deciphering \\
+\hline
+{\em key\+\_\+sizes} & size of the key (must be KEY\+\_\+\+SIZE) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the deciphered key stored in key\+\_\+buf 
+\end{DoxyReturn}
+\Hypertarget{cipher_8h_ab6e12ddf0cb4548472f376e0873790ee}\index{cipher.h@{cipher.h}!get\_rand\_key@{get\_rand\_key}}
+\index{get\_rand\_key@{get\_rand\_key}!cipher.h@{cipher.h}}
+\doxysubsubsection{\texorpdfstring{get\_rand\_key()}{get\_rand\_key()}}
+{\footnotesize\ttfamily \label{cipher_8h_ab6e12ddf0cb4548472f376e0873790ee} 
+unsigned char \texorpdfstring{$\ast$}{*} get\+\_\+rand\+\_\+key (\begin{DoxyParamCaption}\item[{unsigned char}]{buf}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{size\+\_\+t}]{key\+\_\+len}{}\end{DoxyParamCaption})}
+
+
+
+Generate a random key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & buffer to store the random key \\
+\hline
+{\em key\+\_\+len} & length of the key (must be KEY\+\_\+\+SIZE) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the random key stored in buf 
+\end{DoxyReturn}
+\Hypertarget{cipher_8h_a676ad79ba3367a7c0d63d49a4918d4e3}\index{cipher.h@{cipher.h}!set\_master\_key@{set\_master\_key}}
+\index{set\_master\_key@{set\_master\_key}!cipher.h@{cipher.h}}
+\doxysubsubsection{\texorpdfstring{set\_master\_key()}{set\_master\_key()}}
+{\footnotesize\ttfamily \label{cipher_8h_a676ad79ba3367a7c0d63d49a4918d4e3} 
+unsigned char \texorpdfstring{$\ast$}{*} set\+\_\+master\+\_\+key (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{user\+\_\+str}{, }\item[{unsigned char}]{master\+\_\+key\+\_\+buf}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{size\+\_\+t}]{master\+\_\+key\+\_\+len}{}\end{DoxyParamCaption})}
+
+
+
+Set the master key based on a user-\/provided string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+str} & the user-\/provided string \\
+\hline
+{\em master\+\_\+key\+\_\+buf} & buffer to store the master key \\
+\hline
+{\em master\+\_\+key\+\_\+len} & length of the master key (must be KEY\+\_\+\+SIZE) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the master key stored in master\+\_\+key\+\_\+buf 
+\end{DoxyReturn}
+\Hypertarget{cipher_8h_a2c8b5283426afe258d75e9efa5631749}\index{cipher.h@{cipher.h}!xor\_file@{xor\_file}}
+\index{xor\_file@{xor\_file}!cipher.h@{cipher.h}}
+\doxysubsubsection{\texorpdfstring{xor\_file()}{xor\_file()}}
+{\footnotesize\ttfamily \label{cipher_8h_a2c8b5283426afe258d75e9efa5631749} 
+void xor\+\_\+file (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{input\+\_\+file}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{output\+\_\+file}{, }\item[{unsigned char}]{rand\+\_\+key}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{size\+\_\+t}]{key\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+XOR the contents of an input file with a random key and write to an output file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+file} & the input file to read from \\
+\hline
+{\em output\+\_\+file} & the output file to write to \\
+\hline
+{\em rand\+\_\+key} & the random key to use for XOR operation \\
+\hline
+{\em key\+\_\+size} & size of the key (must be KEY\+\_\+\+SIZE) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cipher_8h_a259ce324d4147fd867a19b979e590033}\index{cipher.h@{cipher.h}!xor\_key@{xor\_key}}
+\index{xor\_key@{xor\_key}!cipher.h@{cipher.h}}
+\doxysubsubsection{\texorpdfstring{xor\_key()}{xor\_key()}}
+{\footnotesize\ttfamily \label{cipher_8h_a259ce324d4147fd867a19b979e590033} 
+unsigned char \texorpdfstring{$\ast$}{*} xor\+\_\+key (\begin{DoxyParamCaption}\item[{unsigned char}]{rand\+\_\+key}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{unsigned char}]{master\+\_\+key}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{unsigned char}]{buf}{\mbox{[}\+KEY\+\_\+\+SIZE\mbox{]}, }\item[{size\+\_\+t}]{key\+\_\+sizes}{}\end{DoxyParamCaption})}
+
+
+
+Function prototypes. 
+
+XOR two keys to produce a third key 
+\begin{DoxyParams}{Parameters}
+{\em rand\+\_\+key} & the random key \\
+\hline
+{\em master\+\_\+key} & the master key \\
+\hline
+{\em buf} & buffer to store the resulting key \\
+\hline
+{\em key\+\_\+sizes} & size of the keys (must be KEY\+\_\+\+SIZE) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting key stored in buf 
+\end{DoxyReturn}

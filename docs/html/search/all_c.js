@@ -1,21 +1,5 @@
 var searchData=
 [
-  ['save_5fbin_2eh_0',['save_bin.h',['../save__bin_8h.html',1,'']]],
-  ['sect_1',['sect',['../structsect.html',1,'']]],
-  ['section_2',['Section',['../load__data_8h.html#aef02f2f64f0bcd6490171dc1c01cfb37',1,'load_data.h']]],
-  ['section_5fcontent_3',['SECTION_CONTENT',['../load__data_8h.html#a82f7376fac56bac377c052858b3f8bd7',1,'load_data.h']]],
-  ['section_5fheader_4',['section_header',['../structsect.html#ad1e36075bca61392a0b823d260722a4f',1,'sect']]],
-  ['section_5ftitle_5',['section_title',['../structsect.html#a87957e266f18dfa52f69b63cac55d819',1,'sect']]],
-  ['set_5fcursor_5fto_5fnext_5fsection_6',['set_cursor_to_next_section',['../load__data_8h.html#a2d7c226fde2c516c982203dbb529bf3b',1,'load_data.c']]],
-  ['size_5ftop1_7',['SIZE_TOP1',['../student__api_8h.html#afbe3e8f40bf976d09a4881621d01db79',1,'student_api.h']]],
-  ['size_5ftop2_8',['SIZE_TOP2',['../student__api_8h.html#a47fd7d8326ae22c6722da7848d63d024',1,'student_api.h']]],
-  ['stu_5fdtab_9',['stu_dtab',['../structpromotion.html#a73e44eef5edfafd80c97014ab07f8339',1,'promotion']]],
-  ['student_10',['Student',['../students_8h.html#ae8c079733e2570c4a107caf4b38afc60',1,'students.h']]],
-  ['student_11',['student',['../structstudent.html',1,'']]],
-  ['student_5fapi_2eh_12',['student_api.h',['../student__api_8h.html',1,'']]],
-  ['student_5fid_13',['STUDENT_ID',['../student__api_8h.html#a708f939981ead4d1db83b3a33c9246ad',1,'student_api.h']]],
-  ['student_5fis_5fvalid_14',['student_is_valid',['../students_8h.html#af4e2faccd38b6354983fcd4c3e8a92b7',1,'students.c']]],
-  ['student_5ftab_5fbsearch_15',['student_tab_bsearch',['../promotion_8h.html#afc22f1d99464e360f3d958f732d22070',1,'promotion.c']]],
-  ['students_2eh_16',['students.h',['../students_8h.html',1,'']]],
-  ['students_5fid_5fare_5fsorted_5fand_5funique_17',['students_id_are_sorted_and_unique',['../promotion_8h.html#af58511727a5e4d628dbdf7496ee0f2f9',1,'promotion.c']]]
+  ['mag_0',['MAG',['../utils_8h.html#af54a5a977c0c499323d656315f008ee0',1,'utils.h']]],
+  ['minimum_1',['MINIMUM',['../student__api_8h.html#ab414b3d93e06e9151175e4084ed3295d',1,'student_api.h']]]
 ];

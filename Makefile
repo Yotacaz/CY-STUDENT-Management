@@ -1,5 +1,6 @@
-TEST_MODE=0
-#set to 1 if you need to create a dynamic lib
+TEST_MODE=1
+
+#set to 1 if you need to create a dynamic lib (leave to 0 otherwise) :
 DYN_MODE=0
 
 
@@ -97,4 +98,5 @@ debug:
 test_static: $(STAT_LIB)
 
 	gcc -O0 -g  test.c -Llib -lstudent_s -o test
+	@echo "starting program :"
 	./test

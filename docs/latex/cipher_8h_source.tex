@@ -1,0 +1,36 @@
+\doxysection{cipher.\+h}
+\hypertarget{cipher_8h_source}{}\label{cipher_8h_source}\index{src/core/cipher.h@{src/core/cipher.h}}
+\mbox{\hyperlink{cipher_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CIPHER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CIPHER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{../other/utils.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ KEY\_SIZE\ 16UL}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{cipher_8h_a259ce324d4147fd867a19b979e590033}{xor\_key}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ rand\_key[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ master\_key[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ buf[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ key\_sizes);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cipher_8h_a2c8b5283426afe258d75e9efa5631749}{xor\_file}}(FILE\ *input\_file,\ FILE\ *output\_file,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ rand\_key[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],\ \textcolor{keywordtype}{size\_t}\ key\_size);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{cipher_8h_a676ad79ba3367a7c0d63d49a4918d4e3}{set\_master\_key}}(\textcolor{keywordtype}{char}\ *user\_str,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ master\_key\_buf[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],\ \textcolor{keywordtype}{size\_t}\ master\_key\_len);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{cipher_8h_ab6e12ddf0cb4548472f376e0873790ee}{get\_rand\_key}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ buf[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],\ \textcolor{keywordtype}{size\_t}\ key\_len);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{cipher_8h_abd821a03b937a161d2bb3508d87ad03e}{decipher\_key\_from\_file}}(FILE\ *file,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ key\_buf[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ master\_key[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ key\_sizes);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cipher_8h_a84121acebbae22e27fa0ee4511f9ca3c}{cipher\_key\_in\_file}}(FILE\ *file,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ plain\_key[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ master\_key[\mbox{\hyperlink{cipher_8h_a2d996237e082b78b41771b5aa1a6eae1}{KEY\_SIZE}}],}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ key\_sizes);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cipher_8h_a699d8b6be07b76205e3431a6fa9c8782}{cipher\_file}}(FILE\ *input\_file,\ FILE\ *output\_file);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cipher_8h_a24872b5dc52d0fac585f17bca0ba0033}{decipher\_file}}(FILE\ *input\_file,\ FILE\ *output\_file);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

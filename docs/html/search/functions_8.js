@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['set_5fcursor_5fto_5fnext_5fsection_0',['set_cursor_to_next_section',['../load__data_8h.html#a2d7c226fde2c516c982203dbb529bf3b',1,'load_data.c']]],
-  ['student_5fis_5fvalid_1',['student_is_valid',['../students_8h.html#af4e2faccd38b6354983fcd4c3e8a92b7',1,'students.c']]],
-  ['student_5ftab_5fbsearch_2',['student_tab_bsearch',['../promotion_8h.html#afc22f1d99464e360f3d958f732d22070',1,'promotion.c']]],
-  ['students_5fid_5fare_5fsorted_5fand_5funique_3',['students_id_are_sorted_and_unique',['../promotion_8h.html#af58511727a5e4d628dbdf7496ee0f2f9',1,'promotion.c']]]
+  ['load_5fcourses_5fdata_0',['load_courses_data',['../load__data_8h.html#a5af573cac1a0bc650fc6d1b34b3b5832',1,'load_data.c']]],
+  ['load_5fgrades_5fdata_1',['load_grades_data',['../load__data_8h.html#a6b072280706eb2f8e48ca4d0efba636b',1,'load_data.c']]],
+  ['load_5fstudent_5ftab_5fdata_2',['load_student_tab_data',['../load__data_8h.html#affeacd3d8564a7cef5d26ecc3c8e62d2',1,'load_data.c']]]
 ];

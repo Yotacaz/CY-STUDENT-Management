@@ -94,13 +94,14 @@ $(function(){initNavTree('project__info_8h.html','',''); });
 
 <p>Project information macros.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
+</div>
 <p><a href="project__info_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a4a776fa6ea8b7bdf8dfa04ad42b46407" id="r_a4a776fa6ea8b7bdf8dfa04ad42b46407"><td class="memItemLeft" align="right" valign="top"><a id="a4a776fa6ea8b7bdf8dfa04ad42b46407" name="a4a776fa6ea8b7bdf8dfa04ad42b46407"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PROJECT_VERSION</b>&#160;&#160;&#160;&quot;1.1.0&quot;</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PROJECT_VERSION</b>&#160;&#160;&#160;&quot;0.4.0&quot;</td></tr>
 <tr class="memdesc:a4a776fa6ea8b7bdf8dfa04ad42b46407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project version. <br /></td></tr>
 <tr class="memitem:a6c8fad838ed64cc67da3f68149009758" id="r_a6c8fad838ed64cc67da3f68149009758"><td class="memItemLeft" align="right" valign="top"><a id="a6c8fad838ed64cc67da3f68149009758" name="a6c8fad838ed64cc67da3f68149009758"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>AUTHOR</b>&#160;&#160;&#160;&quot;Martin CRISSOT (https://github.com/Yotacaz/)&quot;</td></tr>
@@ -108,10 +109,38 @@ Macros</h2></td></tr>
 <tr class="memitem:ae73053051efbb45c3a39751f5ce9fb36" id="r_ae73053051efbb45c3a39751f5ce9fb36"><td class="memItemLeft" align="right" valign="top"><a id="ae73053051efbb45c3a39751f5ce9fb36" name="ae73053051efbb45c3a39751f5ce9fb36"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PROJECT_NAME</b>&#160;&#160;&#160;&quot;CY-STUDENT MANAGEMENT&quot;</td></tr>
 <tr class="memdesc:ae73053051efbb45c3a39751f5ce9fb36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project name. <br /></td></tr>
+<tr class="memitem:ac08e6b8c7e5d3b1e34eef2143f17a2cd" id="r_ac08e6b8c7e5d3b1e34eef2143f17a2cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac08e6b8c7e5d3b1e34eef2143f17a2cd">PRINT_PROJECT_INFO</a>()</td></tr>
+<tr class="memdesc:ac08e6b8c7e5d3b1e34eef2143f17a2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to print project information.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Project information macros. </p>
-</div></div><!-- contents -->
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="ac08e6b8c7e5d3b1e34eef2143f17a2cd" name="ac08e6b8c7e5d3b1e34eef2143f17a2cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08e6b8c7e5d3b1e34eef2143f17a2cd">&#9670;&#160;</a></span>PRINT_PROJECT_INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PRINT_PROJECT_INFO</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">printf(<a class="code hl_define" href="utils_8h.html#a0719a599e334b3093d1fe3277a261df2">BOLD_BLU</a> <a class="code hl_define" href="#ae73053051efbb45c3a39751f5ce9fb36">PROJECT_NAME</a> <span class="stringliteral">&quot; (&quot;</span> <a class="code hl_define" href="#a4a776fa6ea8b7bdf8dfa04ad42b46407">PROJECT_VERSION</a> <span class="stringliteral">&quot;) | Author : &quot;</span> <a class="code hl_define" href="#a6c8fad838ed64cc67da3f68149009758">AUTHOR</a> <span class="stringliteral">&quot;\n&quot;</span> <a class="code hl_define" href="utils_8h.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a>)</div>
+<div class="ttc" id="aproject__info_8h_html_a4a776fa6ea8b7bdf8dfa04ad42b46407"><div class="ttname"><a href="#a4a776fa6ea8b7bdf8dfa04ad42b46407">PROJECT_VERSION</a></div><div class="ttdeci">#define PROJECT_VERSION</div><div class="ttdoc">Project version.</div><div class="ttdef"><b>Definition</b> project_info.h:10</div></div>
+<div class="ttc" id="aproject__info_8h_html_a6c8fad838ed64cc67da3f68149009758"><div class="ttname"><a href="#a6c8fad838ed64cc67da3f68149009758">AUTHOR</a></div><div class="ttdeci">#define AUTHOR</div><div class="ttdoc">Author information.</div><div class="ttdef"><b>Definition</b> project_info.h:13</div></div>
+<div class="ttc" id="aproject__info_8h_html_ae73053051efbb45c3a39751f5ce9fb36"><div class="ttname"><a href="#ae73053051efbb45c3a39751f5ce9fb36">PROJECT_NAME</a></div><div class="ttdeci">#define PROJECT_NAME</div><div class="ttdoc">Project name.</div><div class="ttdef"><b>Definition</b> project_info.h:16</div></div>
+<div class="ttc" id="autils_8h_html_a0719a599e334b3093d1fe3277a261df2"><div class="ttname"><a href="utils_8h.html#a0719a599e334b3093d1fe3277a261df2">BOLD_BLU</a></div><div class="ttdeci">#define BOLD_BLU</div><div class="ttdoc">Bold blue text color for terminal output.</div><div class="ttdef"><b>Definition</b> utils.h:57</div></div>
+<div class="ttc" id="autils_8h_html_ab702106cf3b3e96750b6845ded4e0299"><div class="ttname"><a href="utils_8h.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a></div><div class="ttdeci">#define RESET</div><div class="ttdoc">Reset text formatting for terminal output.</div><div class="ttdef"><b>Definition</b> utils.h:69</div></div>
+</div><!-- fragment -->
+<p>Macro to print project information. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

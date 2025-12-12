@@ -113,12 +113,58 @@ Macros</h2></td></tr>
 <tr class="memitem:ae43cf4df151af6f9140c801ba7c0b68e" id="r_ae43cf4df151af6f9140c801ba7c0b68e"><td class="memItemLeft" align="right" valign="top"><a id="ae43cf4df151af6f9140c801ba7c0b68e" name="ae43cf4df151af6f9140c801ba7c0b68e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GRADE_MAX</b>&#160;&#160;&#160;20.0001</td></tr>
 <tr class="memdesc:ae43cf4df151af6f9140c801ba7c0b68e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum valid grade value. <br /></td></tr>
+<tr class="memitem:a5f3c29eceed480c9d507238d0d64b92e" id="r_a5f3c29eceed480c9d507238d0d64b92e"><td class="memItemLeft" align="right" valign="top"><a id="a5f3c29eceed480c9d507238d0d64b92e" name="a5f3c29eceed480c9d507238d0d64b92e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>GRADE_TO_VALIDATE</b>&#160;&#160;&#160;9.9999</td></tr>
+<tr class="memdesc:a5f3c29eceed480c9d507238d0d64b92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grade value used to represent unvalidated courses. <br /></td></tr>
+<tr class="memitem:a648fd6bcdb172519010ddd81b9b3026c" id="r_a648fd6bcdb172519010ddd81b9b3026c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a648fd6bcdb172519010ddd81b9b3026c">SCIENCES_MASK</a></td></tr>
+<tr class="memdesc:a648fd6bcdb172519010ddd81b9b3026c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask definitions for course categories.  <br /></td></tr>
+<tr class="memitem:a7a3616783bd3d89e331e694d2f3bc6cb" id="r_a7a3616783bd3d89e331e694d2f3bc6cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a3616783bd3d89e331e694d2f3bc6cb">HUMANITIES_MASK</a></td></tr>
+<tr class="memdesc:a7a3616783bd3d89e331e694d2f3bc6cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask definitions for course categories.  <br /></td></tr>
+<tr class="memitem:ae71cdbd96e5b1aedb065c626f334e88d" id="r_ae71cdbd96e5b1aedb065c626f334e88d"><td class="memItemLeft" align="right" valign="top"><a id="ae71cdbd96e5b1aedb065c626f334e88d" name="ae71cdbd96e5b1aedb065c626f334e88d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>YEAR_MASK</b>&#160;&#160;&#160;(<a class="el" href="#a648fd6bcdb172519010ddd81b9b3026c">SCIENCES_MASK</a> | <a class="el" href="#a7a3616783bd3d89e331e694d2f3bc6cb">HUMANITIES_MASK</a>)</td></tr>
+<tr class="memdesc:ae71cdbd96e5b1aedb065c626f334e88d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask representing all courses in a year. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ae152a4e920986ad3baf9e0e3af2f3cc6" id="r_ae152a4e920986ad3baf9e0e3af2f3cc6"><td class="memItemLeft" align="right" valign="top"><a id="ae152a4e920986ad3baf9e0e3af2f3cc6" name="ae152a4e920986ad3baf9e0e3af2f3cc6"></a>
+typedef enum <a class="el" href="#a85b76d569a67435d5b333ffa620640c8">_cindex</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CourseIndex</b></td></tr>
+<tr class="memdesc:ae152a4e920986ad3baf9e0e3af2f3cc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum listing all possible courses does not correspond to course id in the CoursesTable, just a convenient way to refer to courses. WARNING : <b>ENUM MUST BE ORDERED ALPHABETICALLY</b>. <br /></td></tr>
 <tr class="memitem:a073a650292b8c9358734e1254a622c67" id="r_a073a650292b8c9358734e1254a622c67"><td class="memItemLeft" align="right" valign="top"><a id="a073a650292b8c9358734e1254a622c67" name="a073a650292b8c9358734e1254a622c67"></a>
 typedef struct <a class="el" href="structfollowed__course.html">followed_course</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Followed_course</b></td></tr>
 <tr class="memdesc:a073a650292b8c9358734e1254a622c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">The courses followed by a specific student. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a85b76d569a67435d5b333ffa620640c8" id="r_a85b76d569a67435d5b333ffa620640c8"><td class="memItemLeft" align="right" valign="top"><a id="a85b76d569a67435d5b333ffa620640c8" name="a85b76d569a67435d5b333ffa620640c8"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85b76d569a67435d5b333ffa620640c8">_cindex</a> { <br />
+&#160;&#160;<b>ALLEMAND</b>
+, <b>ANGLAIS</b>
+, <b>ARTPLASTIQUE</b>
+, <b>BIOLOGIE</b>
+, <br />
+&#160;&#160;<b>CHIMIE</b>
+, <b>EPS</b>
+, <b>ECONOMIE</b>
+, <b>ESPAGNOL</b>
+, <br />
+&#160;&#160;<b>FRANCAIS</b>
+, <b>GEOGRAPHIE</b>
+, <b>HISTOIRE</b>
+, <b>INFORMATIQUE</b>
+, <br />
+&#160;&#160;<b>LATIN</b>
+, <b>MATHEMATIQUES</b>
+, <b>MUSIQUE</b>
+, <b>PHILOSOPHIE</b>
+, <br />
+&#160;&#160;<b>PHYSIQUE</b>
+, <b>SCIENCESSOCIALES</b>
+, <b>SOCIOLOGIE</b>
+, <b>TECHNOLOGIE</b>
+, <br />
+&#160;&#160;<b>NB_COURSES</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:a85b76d569a67435d5b333ffa620640c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum listing all possible courses does not correspond to course id in the CoursesTable, just a convenient way to refer to courses. WARNING : <b>ENUM MUST BE ORDERED ALPHABETICALLY</b>. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -135,7 +181,45 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure and functions to handle followed courses data. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a7a3616783bd3d89e331e694d2f3bc6cb" name="a7a3616783bd3d89e331e694d2f3bc6cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3616783bd3d89e331e694d2f3bc6cb">&#9670;&#160;</a></span>HUMANITIES_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HUMANITIES_MASK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ((1 &lt;&lt; ALLEMAND) | (1 &lt;&lt; ANGLAIS) | (1 &lt;&lt; ARTPLASTIQUE) | (1 &lt;&lt; ESPAGNOL) | (1 &lt;&lt; FRANCAIS) |  \</div>
+<div class="line">     (1 &lt;&lt; GEOGRAPHIE) | (1 &lt;&lt; HISTOIRE) | (1 &lt;&lt; LATIN) | (1 &lt;&lt; MUSIQUE) | (1 &lt;&lt; PHILOSOPHIE) |    \</div>
+<div class="line">     (1 &lt;&lt; SCIENCESSOCIALES) | (1 &lt;&lt; SOCIOLOGIE))</div>
+</div><!-- fragment -->
+<p>Bitmask definitions for course categories. </p>
+
+</div>
+</div>
+<a id="a648fd6bcdb172519010ddd81b9b3026c" name="a648fd6bcdb172519010ddd81b9b3026c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a648fd6bcdb172519010ddd81b9b3026c">&#9670;&#160;</a></span>SCIENCES_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCIENCES_MASK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ((1 &lt;&lt; BIOLOGIE) | (1 &lt;&lt; CHIMIE) | (1 &lt;&lt; ECONOMIE) | (1 &lt;&lt; INFORMATIQUE) |                     \</div>
+<div class="line">     (1 &lt;&lt; MATHEMATIQUES) | (1 &lt;&lt; PHYSIQUE) | (1 &lt;&lt; TECHNOLOGIE))</div>
+</div><!-- fragment -->
+<p>Bitmask definitions for course categories. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a3fa63a75df11e2f7f8eb8d8bc14db581" name="a3fa63a75df11e2f7f8eb8d8bc14db581"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3fa63a75df11e2f7f8eb8d8bc14db581">&#9670;&#160;</a></span>followed_course_is_valid()</h2>
 

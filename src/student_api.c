@@ -1,8 +1,9 @@
 #include "../lib/student_api.h"
-#include "../src/core/load_bin.h"
-#include "../src/core/load_data.h"
-#include "../src/core/save_bin.h"
-#include "../src/other/project_info.h"
+#include "core/cipher.h"
+#include "core/load_bin.h"
+#include "core/load_data.h"
+#include "core/save_bin.h"
+#include "other/project_info.h"
 
 CLASS_DATA *API_load_students(char *file_path)
 {
@@ -60,8 +61,10 @@ CLASS_DATA *API_restore_from_binary_file(char *file_path)
         exit(EXIT_FAILURE);
     }
     CoursesTab *cr_dtab = CoursesTab_load_from_bin(file, bin_load_course);
+    assert(CoursesTab_is_valid(cr_dtab, course_is_valid));
     StudentsTab *stu_dtab = StudentsTab_load_from_bin(file, bin_load_student);
-    assert(cr_dtab && stu_dtab);
+
+    assert(StudentsTab_is_valid(stu_dtab, student_is_valid));
     Promotion *prom = init_promotion(cr_dtab, stu_dtab);
     fclose(file);
     return prom;
@@ -70,8 +73,18 @@ CLASS_DATA *API_restore_from_binary_file(char *file_path)
 void API_display(CLASS_DATA *prom)
 {
     assert(prom);
-    printf(BOLD_BLU PROJECT_NAME " (" PROJECT_VERSION ") | Author : " AUTHOR "\n" RESET);
+    PRINT_PROJECT_INFO();
     print_promotion(prom);
+}
+
+void API_display_results_per_field(CLASS_DATA *pClass)
+{
+    Promotion *prom = (Promotion *)pClass;
+    PRINT_PROJECT_INFO();
+    assert(promotion_is_valid(prom));
+    CoursesTab_print(prom->courses, print_course);
+    printf(BOLD_BLU "\n-------------\n" RESET);
+    StudentsTab_print(prom->stu_dtab, print_student_validation);
 }
 
 void API_unload(CLASS_DATA *pClass) { free_promotion(pClass, free_student, free_course); }
@@ -82,8 +95,6 @@ char **API_get_best_students(CLASS_DATA *pClass)
     assert(promotion_is_valid(prom));
     StudentsTab *stu_dtab = get_top_students(prom->stu_dtab, SIZE_TOP1);
     assert(stu_dtab);
-    Student **tab = stu_dtab->tab;
-    int size = stu_dtab->size;
     return get_students_names_and_fname(stu_dtab->tab, stu_dtab->size);
 }
 
@@ -125,9 +136,9 @@ int API_set_sorting_mode(CLASS_DATA *pClass, int mode)
     default:
         fprintf(stderr, BOLD_RED "WARNING: incorrect sorting mode %d, sorting mode unchanged" RESET,
                 mode);
-        return 1;
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 char **API_sort_students(CLASS_DATA *pClass)
@@ -137,4 +148,29 @@ char **API_sort_students(CLASS_DATA *pClass)
     StudentsTab *stu_dtab = prom->stu_dtab;
     StudentsTab_sort(stu_dtab, prom->compare_student);
     return get_students_names_and_fname(stu_dtab->tab, SIZE_TOP1);
+}
+
+int API_cipher(char *pIn, char *pOut)
+{
+    verify(pIn && pOut, "NULL pointer given");
+    FILE *input_file = fopen(pIn, "r");
+    verify(!ferror(input_file), "couldn't open input file");
+    FILE *output_file = fopen(pOut, "w");
+    verify(!ferror(output_file), "couldn't open output file");
+    printf(BOLD_BLU "Ciphering '%s' to '%s'\n" RESET, pIn, pOut);
+    cipher_file(input_file, output_file);
+
+    return !(fclose(input_file) || fclose(output_file));
+}
+
+int API_decipher(char *pIn, char *pOut)
+{
+    verify(pIn && pOut, "NULL pointer given");
+    FILE *input_file = fopen(pIn, "r");
+    verify(!ferror(input_file), "couldn't open input file");
+    FILE *output_file = fopen(pOut, "w");
+    verify(!ferror(output_file), "couldn't open output file");
+    printf(BOLD_BLU "Deciphering '%s' to '%s'\n" RESET, pIn, pOut);
+    decipher_file(input_file, output_file);
+    return !(fclose(input_file) || fclose(output_file));
 }
