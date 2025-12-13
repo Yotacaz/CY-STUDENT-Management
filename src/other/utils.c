@@ -1,7 +1,9 @@
-#include "utils.h"
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "utils.h"
 
 size_t bin_read_string(FILE *file, char buf[], long buf_size)
 {

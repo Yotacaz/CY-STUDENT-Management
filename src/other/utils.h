@@ -2,7 +2,6 @@
 #define UTILS_H
 /// @file utils.h
 /// @brief Various utility functions
-#include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>

@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "course.h"
+#include "../other/utils.h"
 
 DEFINE_DYN_TABLE(Course *, CoursesTab)
 

@@ -1,5 +1,7 @@
-#include "promotion.h"
 #include <float.h>
+
+#include "../other/utils.h"
+#include "promotion.h"
 
 DEFINE_DYN_TABLE(Student *, StudentsTab)
 

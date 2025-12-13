@@ -2,7 +2,6 @@
 #define CIPHER_H
 
 #include "../other/utils.h"
-#include <stdlib.h>
 
 /// @file cipher.h
 /// @brief Functions for file ciphering and deciphering

@@ -1,13 +1,14 @@
 #ifndef STUDENTS_H
 #define STUDENTS_H
-#include <stdlib.h>
-#include <string.h>
-
 /// @file students.h
 /// @brief Structure and functions to handle students data
 
+#include <stdlib.h>
+#include <string.h>
+
 #include "course.h"
 #include "followed_course.h"
+#include "../other/utils.h"
 
 /// @brief Define to print the followed courses when printing a student
 // #define PRINT_STUDENT_COURSES
@@ -20,6 +21,7 @@
 /// @brief Maximum valid ages for students
 #define AGE_MAX 100
 #endif
+
 /// @brief Structure representing a student.
 /// We suppose here that every student follows the same number of courses (n_courses).
 /// In the f_courses table, the courses are stored in the same order as in the CoursesTab of the
@@ -31,7 +33,7 @@ typedef struct student
     /// else not validated
     /// used to quickly check if a student has validated a set of courses
     /// (see student_has_validated function)
-    u_int32_t course_validation_mask;
+    __uint32_t course_validation_mask;
     ///@brief table of followed courses, **is ordered alphabetically**
     Followed_course **f_courses;
     ///@brief last name
@@ -129,7 +131,7 @@ void update_student_bitmask(Student *stu);
 /// @param stu the student
 /// @param courses_bitmask the bitmask representing the courses to check
 /// @return true if the student has validated all courses in the bitmask, false otherwise
-static inline bool student_has_validated(Student *stu, uint32_t courses_bitmask)
+static inline bool student_has_validated(Student *stu, __uint32_t courses_bitmask)
 {
     assert(student_is_valid(stu));
     return (stu->course_validation_mask & courses_bitmask) == courses_bitmask;

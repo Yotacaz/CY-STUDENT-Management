@@ -1,5 +1,4 @@
 #include "save_bin.h"
-#include <arpa/inet.h>
 
 void bin_save_prom(Promotion *prom, FILE *file)
 {

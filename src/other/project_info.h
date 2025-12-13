@@ -4,10 +4,10 @@
 /// @file project_info.h
 /// @brief Project information macros
 
-#include "utils.h"
+#include <stdio.h>
 
 /// Project version
-#define PROJECT_VERSION "0.4.0"
+#define PROJECT_VERSION "0.4.1"
 
 /// Author information
 #define AUTHOR "Martin CRISSOT (https://github.com/Yotacaz/)"

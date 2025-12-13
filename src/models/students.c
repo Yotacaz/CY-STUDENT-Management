@@ -1,6 +1,7 @@
 #include <assert.h>
 
 #include "students.h"
+#include "../other/utils.h"
 
 Student *init_student(char *name, char *first_name, unsigned int student_id, int n_courses, int age)
 {
@@ -82,7 +83,7 @@ void print_student_validation(Student *stu)
     bool humanities_is_validated = student_has_validated(stu, HUMANITIES_MASK);
     if (science_is_validated && humanities_is_validated)
     {
-        printf(CYN "OO - every course is validated\n" RESET);
+        printf( "OO - every course is validated\n");
     }
     else if (!science_is_validated && !humanities_is_validated)
     {
@@ -90,11 +91,11 @@ void print_student_validation(Student *stu)
     }
     else if (!science_is_validated)
     {
-        printf(RED "OX - science not validated\n" RESET);
+        printf( "O"RED"X - "RESET"humanities validated,"RED" science not validated\n" RESET);
     }
     else
     {
-        printf(RED "XO - humanities not validated\n" RESET);
+        printf( RED"X"RESET"O"RED" - humanities not validated,"RESET" science validated\n");
     }
 }
 
@@ -193,7 +194,7 @@ void update_student_bitmask(Student *stu)
         }
         else
         {
-            stu->course_validation_mask &= 0 << i;
+            stu->course_validation_mask &= ~(1 << i);
         }
     }
 }

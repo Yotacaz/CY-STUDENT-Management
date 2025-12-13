@@ -1,5 +1,8 @@
+#include <assert.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-
+#include "../other/utils.h"
 #include "followed_course.h"
 
 DEFINE_DYN_TABLE(float, Grades)

@@ -5,7 +5,6 @@
 /// @brief Structure and functions to handle courses data
 
 #include "../other/dyn_table.h"
-#include "../other/utils.h"
 
 #ifndef COEF_MIN
 /// @brief Minimum valid coefficient value

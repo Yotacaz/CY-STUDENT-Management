@@ -6,7 +6,6 @@
 /// A dynamic table is a structure that can grow as needed when elements are added.
 /// It contains a pointer to the elements, the current size, and the capacity.
 
-#include <arpa/inet.h>
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>

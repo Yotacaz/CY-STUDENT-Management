@@ -5,8 +5,6 @@
 /// @brief Structure and functions to handle followed courses data
 
 #include "../other/dyn_table.h"
-#include "../other/utils.h"
-#include <stdio.h>
 
 DECLARE_DYN_TABLE(float, Grades)
 
