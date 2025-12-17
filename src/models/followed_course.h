@@ -50,14 +50,14 @@ typedef enum _cindex
 
 /// @brief Bitmask definitions for course categories
 #define SCIENCES_MASK                                                                              \
-    ((1 << BIOLOGIE) | (1 << CHIMIE) | (1 << ECONOMIE) | (1 << INFORMATIQUE) |                     \
-     (1 << MATHEMATIQUES) | (1 << PHYSIQUE) | (1 << TECHNOLOGIE))
+    ((1 << BIOLOGIE) | (1 << CHIMIE) | (1 << INFORMATIQUE) | (1 << MATHEMATIQUES) |                \
+     (1 << PHYSIQUE) | (1 << TECHNOLOGIE))
 
 /// @brief Bitmask definitions for course categories
 #define HUMANITIES_MASK                                                                            \
     ((1 << ALLEMAND) | (1 << ANGLAIS) | (1 << ARTPLASTIQUE) | (1 << ESPAGNOL) | (1 << FRANCAIS) |  \
      (1 << GEOGRAPHIE) | (1 << HISTOIRE) | (1 << LATIN) | (1 << MUSIQUE) | (1 << PHILOSOPHIE) |    \
-     (1 << SCIENCESSOCIALES) | (1 << SOCIOLOGIE))
+     (1 << SCIENCESSOCIALES) | (1 << SOCIOLOGIE) | (1 << ECONOMIE))
 
 /// @brief Bitmask representing all courses in a year
 #define YEAR_MASK (SCIENCES_MASK | HUMANITIES_MASK)

@@ -69,10 +69,10 @@ int compare_student_minimum(const void *a, const void *b)
     {
         if (s2->f_courses[i]->average < min_s2)
         {
-            min_s1 = s2->f_courses[i]->average;
+            min_s2 = s2->f_courses[i]->average;
         }
     }
-    return min_s1 - min_s2;
+    return (min_s1 < min_s2) - (min_s1 > min_s2);
 }
 
 Student *student_tab_bsearch(StudentsTab *stu_dtab, unsigned int searched_id)

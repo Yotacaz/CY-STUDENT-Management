@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 /// Project version
-#define PROJECT_VERSION "0.4.1"
+#define PROJECT_VERSION "0.4.2"
 
 /// Author information
 #define AUTHOR "Martin CRISSOT (https://github.com/Yotacaz/)"

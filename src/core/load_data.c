@@ -18,7 +18,7 @@ StudentsTab *load_student_tab_data(FILE *file)
     int n_char =
             snprintf(format, BUF_LEN, "%%u;%%%d[^;\n];%%%d[^;\n];%%d\n", BUF_LEN - 1, BUF_LEN - 1);
     assert(n_char > 0 && n_char < BUF_LEN); // no error or overflow
-    while (fscanf(file, format, &stu_id, name, fname, &age) == 4)
+    while (fscanf(file, format, &stu_id, fname, name, &age) == 4)
     {
         // we don't know the number of courses yet
         verify(age_is_valid(age), "invalid age while loading student data from text file");
